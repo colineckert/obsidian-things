@@ -2,7 +2,7 @@
 
 ![](assets/main-demo.png)
 
-I love [Things 3](https://culturedcode.com/things/). It's been the task manager I've trusted and used for years, partly because the design makes using the app so enjoyable. I wanted to bring that same joy to Obsidian by creating a native look and feel on MacOS, iOS and iPadOS.
+I love [Things 3](https://culturedcode.com/things/). It's been the task manager I've trusted and used for years, partly because the design makes using the app so enjoyable. I wanted to bring that same joy to Obsidian by creating a Things-inspired, native look and feel on MacOS, iOS and iPadOS.
 
 ### Features
 
