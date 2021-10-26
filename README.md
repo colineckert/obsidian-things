@@ -2,7 +2,7 @@
 
 ![](assets/main-demo.png)
 
-I love [Things 3](https://culturedcode.com/things/). It's been the task manager I've trusted and used for years, partly because the design makes using the app so enjoyable. I wanted to bring that same joy to Obsidian by creating a Things-inspired, native look and feel on MacOS, iOS and iPadOS.
+I love [Things 3](https://culturedcode.com/things/). It's been the task manager I've trusted and used for years, partly because the design makes using the app so enjoyable. I wanted to bring that same joy to Obsidian by creating a Things-inspired design that looked and felt native on MacOS, iOS and iPadOS.
 
 ### Features
 
@@ -24,6 +24,7 @@ This theme has support for the following Obsidian community plugins:
 - [Sliding Panes (Andy's Mode)](https://github.com/deathau/sliding-panes-obsidian)
 - [Calendar](https://github.com/liamcain/obsidian-calendar-plugin)
 - [Kanban](https://github.com/mgmeyers/obsidian-kanban)
+- [Hider](https://github.com/kepano/obsidian-hider) (Recommended)
 - [Checklist](https://github.com/delashum/obsidian-checklist-plugin)
 - [Todoist](https://github.com/jamiebrynes7/obsidian-todoist-plugin) (ironic, I know)
 
@@ -33,7 +34,7 @@ If you have any issues and/or suggestions, please submit an issue or raise a PR.
 
 ### Credits
 
-I owe a huge credit to @kepano and the Minimal Theme for inspiration for making an elegant, native-feeling design!
+I owe a huge credit to @kepano and the Minimal Theme for inspiration on making an elegant, native-feeling design!
 
 ### Support
 

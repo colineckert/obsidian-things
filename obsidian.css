@@ -3,14 +3,14 @@
   COLORS
   ----------------------------------------------------------------*/
 
-  --base-h: 212;
-  --base-s: 15%;
-  --base-d: 13%;
-  --base-l: 97%;
-  --accent-h: 215;
-  --accent-s: 75%;
-  --accent-d: 70%;
-  --accent-l: 60%;
+  --base-h: 212; /* Base hue */
+  --base-s: 15%; /* Base saturation */
+  --base-d: 13%; /* Base lightness Dark Mode  - 0 is black */
+  --base-l: 97%; /* Base lightness Light Mode  - 100 is white */
+  --accent-h: 215; /* Accent hue */
+  --accent-s: 75%; /* Accent saturation */
+  --accent-d: 70%; /* Accent lightness Dark Mode */
+  --accent-l: 60%; /* Accent lightness Light Mode */
 
   --blue: #2e80f2;
   --pink: #ff82b2;
@@ -85,15 +85,15 @@
   --strong-color: var(--pink);
   --em-color: var(--pink);
 
-  --normal-weight: 400;
-  --bold-weight: 600;
+  --normal-weight: 400; /* Switch to 300 if you want thinner default text */
+  --bold-weight: 600; /* Switch to 700 if you want thicker bold text */
   --icon-muted: 0.4;
-  --line-width: 40rem;
+  --line-width: 40rem; /* Maximum characters per line */
   --line-height: 1.5;
   --border-width: 1px;
   --border-width-alt: 1px;
-  --max-width: 85%;
-  --nested-padding: 3.5%;
+  --max-width: 85%; /* Amount of padding around the text, use 90% for narrower padding */
+  --nested-padding: 3.5%; /* Amount of padding for quotes and transclusions */
   --input-height: 36px;
 
   --font-todoist-title-size: 1em;
@@ -1817,16 +1817,6 @@ input[type='checkbox']:checked {
 .nav-header {
   padding: 0;
 }
-/*
-.nav-header:after {
-  content:"";
-  pointer-events:none;
-  z-index:9;
-  background:linear-gradient(0deg,var(--background-transparent) 0%,var(--background-secondary) 100%);;
-  height:12px;
-  width:100%;
-  position:fixed;
-}*/
 .nav-buttons-container {
   padding: 10px 5px 0px 5px;
   margin-bottom: 0px !important;
@@ -1836,6 +1826,7 @@ input[type='checkbox']:checked {
 .nav-files-container {
   overflow-x: hidden;
   padding-bottom: 50px;
+  padding-left: 5px;
 }
 .nav-folder-title {
   margin: 0 0 0 8px;
@@ -1856,6 +1847,7 @@ input[type='checkbox']:checked {
 }
 .nav-folder-title-content {
   padding: 0px 4px 1px 0;
+  font-weight: 600;
 }
 .nav-folder-collapse-indicator {
   top: 1px;
