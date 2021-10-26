@@ -9,7 +9,7 @@ I love [Things 3](https://culturedcode.com/things/). It's been the task manager 
 - Things-inspired color palette
 - Light and dark theme
 - Desktop and mobile support
-- Custom colors for bold, italic and block-quotes
+- Customizable colors for bold, italic, highlighters, and block-quotes
 - Tag pills for readability
 - Better designed image cards
 - Bullet and number list relationship lines
@@ -34,10 +34,10 @@ If you have any issues and/or suggestions, please submit an issue or raise a PR.
 
 ### Credits
 
-I owe a huge credit to @kepano and his Minimal Theme for inspiration on making an elegant, native-feeling design!
+I owe a huge credit to both @kepano and his Minimal Theme and @chetachiezikeuzor and her Yin and Yang Theme for inspiration on building an elegant, native-feeling design!
 
 ### Support
 
 🎉 Support development: **@colineckert** on [Twitter](https://www.twitter.com/colineckert) or [Buy me a coffee](https://www.buymeacoffee.com/colineckert).
 
-<a href="https://www.buymeacoffee.com/colineckert"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=kepano&button_colour=5F7FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00"></a>
+<a href="https://www.buymeacoffee.com/colineckert"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=colineckert&button_colour=5F7FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00"></a>
