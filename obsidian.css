@@ -2571,7 +2571,7 @@ input.search-input:focus {
 }
 
 /* Blend right sidebar */
-.workspace-ribbon.side-dock-ribbon.mod-right {
+/* .workspace-ribbon.side-dock-ribbon.mod-right {
   width: auto;
   border: none;
   background: var(--background-primary);
@@ -2579,7 +2579,7 @@ input.search-input:focus {
 }
 .workspace-ribbon.side-dock-ribbon.mod-right .workspace-ribbon-collapse-btn {
   padding: 10px 3px 20px 3px;
-}
+} */
 
 /* --------------- */
 /* Preview mode  */
