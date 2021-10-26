@@ -25,6 +25,7 @@
   --pink-highlighter: #ffb8eba6;
   --red-highlighter: #db3e606e;
   --blue-highlighter: #adccffa6;
+  --dark-blue-highlighter: #adccff5b;
   --green-highlighter: #bbfabba6;
   --purple-highlighter: #d2b3ffa6;
   --orange-highlighter: #ffb86ca6;
@@ -265,7 +266,7 @@ body {
   --text-on-accent: white;
 
   --text-selection: hsla(var(--accent-h), 70%, 40%, 30%);
-  --text-highlight-bg: var(--dark-yellow-highlighter);
+  --text-highlight-bg: var(--dark-blue-highlighter);
   --text-highlight-bg-active: rgba(255, 255, 255, 0.1);
 
   --code-color: #c7254e;
@@ -855,6 +856,7 @@ input.prompt-input:hover {
 }
 .prompt-instructions {
   color: var(--text-muted);
+  padding: 10px;
 }
 .prompt-instruction-command {
   font-weight: 600;
@@ -2543,13 +2545,12 @@ input.search-input:focus {
 }
 
 /* --------------- */
-/* Default ribbon sidedock icons */
+/* Workplace ribbon & sidedock icons */
 /* --------------- */
 
-/* TODO: */
 .workspace-ribbon-collapse-btn {
   margin: 0;
-  padding-top: 10px;
+  padding-top: 30px;
 }
 .workspace-ribbon-collapse-btn,
 .view-action,
@@ -2568,9 +2569,17 @@ input.search-input:focus {
 .side-dock-ribbon-action {
   padding: 8px 0;
 }
-/* .side-dock-settings {
-  padding-bottom: 10px;
-} */
+
+/* Blend right sidebar */
+.workspace-ribbon.side-dock-ribbon.mod-right {
+  width: auto;
+  border: none;
+  background: var(--background-primary);
+}
+.workspace-ribbon.side-dock-ribbon.mod-right .workspace-ribbon-collapse-btn {
+  padding: 10px 2px 20px 2px;
+  align-self: center;
+}
 
 /* --------------- */
 /* Preview mode  */
@@ -4147,6 +4156,15 @@ body.plugin-sliding-panes.is-fullscreen .view-header-icon {
 body.plugin-sliding-panes .mod-root .graph-controls {
   top: 20px;
   left: 30px;
+}
+body.plugin-sliding-panes-rotate-header
+  .workspace
+  > .mod-root
+  > .workspace-leaf
+  > .workspace-leaf-content
+  > .view-header
+  .view-header-icon {
+  margin: 30px 0 3px 0 !important;
 }
 
 /* --------------- */
