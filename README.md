@@ -24,7 +24,7 @@ This theme has support for the following Obsidian community plugins:
 - [Sliding Panes (Andy's Mode)](https://github.com/deathau/sliding-panes-obsidian)
 - [Calendar](https://github.com/liamcain/obsidian-calendar-plugin)
 - [Kanban](https://github.com/mgmeyers/obsidian-kanban)
-- [Hider](https://github.com/kepano/obsidian-hider) (recommended)
+- [Hider](https://github.com/kepano/obsidian-hider) (recommend hiding titlebar, scroll bars, and status bar)
 - [Checklist](https://github.com/delashum/obsidian-checklist-plugin)
 - [Todoist](https://github.com/jamiebrynes7/obsidian-todoist-plugin) (ironic, I know)
 

@@ -2575,10 +2575,10 @@ input.search-input:focus {
   width: auto;
   border: none;
   background: var(--background-primary);
+  display: contents;
 }
 .workspace-ribbon.side-dock-ribbon.mod-right .workspace-ribbon-collapse-btn {
-  padding: 10px 2px 20px 2px;
-  align-self: center;
+  padding: 10px 3px 20px 3px;
 }
 
 /* --------------- */
