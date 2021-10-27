@@ -4273,8 +4273,8 @@ body.plugin-sliding-panes-rotate-header
   table-layout: fixed;
 }
 #calendar-container h2 {
-  font-weight: 400;
   font-size: var(--h2);
+  font-weight: 400;
 }
 .mod-root #calendar-container {
   width: var(--line-width-adaptive);
@@ -4403,13 +4403,13 @@ body .kanban-plugin__grow-wrap::after {
   padding: 0;
   border: 0;
 }
-body:not(.is-mobile) .kanban-plugin__grow-wrap > textarea:focus {
-  box-shadow: none;
-}
 body .kanban-plugin__grow-wrap > textarea,
 body .kanban-plugin__grow-wrap::after,
 body .kanban-plugin__item-title p {
   font-size: calc(var(--font-adaptive-normal) - 2px);
+}
+body:not(.is-mobile) .kanban-plugin__grow-wrap > textarea:focus {
+  box-shadow: none;
 }
 .kanban-plugin__item-input-actions button,
 .kanban-plugin__lane-input-actions button {
