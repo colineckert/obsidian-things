@@ -3927,14 +3927,22 @@ body.plugin-sliding-panes-rotate-header {
 body.plugin-sliding-panes-rotate-header .view-header-title:before {
   display: none;
 }
-body.plugin-sliding-panes-rotate-header
+body.plugin-sliding-panes.plugin-sliding-panes-rotate-header
+  .workspace
+  > .mod-root
+  > .workspace-leaf
+  > .workspace-leaf-content
+  > .view-header {
+  border: none;
+}
+body.plugin-sliding-panes.plugin-sliding-panes-rotate-header
   .workspace
   > .mod-root
   > .workspace-leaf
   > .workspace-leaf-content
   > .view-header
   > .view-header-title-container:before,
-body.plugin-sliding-panes-rotate-header
+body.plugin-sliding-panes.plugin-sliding-panes-rotate-header
   .app-container
   .workspace
   > .mod-root
@@ -3947,10 +3955,18 @@ body.plugin-sliding-panes-rotate-header
 body.plugin-sliding-panes-rotate-header .workspace > .mod-root .view-header {
   text-orientation: sideways;
 }
+body.plugin-sliding-panes.plugin-sliding-panes-rotate-header
+  .workspace
+  > .mod-root
+  > .workspace-leaf.mod-active
+  > .workspace-leaf-content
+  > .view-header {
+  border-right: none;
+}
 body.plugin-sliding-panes-stacking .workspace > .mod-root > .workspace-leaf,
 body.plugin-sliding-panes .workspace-split.mod-vertical > .workspace-leaf {
   box-shadow: 0 0 0 1px var(--background-modifier-border),
-    1px 0px 15px 3px var(--shadow-color) !important;
+    1px 0px 15px 0px var(--shadow-color) !important;
 }
 body.plugin-sliding-panes .mod-horizontal .workspace-leaf {
   box-shadow: none !important;
@@ -3995,29 +4011,63 @@ body.plugin-sliding-panes-rotate-header
   > .workspace-leaf-content
   > .view-header
   > div {
-  padding-left: 0;
-  padding-bottom: 40px;
-  margin-left: 2px;
+  margin-left: 0px;
   bottom: 0;
 }
 body.plugin-sliding-panes-rotate-header .view-header-icon {
-  opacity: 0.5;
+  opacity: var(--icon-muted);
 }
-body.plugin-sliding-panes.is-fullscreen .view-header-icon {
-  padding-top: 8px;
+body.plugin-sliding-panes-rotate-header .view-header-icon:hover {
+  opacity: 1;
 }
-body.plugin-sliding-panes .mod-root .graph-controls {
-  top: 20px;
-  left: 30px;
-}
-body.plugin-sliding-panes-rotate-header
+body.plugin-sliding-panes.plugin-sliding-panes-rotate-header
   .workspace
   > .mod-root
   > .workspace-leaf
   > .workspace-leaf-content
   > .view-header
   .view-header-icon {
-  margin: 30px 0 3px 0 !important;
+  padding: 4px 1px;
+  margin: 5px 0 0 0;
+  left: 0;
+  width: 26px;
+}
+body.plugin-sliding-panes.plugin-sliding-panes-rotate-header
+  .workspace
+  > .mod-root
+  > .workspace-leaf
+  > .workspace-leaf-content
+  > .view-header
+  .view-actions {
+  padding-bottom: 33px;
+}
+/* Space for the hover ribbon in the bottom left */
+body.hider-ribbon.plugin-sliding-panes.plugin-sliding-panes-rotate-header
+  .workspace
+  > .mod-root
+  > .workspace-leaf
+  > .workspace-leaf-content
+  > .view-header
+  .view-actions {
+  padding-bottom: 50px;
+}
+body.plugin-sliding-panes.is-fullscreen .view-header-icon {
+  padding-top: 8px;
+}
+body.plugin-sliding-panes.plugin-sliding-panes-rotate-header
+  .workspace
+  > .mod-root
+  > .workspace-leaf
+  > .workspace-leaf-content
+  > .view-header
+  .view-action {
+  margin: 3px 0;
+  padding: 4px 1px;
+  width: 26px;
+}
+body.plugin-sliding-panes .mod-root .graph-controls {
+  top: 20px;
+  left: 30px;
 }
 
 /* --------------- */
@@ -4031,40 +4081,43 @@ body.plugin-sliding-panes-rotate-header
   pointer-events: none;
 }
 .hider-ribbon:not(.is-mobile) .workspace-ribbon.mod-left {
-  position: fixed;
+  position: absolute;
   border-right: 0px;
   margin: 0;
-  height: 40px;
+  height: var(--header-height);
   overflow: visible;
   flex-basis: 0;
   bottom: 0;
   top: auto;
   display: flex !important;
   flex-direction: row;
-  background: var(--background-primary);
   z-index: 17;
   opacity: 0;
   transition: opacity 0.25s ease-in-out;
+  filter: drop-shadow(2px 10px 30px rgba(0, 0, 0, 0.2));
 }
 .hider-ribbon:not(.is-mobile) .side-dock-actions,
 .hider-ribbon:not(.is-mobile) .side-dock-settings {
   display: flex;
   border-top: var(--border-width) solid var(--background-modifier-border);
-  background: var(--background-primary);
+  background: var(--background-secondary);
   margin: 0;
+  position: relative;
 }
-.hider-ribbon:not(.is-mobile) .workspace-ribbon.mod-left:after {
-  border-top: var(--border-width) solid var(--background-modifier-border);
-  background: var(--background-primary);
-  padding-right: 100vw;
-  content: ' ';
-  pointer-events: none;
+.hider-ribbon:not(.is-mobile) .side-dock-actions {
+  padding-left: 5px;
+}
+.hider-ribbon:not(.is-mobile) .side-dock-settings {
+  border-right: var(--border-width) solid var(--background-modifier-border);
+  border-top-right-radius: 5px;
+  padding-right: 10px;
 }
 .hider-ribbon:not(.is-mobile)
   .workspace-ribbon.mod-left
   .side-dock-ribbon-action {
-  display: inline-block;
-  padding: 10px 5px 0 15px;
+  display: flex;
+  padding: 4px;
+  margin: 6px 0px 5px 10px;
 }
 .hider-ribbon:not(.is-mobile) .workspace-ribbon.mod-left:hover {
   opacity: 1;
@@ -4080,6 +4133,9 @@ body.plugin-sliding-panes-rotate-header
 }
 .hider-ribbon:not(.is-mobile) .workspace-leaf-content .item-list {
   padding-bottom: 40px;
+}
+.hider-ribbon .workspace-ribbon {
+  padding: 0;
 }
 
 /* --------------- */
@@ -4103,6 +4159,65 @@ body.plugin-sliding-panes-rotate-header
 }
 .view-actions .view-action:last-child {
   margin-left: 2px;
+}
+
+/* Frameless mode on macOS only */
+
+.hider-frameless:not(.is-mobile)
+  .workspace-split.mod-right-split
+  > .workspace-tabs,
+.hider-frameless:not(.is-mobile) .workspace-split.mod-root .view-header {
+  padding-top: 2px;
+}
+.hider-frameless:not(.is-mobile)
+  .workspace-split.mod-left-split
+  > .workspace-tabs {
+  padding-top: 24px;
+}
+.hider-frameless:not(.is-mobile)
+  .workspace-split.mod-right-split
+  > .workspace-tabs
+  ~ .workspace-tabs,
+.hider-frameless:not(.is-mobile)
+  .workspace-split.mod-left-split
+  > .workspace-tabs
+  ~ .workspace-tabs {
+  padding-top: 0px;
+}
+.hider-frameless.is-fullscreen:not(.is-mobile)
+  .workspace-split.mod-left-split
+  > .workspace-tabs,
+.hider-frameless.is-fullscreen:not(.is-mobile)
+  .workspace-split.mod-root
+  .view-header {
+  padding-top: 0px;
+}
+
+/* Title bar / traffic light icons */
+
+.mod-macos.minimal-folding.hider-frameless.hider-ribbon:not(.plugin-sliding-panes-rotate-header) {
+  --traffic-space: 80px;
+  --traffic-padding: 60px;
+}
+.mod-macos.minimal-folding.hider-frameless:not(.plugin-sliding-panes-rotate-header) {
+  --traffic-space: 55px;
+  --traffic-padding: 20px;
+}
+.mod-macos.hider-frameless.hider-ribbon:not(.plugin-sliding-panes-rotate-header) {
+  --traffic-space: 95px;
+  --traffic-padding: 60px;
+}
+.mod-macos.hider-frameless:not(.plugin-sliding-panes-rotate-header) {
+  --traffic-space: 65px;
+  --traffic-padding: 20px;
+}
+.mod-macos.hider-frameless:not(.is-fullscreen):not(.plugin-sliding-panes-rotate-header)
+  .workspace-split.mod-left-split.is-collapsed
+  + .mod-root
+  .workspace-leaf:first-of-type
+  .workspace-leaf-content:not([data-type='graph'])
+  .view-header-icon {
+  margin-left: var(--traffic-padding);
 }
 
 /* --------------- */
