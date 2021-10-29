@@ -894,13 +894,11 @@ input.prompt-input:hover {
   opacity: 100;
   border-radius: 0 !important;
 }
-
 .mod-drag {
   opacity: 0;
   border: 2px solid var(--text-accent);
   background-color: var(--background-primary);
 }
-
 .view-header.is-highlighted:after {
   background-color: var(--text-selection);
 }
