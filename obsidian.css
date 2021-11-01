@@ -103,7 +103,7 @@
   --cursor: default;
 }
 
-/* Desktop font sizes */
+/* Desktop fonts */
 body {
   --font-adaptive-normal: var(--font-normal);
   --font-adaptive-small: var(--font-small);
@@ -112,7 +112,7 @@ body {
   --line-width-adaptive: var(--line-width);
 }
 
-/* Tablet font sizes */
+/* Tablet fonts */
 @media (min-width: 400pt) {
   .is-mobile {
     --font-adaptive-normal: calc(var(--font-normal) + 4px);
@@ -124,7 +124,7 @@ body {
   }
 }
 
-/* Phone font sizes */
+/* Phone fonts */
 @media (max-width: 400pt) {
   .is-mobile {
     --font-adaptive-small: calc(var(--font-small) + 2px);
@@ -4745,6 +4745,37 @@ body .kanban-plugin__markdown-preview-view ul,
 }
 .checklist-plugin-main .toggle:hover {
   box-shadow: none;
+}
+
+/* Checklist mobile styling */
+
+.is-mobile .checklist-plugin-main .group-header {
+  display: flex;
+  margin-bottom: 12px;
+}
+.is-mobile .checklist-plugin-main .group-header .title {
+  font-weight: 500;
+  color: var(--text-muted);
+  font-size: var(--font-adaptive-small);
+}
+.is-mobile .checklist-plugin-main .group-header button {
+  width: fit-content !important;
+  margin-left: 5px;
+}
+.is-mobile .checklist-plugin-main .group .classic {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+}
+.is-mobile .checklist-plugin-main .group .classic .content {
+  padding: 0;
+  display: inline-block;
+}
+.is-mobile .checklist-plugin-main .group .classic .toggle {
+  padding: 0;
+  margin-right: 1rem;
+  width: fit-content !important;
+  display: inline-block;
 }
 
 /* --------------- */
