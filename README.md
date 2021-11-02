@@ -52,7 +52,7 @@ This theme has support for the following Obsidian community plugins:
 1. Open the **Settings** in Obsidian
 1. Navigate to **Appearances** tab under **Options**
 1. Under the **Themes** section, click on the dropdown menu next to **Theme** heading
-1. Select for `Things` and then you're done! 🎉
+1. Select `Things` and then you're done! 🎉
 
 ## Feedback
 
@@ -64,6 +64,6 @@ I owe a huge hat tip to both `@kepano` and his Minimal Theme, which served as th
 
 ## Support
 
-🎉 You can help me keep creating tools like this by supporting development: **@colineckert** on [Twitter](https://www.twitter.com/colineckert) or [Buy me a coffee](https://www.buymeacoffee.com/colineckert).
+🎉 You can help me keep creating _things_ like this by supporting development: **@colineckert** on [Twitter](https://www.twitter.com/colineckert) or [Buy me a coffee](https://www.buymeacoffee.com/colineckert).
 
 <a href="https://www.buymeacoffee.com/colineckert"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=colineckert&button_colour=5F7FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00"></a>
