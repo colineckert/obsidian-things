@@ -2,6 +2,12 @@
 
 ![](assets/main-demo.png)
 
+_Things was written during [Obsidian October 2021](https://forum.obsidian.md/t/obsidian-october-2021-make-plugins-and-themes-together-and-win-awards/24471)._
+
+> 🛠 Status: Not yet available in Obsidian's Community themes. Manual installation needed.
+
+<!-- > ✅ Status: Available in Obsidian's Community themes. -->
+
 I love [Things 3](https://culturedcode.com/things/). It's been the task manager I've trusted and used for years, partly because the design makes using the app so enjoyable. I wanted to bring that same joy to Obsidian by creating a Things-inspired design that looked and felt native on MacOS and iOS.
 
 ## Features
