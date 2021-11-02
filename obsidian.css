@@ -1,3 +1,15 @@
+/*───────────────────────────────────────────────────────
+THINGS
+Version 1.1.1
+https://github.com/colineckert/obsidian-things
+Created by @colineckert (GitHub)
+MIT License
+─────────────────────────────────────────────────────────
+For help and/or CSS snippets, thanks to:
+- @kepano
+- @chetachiezikeuzor
+────────────────────────────────────────────────────── */
+
 :root {
   /*----------------------------------------------------------------
   COLORS
@@ -4917,3 +4929,43 @@ body .kanban-plugin__markdown-preview-view ul,
   cursor: var(--cursor);
   font-family: var(--font-monospace);
 }
+
+/* ─────────────────────────────────────────────────── */
+/* Plugin Compatibility info for the Obsidian Hub */
+/* ─────────────────────────────────────────────────── */
+
+/* @plugins
+core:
+- backlink
+- command-palette
+- file-explorer
+- global-search
+- graph
+- outgoing-link
+- outline
+- page-preview
+- starred
+- switcher
+- tag-pane
+- file-recovery
+- daily-notes
+- random-note
+- publish
+- sync
+- word-count
+community:
+- sliding-panes-obsidian
+- obsidian-codemirror-options
+- obsidian-kanban
+- dataview
+- obsidian-hider
+- calendar
+- mysnippets-plugin
+- cmenu-plugin
+- obsidian-outliner
+- readwise-official
+- tag-wrangler
+- todoist-sync-plugin
+- templater-obsidian
+- obsidian-system-dark-mode
+*/
