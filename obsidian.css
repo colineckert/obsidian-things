@@ -2642,6 +2642,30 @@ iframe {
   color: var(--text-muted);
 }
 
+.frontmatter-container {
+  border: 1px solid var(--background-modifier-border);
+  font-size: 14px;
+  color: var(--text-muted);
+  padding: 6px 14px;
+  border-radius: 4px;
+  background-color: var(--background-primary-alt);
+  position: relative;
+  margin-top: 16px;
+}
+
+/* Blockquotes */
+
+.markdown-preview-view blockquote {
+  border-radius: 0;
+  border: solid var(--quote-opening-modifier);
+  border-width: 0px 0px 0px 2px;
+  background-color: transparent;
+  color: var(--green);
+  font-style: italic;
+  padding: 0 0 0 calc(var(--nested-padding) / 2);
+  margin-inline-start: var(--nested-padding);
+}
+
 /* Blockquotes */
 
 .markdown-preview-view blockquote {
