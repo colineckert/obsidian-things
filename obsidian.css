@@ -4123,6 +4123,10 @@ body.plugin-sliding-panes-rotate-header {
 body.plugin-sliding-panes-rotate-header .view-header-title:before {
   display: none;
 }
+/* better vertically align file title */
+body.plugin-sliding-panes-rotate-header.plugin-sliding-select-orientation-mixed .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header {
+  padding: 2.5px;
+}
 body.plugin-sliding-panes.plugin-sliding-panes-rotate-header
   .workspace
   > .mod-root
