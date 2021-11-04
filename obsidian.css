@@ -3833,7 +3833,7 @@ body:not(.is-ios).is-mobile .workspace-drawer-ribbon {
     padding: 40px 0 20px 0;
   }
   .is-mobile .view-header-title {
-    max-width: 70vw;
+    max-width: 80vw;
   }
   .is-mobile .view-header-title {
     padding-right: 20px;
@@ -3915,6 +3915,44 @@ body:not(.is-ios).is-mobile .workspace-drawer-ribbon {
   .is-mobile .publish-changes-switch-site {
     flex-grow: 0;
     margin-right: 10px;
+  }
+}
+
+/* ---------------- */
+/* Mobile toolbar button */
+/* ---------------- */
+
+.is-mobile [aria-label="Edit (⌘+Click to edit in new pane)"],
+.is-mobile [aria-label="Edit (Ctrl+Click to edit in new pane)"],
+.is-mobile [aria-label="Preview (⌘+Click to open in new pane)"],
+.is-mobile [aria-label="Preview (Ctrl+Click to open in new pane)"] {
+  color: white;
+  background-color: var(--blue);
+  opacity: 1;
+  /* filter: brightness(97%); */
+  top: calc(90vh - 48px);
+  display: flex;
+  padding: 5px;
+  position: absolute;
+  left: 87vw;
+  transform: translate(-40%, -15%);
+  justify-content: center;
+  align-items: center;
+  width: 53px;
+  height: 53px;
+  border-radius: 50% !important;
+  box-shadow: 0.9px 0.9px 3.6px rgba(0, 0, 0, 0.07),
+    2.5px 2.4px 10px rgba(0, 0, 0, 0.1), 6px 5.7px 24.1px rgba(0, 0, 0, 0.13),
+    20px 19px 80px rgba(0, 0, 0, 0.2);
+}
+
+/* Shrink FAB on small displays */
+@media screen and (max-height: 400px) {
+  [aria-label="Edit (⌘+Click to edit in new pane)"],
+  [aria-label="Edit (Ctrl+Click to edit in new pane)"],
+  [aria-label="Preview (⌘+Click to open in new pane)"],
+  [aria-label="Preview (Ctrl+Click to open in new pane)"] {
+    transform: scale(0.8) translate(-50%, -50%);
   }
 }
 

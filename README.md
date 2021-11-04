@@ -14,7 +14,7 @@ I love [Things 3](https://culturedcode.com/things/). It's been the task manager 
 
 - Things-inspired color palette
 - Light and dark theme
-- Desktop and mobile support
+- Quick preview/edit mode button in mobile
 - Customizable colors for bold, italic, highlighters, and block-quotes
 - Tag pills for readability
 - Better designed image cards
