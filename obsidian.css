@@ -2641,6 +2641,16 @@ iframe {
 .frontmatter-container .frontmatter-alias {
   color: var(--text-muted);
 }
+.frontmatter-container {
+  border: 1px solid var(--background-modifier-border);
+  font-size: 14px;
+  color: var(--text-muted);
+  padding: 6px 14px;
+  border-radius: 4px;
+  background-color: var(--background-primary-alt);
+  position: relative;
+  margin-top: 16px;
+}
 
 /* Blockquotes */
 

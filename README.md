@@ -4,9 +4,7 @@
 
 _Things was written during [Obsidian October 2021](https://forum.obsidian.md/t/obsidian-october-2021-make-plugins-and-themes-together-and-win-awards/24471)._
 
-> 🛠 Status: Not yet available in Obsidian's Community themes. Manual installation needed.
-
-<!-- > ✅ Status: Available in Obsidian's Community themes. -->
+> ✅ Status: Available in Obsidian's Community themes 🎉.
 
 I love [Things 3](https://culturedcode.com/things/). It's been the task manager I've trusted and used for years, partly because the design makes using the app so enjoyable. I wanted to bring that same joy to Obsidian by creating a Things-inspired design that looked and felt native on MacOS and iOS.
 
@@ -36,13 +34,13 @@ This theme has support for the following Obsidian community plugins:
 
 ## Installation
 
-<!-- ### Obsidian Marketplace (Recommended) -->
+### Obsidian Marketplace (Recommended)
 
-<!-- 1. Open the **Settings** in Obsidian
+1. Open the **Settings** in Obsidian
 1. Navigate to **Appearances** tab under **Options**
-1. Under the **Themes** section, click on the `Browse` button next to **Community Themes**
-1. Search for `Things` in the Filter text input in the upper left corner
-1. Click `Use` and then you're done! 🎉 -->
+1. Under the **Themes** section, click on the `Manage` button across from **Themes**
+1. Search for `Things` in the Filter text input
+1. Click `Use` and then you're done! 🎉
 
 ### Manual
 
