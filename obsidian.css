@@ -404,13 +404,11 @@ h3,
 h4 {
   letter-spacing: -0.02em;
 }
-
 h2 {
   border-bottom: 1px solid var(--background-modifier-border);
   width: 100%;
   padding-bottom: 2px;
 }
-
 body,
 input,
 button {
@@ -3009,8 +3007,8 @@ input[type='range'] {
   margin: 0;
   border-radius: 0px;
 }
-input[type='range']:focus {
-}
+/* input[type='range']:focus {
+} */
 input[type='range']::-webkit-slider-runnable-track {
   background: var(--background-modifier-border-hover);
   height: 2px;
@@ -3296,12 +3294,17 @@ Mobile styling
 -------------------------------------------------------------------------------- */
 
 .is-mobile {
+  --font-settings-title: 18px;
   --font-settings: 16px;
   --font-settings-small: 13px;
   --input-height: 40px;
 }
 body.is-mobile {
   padding: 0 !important; /* Reset podding */
+}
+/* Fix large edit mode headers in mobile */
+.is-mobile .cm-header {
+  font-size: 1em;
 }
 .is-mobile .follow-link-popover {
   font-family: var(--font-ui);
