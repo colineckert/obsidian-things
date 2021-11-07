@@ -1130,7 +1130,7 @@ body.is-dragging {
   border-radius: 10px !important;
 }
 .workspace-tab-header-inner {
-  padding: 8px 10px;
+  padding: 8px 14px;
 }
 .workspace-tab-header-inner-icon {
   display: flex;
@@ -3472,7 +3472,7 @@ body:not(.is-ios).is-mobile .workspace-drawer-ribbon {
   box-shadow: 0 0 0px 1px var(--background-tertiary);
 }
 .is-mobile .workspace-drawer-active-tab-container {
-  z-index: 2;
+  z-index: 9999;
   background-color: var(--background-primary);
 }
 .is-mobile .side-dock-actions,
@@ -3566,9 +3566,10 @@ body:not(.is-ios).is-mobile .workspace-drawer-ribbon {
 .is-mobile .workspace-drawer-active-tab-container {
   background-color: var(--background-secondary);
 }
-.workspace-drawer-active-tab-icon {
+/* Hide expand workspace icon */
+/* .workspace-drawer-active-tab-icon {
   display: none;
-}
+} */
 .is-mobile .menu {
   border: none;
   width: 100%;
