@@ -952,7 +952,7 @@ body.is-dragging {
   border-width: 1px;
 }
 .workspace-split.mod-horizontal > * > .workspace-leaf-resize-handle {
-  height: 3px;
+  height: 2px;
   background: transparent;
   border-bottom: var(--border-width-alt) solid var(--background-modifier-border);
 }
@@ -964,7 +964,7 @@ body.is-dragging {
 .workspace-split.mod-vertical > * > .workspace-leaf-resize-handle,
 .workspace-split.mod-left-split > .workspace-leaf-resize-handle {
   border-right: var(--border-width) solid var(--background-modifier-border);
-  width: 1px !important;
+  width: 2px !important;
   background: transparent;
 }
 .workspace-split.mod-right-split > .workspace-leaf-resize-handle:hover,
@@ -974,14 +974,14 @@ body.is-dragging {
   border-color: var(--background-modifier-border-hover);
   transition: border-color 0.1s ease-in-out 0.05s,
     border-width 0.1s ease-in-out 0.05s;
-  border-width: 2px;
+  border-width: 3px;
 }
 .workspace-split.mod-right-split > .workspace-leaf-resize-handle:active,
 .workspace-split.mod-horizontal > * > .workspace-leaf-resize-handle:active,
 .workspace-split.mod-vertical > * > .workspace-leaf-resize-handle:active,
 .workspace-split.mod-left-split > .workspace-leaf-resize-handle:active {
   border-color: var(--background-modifier-border-focus);
-  border-width: 2px;
+  border-width: 3px;
 }
 .workspace-tab-container-before,
 .workspace-tab-container-after {
@@ -1562,21 +1562,6 @@ input.document-replace-input:focus {
   max-width: 100%;
   padding: 0;
   width: auto;
-}
-
-.minimal-folding
-  .workspace
-  > .workspace-split:not(.mod-root)
-  .workspace-leaf-content[data-type='markdown']
-  .allow-fold-headings.markdown-preview-view
-  .markdown-preview-sizer,
-.minimal-folding
-  .workspace
-  > .workspace-split:not(.mod-root)
-  .workspace-leaf-content[data-type='markdown']
-  .allow-fold-lists.markdown-preview-view
-  .markdown-preview-sizer {
-  padding-left: 0;
 }
 
 /* Hide embed styling for sidebar documents */
@@ -4402,11 +4387,11 @@ body.plugin-sliding-panes .mod-root .graph-controls {
 
 /* Title bar / traffic light icons */
 
-.mod-macos.minimal-folding.hider-frameless.hider-ribbon:not(.plugin-sliding-panes-rotate-header) {
+.mod-macos.hider-frameless.hider-ribbon:not(.plugin-sliding-panes-rotate-header) {
   --traffic-space: 80px;
   --traffic-padding: 60px;
 }
-.mod-macos.minimal-folding.hider-frameless:not(.plugin-sliding-panes-rotate-header) {
+.mod-macos.hider-frameless:not(.plugin-sliding-panes-rotate-header) {
   --traffic-space: 55px;
   --traffic-padding: 20px;
 }
@@ -4551,11 +4536,6 @@ body .kanban-plugin__markdown-preview-view {
 }
 
 body .workspace-leaf-content[data-type='kanban'] .view-header-title-container {
-  text-align: center;
-}
-body.minimal-folding:not(.plugin-sliding-panes-rotate-header)
-  .workspace-leaf-content[data-type='kanban']
-  .view-header-title {
   text-align: center;
 }
 body .kanban-plugin {
