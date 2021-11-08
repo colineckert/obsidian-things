@@ -3951,12 +3951,12 @@ body:not(.is-ios).is-mobile .workspace-drawer-ribbon {
   background-color: var(--blue);
   opacity: 1;
   /* filter: brightness(97%); */
-  top: calc(90vh - 48px);
+  top: calc(100vh - 88px);
   display: flex;
   padding: 5px;
-  position: absolute;
+  position: fixed;
   left: 87vw;
-  transform: translate(-40%, -15%);
+  transform: translate(-40%, -18%);
   justify-content: center;
   align-items: center;
   width: 53px;
