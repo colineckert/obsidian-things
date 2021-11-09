@@ -31,6 +31,7 @@ This theme has support for the following Obsidian community plugins:
 - [Hider](https://github.com/kepano/obsidian-hider)
 - [Checklist](https://github.com/delashum/obsidian-checklist-plugin)
 - [Todoist](https://github.com/jamiebrynes7/obsidian-todoist-plugin) (ironic, I know)
+- [Style Settings](https://github.com/mgmeyers/obsidian-style-settings)
 
 ## Installation
 

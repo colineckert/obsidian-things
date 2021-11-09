@@ -363,27 +363,6 @@ body {
   --shadow-color: rgba(0, 0, 0, 0.3);
 }
 
-/* --------------- */
-/* Style Settings */
-/* --------------- */
-
-.setting-item-heading.style-settings-heading,
-.style-settings-container .style-settings-heading {
-  cursor: var(--cursor);
-}
-.modal.mod-settings .setting-item .pickr button.pcr-button {
-  box-shadow: none;
-  border-radius: 40px;
-  height: 24px;
-  width: 24px;
-}
-.setting-item .pickr .pcr-button:after,
-.setting-item .pickr .pcr-button:before {
-  border-radius: 40px;
-  box-shadow: none;
-  border: none;
-}
-
 /* ----------------------------------------------------------------
 Desktop Styling
 ---------------------------------------------------------------- */
@@ -775,9 +754,13 @@ input.prompt-input:hover {
 .prompt-results .suggestion-flair .filled-pin {
   display: none;
 }
-.modal-container .suggestion-item.is-selected {
+.theme-light .modal-container .suggestion-item.is-selected {
   border-radius: 6px;
   background: var(--background-tertiary);
+}
+.theme-dark .modal-container .suggestion-item.is-selected {
+  border-radius: 6px;
+  background: var(--blue);
 }
 .menu-item {
   margin-bottom: 1px;
@@ -2624,6 +2607,22 @@ a[href*="obsidian://search"]
 {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='17' height='17' class='search'%3E%3Cpath fill='white' stroke='white' stroke-width='2' d='M42,6C23.2,6,8,21.2,8,40s15.2,34,34,34c7.4,0,14.3-2.4,19.9-6.4l26.3,26.3l5.6-5.6l-26-26.1c5.1-6,8.2-13.7,8.2-22.1 C76,21.2,60.8,6,42,6z M42,10c16.6,0,30,13.4,30,30S58.6,70,42,70S12,56.6,12,40S25.4,10,42,10z'%3E%3C/path%3E%3C/svg%3E");
 }
+
+/* Style settings to toggle link underlines */
+body:not(.links-int-on) a[href*="obsidian://"],
+body:not(.links-int-on) .markdown-preview-view .internal-link,
+body:not(.links-int-on) .external-link {
+  text-decoration: none;
+}
+body.links-int-on .markdown-preview-view .internal-link,
+.markdown-preview-view .internal-link {
+  text-decoration: underline;
+}
+body.links-ext-on .external-link,
+.external-link {
+  text-decoration: underline;
+}
+
 .footnotes-list {
   margin-block-start: -10px;
   padding-inline-start: 20px;
@@ -4998,6 +4997,27 @@ body .kanban-plugin__markdown-preview-view ul,
   font-family: var(--font-monospace);
 }
 
+/* --------------- */
+/* Style Settings */
+/* --------------- */
+
+.setting-item-heading.style-settings-heading,
+.style-settings-container .style-settings-heading {
+  cursor: var(--cursor);
+}
+.modal.mod-settings .setting-item .pickr button.pcr-button {
+  box-shadow: none;
+  border-radius: 40px;
+  height: 24px;
+  width: 24px;
+}
+.setting-item .pickr .pcr-button:after,
+.setting-item .pickr .pcr-button:before {
+  border-radius: 40px;
+  box-shadow: none;
+  border: none;
+}
+
 /* ─────────────────────────────────────────────────── */
 /* Plugin Compatibility info for the Obsidian Hub */
 /* ─────────────────────────────────────────────────── */
@@ -5036,4 +5056,250 @@ community:
 - todoist-sync-plugin
 - templater-obsidian
 - obsidian-system-dark-mode
+- obsidian-style-settings
+*/
+
+/* Style Settings */
+
+/* @settings
+name: Things Theme
+id: things-style
+settings:
+    -
+        id: features
+        title: Features
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: full-file-names
+        title: Show full file names
+        description: Turn off trimming on files in sidebar
+        type: class-toggle
+    -
+        id: links-int-on
+        title: Underline internal links
+        description: Show underlines on internal links
+        type: class-toggle
+        default:  true
+    -
+        id: links-ext-on
+        title: Underline external links
+        description: Show underlines on external links
+        type: class-toggle
+        default:  true
+    -
+        id: fonts
+        title: Fonts
+        type: heading
+        level: 2
+        collapsed: true
+    - 
+        id: text
+        title: Text font
+        description: Used in preview mode
+        type: variable-text
+        default: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif
+    -
+        id: text-editor
+        title: Editor font
+        description: Used in edit mode
+        type: variable-text
+        default: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif
+    -
+        id: font-monospace
+        title: Monospace font
+        description: Used for code blocks and front matter
+        type: variable-text
+        default: JetBrains Mono,Menlo,SFMono-Regular,Consolas,"Roboto Mono",monospace
+    -
+        id: font-ui
+        title: UI font
+        description: Used for buttons, menus and sidebar
+        type: variable-text
+        default: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif
+    -
+        id: custom-fonts
+        title: Typography
+        type: heading
+        level: 2
+        collapsed: true
+    - 
+        id: font-normal
+        title: Body font size
+        description: Font size in px of the main text
+        type: variable-number
+        default: 16
+        format: px
+    - 
+        id: font-small
+        title: Sidebar font size
+        description: Font size in px of the sidebar and small text
+        type: variable-number
+        default: 13
+        format: px
+    - 
+        id: line-height
+        title: Body line height
+        description: Line height of the main text
+        type: variable-number
+        default: 1.5
+    - 
+        id: line-width
+        title: Normal line width
+        description: Number of characters per line
+        type: variable-number
+        default: 40
+        format: rem
+    -
+        id: max-width
+        title: Maximum line width
+        description: Percentage of space inside a pane that a line can fill. Recommended values between 80 to 100
+        type: variable-number
+        default: 85
+        format: '%'
+    -
+        id: headings
+        title: Headings
+        type: heading
+        level: 2
+        collapsed: true
+    - 
+        id: level-1-headings
+        title: Level 1 Headings
+        type: heading
+        level: 3
+        collapsed: true
+    - 
+        id: h1
+        title: H1 font size
+        description: Accepts any CSS font-size value
+        type: variable-text
+        default: 1.5em
+    - 
+        id: h1-weight
+        title: H1 font weight
+        description: Accepts numbers representing the CSS font-weight
+        type: variable-number
+        default: 700
+    -
+        id: level-2-headings
+        title: Level 2 Headings
+        type: heading
+        level: 3
+        collapsed: true
+    - 
+        id: h2
+        title: H2 font size
+        description: Accepts any CSS font-size value
+        type: variable-text
+        default: 1.2em
+    - 
+        id: h2-weight
+        title: H2 font weight
+        description: Accepts numbers representing the CSS font-weight
+        type: variable-number
+        default: 600
+    - 
+        id: level-3-headings
+        title: Level 3 Headings
+        type: heading
+        level: 3
+        collapsed: true
+    - 
+        id: h3
+        title: H3 font size
+        description: Accepts any CSS font-size value
+        type: variable-text
+        default: 1em
+    - 
+        id: h3-weight
+        title: H3 font weight
+        description: Accepts numbers representing the CSS font-weight
+        type: variable-number
+        default: 600
+    -
+        id: level-4-headings
+        title: Level 4 Headings
+        type: heading
+        level: 3
+        collapsed: true
+    - 
+        id: h4
+        title: H4 font size
+        description: Accepts any CSS font-size value
+        type: variable-text
+        default: 0.9em
+    - 
+        id: h4-weight
+        title: H4 font weight
+        description: Accepts numbers representing the CSS font-weight
+        type: variable-number
+        default: 500
+    - 
+        id: level-5-headings
+        title: Level 5 Headings
+        type: heading
+        level: 3
+        collapsed: true
+    - 
+        id: h5
+        title: H5 font size
+        description: Accepts any CSS font-size value
+        type: variable-text
+        default: 0.85em
+    - 
+        id: h5-weight
+        title: H5 font weight
+        description: Accepts numbers representing the CSS font-weight
+        type: variable-number
+        default: 500
+    - 
+        id: level-6-headings
+        title: Level 6 Headings
+        type: heading
+        level: 3
+        collapsed: true
+    - 
+        id: h6
+        title: H6 font size
+        description: Accepts any CSS font-size value
+        type: variable-text
+        default: 0.85em
+    - 
+        id: h6-weight
+        title: H6 font weight
+        description: Accepts numbers representing the CSS font-weight
+        type: variable-number
+        default: 400
+    -
+        id: advanced
+        title: Advanced
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: cursor
+        title: Cursor style
+        description: The cursor style for UI elements
+        type: variable-select
+        default: default
+        options:
+            - 
+                label: Default
+                value: default
+            - 
+                label: Pointer
+                value: pointer
+            - 
+                label: Crosshair
+                value: crosshair
+    -
+        id: credits
+        title: Credits
+        type: heading
+        description: Created with ❤︎ by @colineckert. Support my work at buymeacoffee.com/colineckert
+        level: 2
+        collapsed: true
+
 */
