@@ -415,6 +415,10 @@ button {
   font-family: var(--font-ui);
 }
 
+/* .markdown-preview-view .internal-link {
+  text-decoration: none;
+} */
+
 .popover,
 .vertical-tab-content-container,
 .workspace-leaf-content[data-type='markdown'] {
@@ -440,7 +444,7 @@ button,
   font-family: var(--text-editor);
 }
 .cm-s-obsidian span.cm-formatting-task {
-  font-family: var(--text-editor);
+  font-family: var(--font-monospace); /* Editor task is monospace */
   line-height: var(--line-height);
 }
 .cm-s-obsidian .cm-header,
@@ -1208,6 +1212,14 @@ body.hider-frameless .titlebar {
   align-items: center;
   padding: 2px 15px;
 }
+
+/* --------------- */
+/* Translucent window enabled */
+/* --------------- */
+
+/* .is-translucent .workspace {
+  background-color: var(--background-translucent) !important;
+} */
 
 /* --------------- */
 /* Title Bar */
@@ -1992,16 +2004,18 @@ ul {
 /* Add padding to account for gutter in Edit mode when folding is on */
 
 body:not(.plugin-sliding-panes-rotate-header) .view-header-title,
- .allow-fold-headings.markdown-preview-view .markdown-preview-sizer,
- .allow-fold-lists.markdown-preview-view .markdown-preview-sizer {
+.allow-fold-headings.markdown-preview-view .markdown-preview-sizer,
+.allow-fold-lists.markdown-preview-view .markdown-preview-sizer {
   padding: 0 8px 0 16px;
 }
- .allow-fold-lists.markdown-preview-view .markdown-embed .markdown-preview-sizer {
+.allow-fold-lists.markdown-preview-view
+  .markdown-embed
+  .markdown-preview-sizer {
   padding-left: 0;
 }
 .is-mobile .markdown-source-view.mod-cm6.is-readable-line-width .cm-gutters,
 .is-mobile .markdown-source-view.mod-cm6.is-readable-line-width .cm-content {
-  transform:translateX(-10px) !important; 
+  transform: translateX(-10px) !important;
 }
 .CodeMirror-sizer {
   padding-right: 12px !important;
@@ -3943,10 +3957,10 @@ body:not(.is-ios).is-mobile .workspace-drawer-ribbon {
 /* Mobile toolbar button */
 /* ---------------- */
 
-.is-mobile [aria-label="Edit (⌘+Click to edit in new pane)"],
-.is-mobile [aria-label="Edit (Ctrl+Click to edit in new pane)"],
-.is-mobile [aria-label="Preview (⌘+Click to open in new pane)"],
-.is-mobile [aria-label="Preview (Ctrl+Click to open in new pane)"] {
+.is-mobile [aria-label='Edit (⌘+Click to edit in new pane)'],
+.is-mobile [aria-label='Edit (Ctrl+Click to edit in new pane)'],
+.is-mobile [aria-label='Preview (⌘+Click to open in new pane)'],
+.is-mobile [aria-label='Preview (Ctrl+Click to open in new pane)'] {
   color: white;
   background-color: var(--blue);
   opacity: 1;
@@ -3969,10 +3983,10 @@ body:not(.is-ios).is-mobile .workspace-drawer-ribbon {
 
 /* Shrink FAB on small displays */
 @media screen and (max-height: 400px) {
-  [aria-label="Edit (⌘+Click to edit in new pane)"],
-  [aria-label="Edit (Ctrl+Click to edit in new pane)"],
-  [aria-label="Preview (⌘+Click to open in new pane)"],
-  [aria-label="Preview (Ctrl+Click to open in new pane)"] {
+  [aria-label='Edit (⌘+Click to edit in new pane)'],
+  [aria-label='Edit (Ctrl+Click to edit in new pane)'],
+  [aria-label='Preview (⌘+Click to open in new pane)'],
+  [aria-label='Preview (Ctrl+Click to open in new pane)'] {
     transform: scale(0.8) translate(-50%, -50%);
   }
 }
