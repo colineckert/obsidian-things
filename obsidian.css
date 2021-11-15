@@ -99,7 +99,7 @@ For help and/or CSS snippets, thanks to:
   --h6-weight: 400;
 
   --normal-weight: 400; /* Switch to 300 if you want thinner default text */
-  --bold-weight: 600; /* Switch to 700 if you want thicker bold text */
+  --bold-weight: 700; /* Switch to 700 if you want thicker bold text */
   --icon-muted: 0.4;
   --line-width: 40rem; /* Maximum characters per line */
   --line-height: 1.5;
@@ -369,11 +369,6 @@ Desktop Styling
 
 /* Headings and fonts */
 
-h1,
-h2,
-h3,
-h4,
-h5,
 strong {
   font-weight: var(--bold-weight);
 }
@@ -393,11 +388,6 @@ input,
 button {
   font-family: var(--font-ui);
 }
-
-/* .markdown-preview-view .internal-link {
-  text-decoration: none;
-} */
-
 .popover,
 .vertical-tab-content-container,
 .workspace-leaf-content[data-type='markdown'] {
@@ -426,9 +416,9 @@ button,
   font-family: var(--font-monospace); /* Editor task is monospace */
   line-height: var(--line-height);
 }
-.cm-s-obsidian .cm-header,
-.cm-s-obsidian .cm-strong {
-  font-weight: var(--bold-weight);
+.cm-formatting-strong,
+.cm-formatting-em {
+  color: var(--text-faint) !important;
 }
 .cm-formatting-header,
 .cm-s-obsidian .cm-formatting-header.cm-header-4,
@@ -443,7 +433,8 @@ button,
   letter-spacing: -0.02em;
   text-align: left;
   font-size: 1.125em;
-  font-weight: var(--bold-weight);
+  padding: 10px;
+  /* font-weight: var(--bold-weight); */
 }
 .empty-state-title,
 .markdown-preview-view h1,
