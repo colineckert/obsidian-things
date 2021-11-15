@@ -419,6 +419,8 @@ button,
 .cm-formatting-strong,
 .cm-formatting-em {
   color: var(--text-faint) !important;
+  font-weight: var(--normal-weight);
+  opacity: 0.6;
 }
 .cm-formatting-header,
 .cm-s-obsidian .cm-formatting-header.cm-header-4,
@@ -426,6 +428,7 @@ button,
 .cm-s-obsidian .cm-formatting-header.cm-header-6 {
   color: var(--text-faint);
   font-weight: var(--bold-weight);
+  opacity: 0.6;
 }
 .view-header-title,
 .file-embed-title,
