@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 THINGS
-Version 1.1.1
+Version 1.3.3
 https://github.com/colineckert/obsidian-things
 Created by @colineckert (GitHub)
 MIT License
@@ -83,6 +83,7 @@ For help and/or CSS snippets, thanks to:
   --font-small: 13px;
   --font-smaller: 11px;
   --font-smallest: 10px;
+  --editor-font-size: 1rem;
 
   --h1: 1.5em;
   --h2: 1.2em;
@@ -368,6 +369,30 @@ Desktop Styling
 ---------------------------------------------------------------- */
 
 /* Headings and fonts */
+html {
+  font-size: var(--editor-font-size);
+}
+
+body {
+  --preview-font-size: var(--editor-font-size);
+  --preview-line-height: var(--line-height);
+  --preview-font-weight: var(--normal-weight);
+}
+
+.markdown-preview-view {
+  font-family: var(--text);
+  font-size: var(--preview-font-size);
+  font-weight: var(--preview-font-weight);
+  line-height: var(--preview-line-heightline-height);
+}
+
+.CodeMirror,
+.markdown-source-view,
+.cm-s-obsidian {
+  font-size: var(--editor-font-size) !important;
+  font-weight: var(--normal-weight);
+  line-height: var(--line-height);
+}
 
 strong {
   font-weight: var(--bold-weight);
@@ -396,7 +421,7 @@ button {
 body,
 input,
 button,
-.markdown-preview-view,
+/* .markdown-preview-view, */
 .cm-s-obsidian .cm-formatting-hashtag,
 .cm-s-obsidian {
   font-size: var(--font-adaptive-normal);
@@ -417,10 +442,12 @@ button,
   line-height: var(--line-height);
 }
 .cm-formatting-strong,
-.cm-formatting-em {
+.cm-formatting-em,
+.cm-formatting.cm-formatting-quote {
   color: var(--text-faint) !important;
   font-weight: var(--normal-weight);
-  opacity: 0.6;
+  opacity: 0.8;
+  letter-spacing: -0.02em;
 }
 .cm-formatting-header,
 .cm-s-obsidian .cm-formatting-header.cm-header-4,
@@ -428,7 +455,8 @@ button,
 .cm-s-obsidian .cm-formatting-header.cm-header-6 {
   color: var(--text-faint);
   font-weight: var(--bold-weight);
-  opacity: 0.6;
+  opacity: 0.8;
+  letter-spacing: -0.02em;
 }
 .view-header-title,
 .file-embed-title,
@@ -754,6 +782,7 @@ input.prompt-input:hover {
 }
 .theme-dark .modal-container .suggestion-item.is-selected {
   border-radius: 6px;
+  /* background: var(--blue-highlighter); */
   background: var(--blue);
 }
 .menu-item {
@@ -4573,7 +4602,7 @@ body .kanban-plugin__grow-wrap::after {
 body .kanban-plugin__grow-wrap > textarea,
 body .kanban-plugin__grow-wrap::after,
 body .kanban-plugin__item-title p {
-  font-size: calc(var(--font-adaptive-normal) - 2px);
+  font-size: calc(var(--preview-font-size) - 2px);
 }
 body:not(.is-mobile) .kanban-plugin__grow-wrap > textarea:focus {
   box-shadow: none;
@@ -5120,15 +5149,15 @@ settings:
         collapsed: true
     - 
         id: font-normal
-        title: Body font size
-        description: Font size in px of the main text
+        title: Note titles, modals, and alt text size
+        description: Font size in px (main editor/preview text size now controlled via slider in Appearance settings)
         type: variable-number
         default: 16
         format: px
     - 
         id: font-small
-        title: Sidebar font size
-        description: Font size in px of the sidebar and small text
+        title: Sidebar and tag font size
+        description: Font size in px of sidebar, tags, and small text
         type: variable-number
         default: 13
         format: px
