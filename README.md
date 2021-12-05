@@ -14,6 +14,7 @@ I love [Things 3](https://culturedcode.com/things/). It's been the task manager 
 - Light and dark theme
 - Quick preview/edit mode button in mobile
 - Customizable colors for bold, italic, highlighters, and block-quotes
+- Atom code syntax higlighting
 - Tag pills for readability
 - Better designed image cards
 - Bullet and number list relationship lines

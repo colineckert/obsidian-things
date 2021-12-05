@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 THINGS
-Version 1.3.4
+Version 1.4.0
 https://github.com/colineckert/obsidian-things
 Created by @colineckert (GitHub)
 MIT License
@@ -259,6 +259,16 @@ body {
     0.7
   );
   --shadow-color: rgba(0, 0, 0, 0.1);
+
+  --atom-gray-1: #383a42;
+  --atom-gray-2: #383a42;
+  --atom-red: #e75545;
+  --atom-green: #4ea24c;
+  --atom-blue: #3d74f6;
+  --atom-purple: #a625a4;
+  --atom-aqua: #0084bc;
+  --atom-yellow: #e35649;
+  --atom-orange: #986800;
 }
 
 .theme-dark {
@@ -362,6 +372,16 @@ body {
     0.8
   );
   --shadow-color: rgba(0, 0, 0, 0.3);
+
+  --atom-gray-1: #5c6370;
+  --atom-gray-2: #abb2bf;
+  --atom-red: #e06c75;
+  --atom-orange: #d19a66;
+  --atom-green: #98c379;
+  --atom-aqua: #56b6c2;
+  --atom-purple: #c678dd;
+  --atom-blue: #61afef;
+  --atom-yellow: #e5c07b;
 }
 
 /* ----------------------------------------------------------------
@@ -371,6 +391,10 @@ Desktop Styling
 /* Headings and fonts */
 html {
   font-size: var(--editor-font-size);
+}
+
+body {
+  -webkit-font-smoothing: auto;
 }
 
 body {
@@ -2822,7 +2846,6 @@ ol > li {
 .markdown-preview-view code {
   color: var(--code-color);
 }
-
 .theme-light :not(pre) > code[class*='language-'],
 .theme-light pre[class*='language-'] {
   background-color: var(--background-primary-alt);
@@ -2861,6 +2884,106 @@ pre .copy-code-button:hover {
 .cm-s-obsidian .cm-hmd-frontmatter {
   font-size: var(--font-adaptive-small);
   color: var(--text-muted);
+}
+
+/* Atom coloring */
+/* Source: https://github.com/AGMStudio/prism-theme-one-dark */
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--atom-gray-1) !important;
+}
+.token.punctuation {
+  color: var(--atom-gray-2) !important;
+}
+.token.selector,
+.token.tag {
+  color: var(--atom-red) !important;
+}
+.token.property,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.attr-name,
+.token.deleted {
+  color: var(--atom-orange) !important;
+}
+.token.string,
+.token.char,
+.token.attr-value,
+.token.builtin,
+.token.inserted {
+  color: var(--atom-green) !important;
+}
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: var(--atom-aqua) !important;
+}
+.token.atrule,
+.token.keyword {
+  color: var(--atom-purple) !important;
+}
+.token.function,
+.token.macro.property {
+  color: var(--atom-blue) !important;
+}
+.token.class-name {
+  color: var(--atom-yellow) !important;
+}
+.token.regex,
+.token.important,
+.token.variable {
+  color: var(--atom-purple) !important;
+}
+.token.important,
+.token.bold {
+  font-weight: bold !important;
+}
+.token.italic {
+  font-style: italic !important;
+}
+.token.entity {
+  cursor: help !important;
+}
+pre.line-numbers {
+  position: relative !important;
+  padding-left: 3.8em !important;
+  counter-reset: linenumber !important;
+}
+pre.line-numbers > code {
+  position: relative !important;
+}
+.line-numbers .line-numbers-rows {
+  position: absolute !important;
+  pointer-events: none !important;
+  top: 0 !important;
+  font-size: 100% !important;
+  left: -3.8em !important;
+  width: 3em !important;
+  letter-spacing: -1px !important;
+  border-right: 0 !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+.line-numbers-rows > span {
+  pointer-events: none !important;
+  display: block !important;
+  counter-increment: linenumber !important;
+}
+.line-numbers-rows > span:before {
+  content: counter(linenumber) !important;
+  color: var(--syntax-gray-1) !important;
+  display: block !important;
+  padding-right: 0.8em !important;
+  text-align: right !important;
 }
 
 /* --------------- */
