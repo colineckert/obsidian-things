@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 THINGS
-Version 1.3.3
+Version 1.3.4
 https://github.com/colineckert/obsidian-things
 Created by @colineckert (GitHub)
 MIT License
@@ -174,7 +174,7 @@ body {
   --text-selection: hsla(var(--accent-h), 50%, calc(var(--base-l) - 20%), 30%);
   --text-highlight-bg: var(--light-yellow-highlighter);
   --text-highlight-bg-active: rgba(0, 0, 0, 0.1);
-  --code-color: #c7254e;
+  --code-color: #5c6370;
 
   --background-primary: white;
   --background-primary-alt: hsl(var(--base-h), var(--base-s), var(--base-l));
@@ -276,7 +276,7 @@ body {
   --text-selection: hsla(var(--accent-h), 70%, 40%, 30%);
   --text-highlight-bg: var(--dark-blue-highlighter);
   --text-highlight-bg-active: rgba(255, 255, 255, 0.1);
-  --code-color: #c7254e;
+  --code-color: #abb2bf;
 
   --background-primary: hsl(var(--base-h), var(--base-s), var(--base-d));
   --background-primary-alt: hsl(
@@ -2830,6 +2830,13 @@ ol > li {
 .theme-light code[class*='language-'],
 .theme-light pre[class*='language-'] {
   text-shadow: none;
+}
+pre .copy-code-button {
+  border-radius: 5px;
+  background-color: var(--background-secondary-alt);
+}
+pre .copy-code-button:hover {
+  background-color: var(--background-tertiary);
 }
 .markdown-preview-section .frontmatter code {
   color: var(--text-muted);
