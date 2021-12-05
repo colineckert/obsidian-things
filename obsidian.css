@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 THINGS
-Version 1.4.0
+Version 1.4.1
 https://github.com/colineckert/obsidian-things
 Created by @colineckert (GitHub)
 MIT License
@@ -174,7 +174,6 @@ body {
   --text-selection: hsla(var(--accent-h), 50%, calc(var(--base-l) - 20%), 30%);
   --text-highlight-bg: var(--light-yellow-highlighter);
   --text-highlight-bg-active: rgba(0, 0, 0, 0.1);
-  --code-color: #5c6370;
 
   --background-primary: white;
   --background-primary-alt: hsl(var(--base-h), var(--base-s), var(--base-l));
@@ -260,6 +259,7 @@ body {
   );
   --shadow-color: rgba(0, 0, 0, 0.1);
 
+  --code-color: #383a42;
   --atom-gray-1: #383a42;
   --atom-gray-2: #383a42;
   --atom-red: #e75545;
@@ -286,7 +286,6 @@ body {
   --text-selection: hsla(var(--accent-h), 70%, 40%, 30%);
   --text-highlight-bg: var(--dark-blue-highlighter);
   --text-highlight-bg-active: rgba(255, 255, 255, 0.1);
-  --code-color: #abb2bf;
 
   --background-primary: hsl(var(--base-h), var(--base-s), var(--base-d));
   --background-primary-alt: hsl(
@@ -373,6 +372,7 @@ body {
   );
   --shadow-color: rgba(0, 0, 0, 0.3);
 
+  --code-color: #c9d1d9;
   --atom-gray-1: #5c6370;
   --atom-gray-2: #abb2bf;
   --atom-red: #e06c75;
@@ -2845,6 +2845,9 @@ ol > li {
 
 .markdown-preview-view code {
   color: var(--code-color);
+}
+.cm-inline-code {
+  color: var(--code-color) !important;
 }
 .theme-light :not(pre) > code[class*='language-'],
 .theme-light pre[class*='language-'] {
