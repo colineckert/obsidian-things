@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 THINGS
-Version 1.4.1
+Version 1.3.3
 https://github.com/colineckert/obsidian-things
 Created by @colineckert (GitHub)
 MIT License
@@ -86,8 +86,8 @@ For help and/or CSS snippets, thanks to:
   --editor-font-size: 1rem;
 
   --h1: 1.5em;
-  --h2: 1.2em;
-  --h3: 1em;
+  --h2: 1.3em;
+  --h3: 1.1em;
   --h4: 0.9em;
   --h5: 0.85em;
   --h6: 0.85em;
@@ -102,7 +102,7 @@ For help and/or CSS snippets, thanks to:
   --normal-weight: 400; /* Switch to 300 if you want thinner default text */
   --bold-weight: 700; /* Switch to 700 if you want thicker bold text */
   --icon-muted: 0.4;
-  --line-width: 40rem; /* Maximum characters per line */
+  --line-width: 45rem; /* Maximum characters per line */
   --line-height: 1.5;
   --border-width: 1px;
   --border-width-alt: 1px;
@@ -388,6 +388,28 @@ body {
 Desktop Styling
 ---------------------------------------------------------------- */
 
+/* ---------------------- */
+/* Better Live Preview */
+/* ---------------------- */
+
+.is-live-preview {
+  padding: 0 1em !important;
+}
+
+/* Quote blocks */
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote {
+  border: 0 solid var(--quote-opening-modifier);
+  border-left-width: 2px;
+  background-color: var(--background-primary);
+}
+
+.is-live-preview .list-bullet {
+  color: var(--text-faint);
+  padding-right: 5px;
+}
+
+/* ---------------------- */
+
 /* Headings and fonts */
 html {
   font-size: var(--editor-font-size);
@@ -418,34 +440,40 @@ body {
   line-height: var(--line-height);
 }
 
+.cm-strong,
 strong {
-  font-weight: var(--bold-weight);
+  font-weight: var(--bold-weight) !important;
 }
+
 h1,
 h2,
 h3,
 h4 {
   letter-spacing: -0.02em;
 }
+
 h2 {
   border-bottom: 1px solid var(--background-modifier-border);
   width: 100%;
   padding-bottom: 2px;
 }
+
 body,
 input,
 button {
   font-family: var(--font-ui);
 }
+
 .popover,
 .vertical-tab-content-container,
 .workspace-leaf-content[data-type='markdown'] {
   font-family: var(--text);
 }
+
 body,
 input,
 button,
-/* .markdown-preview-view, */
+.markdown-preview-view,
 .cm-s-obsidian .cm-formatting-hashtag,
 .cm-s-obsidian {
   font-size: var(--font-adaptive-normal);
@@ -489,17 +517,17 @@ button,
   text-align: left;
   font-size: 1.125em;
   padding: 10px;
-  /* font-weight: var(--bold-weight); */
 }
 .empty-state-title,
 .markdown-preview-view h1,
+.HyperMD-header,
 .HyperMD-header-1,
 .cm-header-1 {
   letter-spacing: -0.02em;
   line-height: 1.3;
   font-size: var(--h1);
   color: var(--h1-color);
-  font-weight: var(--h1-weight);
+  font-weight: var(--h1-weight) !important;
 }
 .markdown-preview-view h2,
 .HyperMD-header-2,
@@ -526,6 +554,7 @@ button,
   font-size: var(--h4);
   color: var(--h4-color);
   font-weight: var(--h4-weight);
+  text-transform: uppercase;
 }
 .markdown-preview-view h5,
 .HyperMD-header-5,
@@ -1309,8 +1338,8 @@ body.full-borders .side-dock-ribbon {
   padding-left: 0;
   padding-right: 0;
   position: absolute;
-  width: var(--line-width-adaptive);
   max-width: var(--max-width);
+  width: var(--line-width-adaptive);
   margin: 0 auto;
   left: 0;
   right: 0;
@@ -1361,6 +1390,8 @@ body.full-borders .side-dock-ribbon {
 .cm-s-obsidian .HyperMD-header,
 .cm-s-obsidian pre.HyperMD-header {
   padding-left: 0 !important;
+  font-size: 1em !important;
+  /* TODO */
 }
 .CodeMirror-linenumber {
   font-size: var(--font-adaptive-small) !important;
@@ -1437,7 +1468,7 @@ body.full-borders .side-dock-ribbon {
 }
 .internal-embed .markdown-embed {
   border: 0;
-  border-left: 1px solid var(--quote-opening-modifier);
+  border-left: 2px solid var(--quote-opening-modifier);
   border-radius: 0;
 }
 
@@ -3453,13 +3484,14 @@ Mobile styling
   --font-settings-small: 13px;
   --input-height: 40px;
 }
+/* Reset podding */
 body.is-mobile {
-  padding: 0 !important; /* Reset podding */
+  padding: 0 !important;
 }
 /* Fix large edit mode headers in mobile */
-.is-mobile .cm-header {
+/* .is-mobile .cm-header {
   font-size: 1em;
-}
+} */
 .is-mobile .follow-link-popover {
   font-family: var(--font-ui);
 }
@@ -5281,6 +5313,24 @@ settings:
         level: 2
         collapsed: true
     - 
+        id: strong-color
+        title: Bold font color
+        type: variable-color
+        format: hex
+        default: '#FF82B2' 
+    - 
+        id: em-color
+        title: Italics font color
+        type: variable-color
+        format: hex
+        default: '#FF82B2' 
+    - 
+        id: green
+        title: Blockquotes font color
+        type: variable-color
+        format: hex
+        default: '#3EB4BF' 
+    - 
         id: font-normal
         title: Note titles, modals, and alt text size
         description: Font size in px (main editor/preview text size now controlled via slider in Appearance settings)
@@ -5339,6 +5389,12 @@ settings:
         type: variable-number
         default: 700
     -
+        id: h1-color
+        title: H1 color
+        type: variable-color
+        format: hex
+        default: '#'
+    - 
         id: level-2-headings
         title: Level 2 Headings
         type: heading
@@ -5349,13 +5405,19 @@ settings:
         title: H2 font size
         description: Accepts any CSS font-size value
         type: variable-text
-        default: 1.2em
+        default: 1.3em
     - 
         id: h2-weight
         title: H2 font weight
         description: Accepts numbers representing the CSS font-weight
         type: variable-number
         default: 600
+    - 
+        id: h2-color
+        title: H2 color
+        type: variable-color
+        format: hex
+        default: '#2E80F2'
     - 
         id: level-3-headings
         title: Level 3 Headings
@@ -5367,7 +5429,7 @@ settings:
         title: H3 font size
         description: Accepts any CSS font-size value
         type: variable-text
-        default: 1em
+        default: 1.1em
     - 
         id: h3-weight
         title: H3 font weight
@@ -5375,6 +5437,12 @@ settings:
         type: variable-number
         default: 600
     -
+        id: h3-color
+        title: H3 color
+        type: variable-color
+        format: hex
+        default: '#2E80F2'
+    - 
         id: level-4-headings
         title: Level 4 Headings
         type: heading
@@ -5392,6 +5460,12 @@ settings:
         description: Accepts numbers representing the CSS font-weight
         type: variable-number
         default: 500
+    - 
+        id: h4-color
+        title: H4 color
+        type: variable-color
+        format: hex
+        default: '#E5B567'
     - 
         id: level-5-headings
         title: Level 5 Headings
@@ -5411,6 +5485,12 @@ settings:
         type: variable-number
         default: 500
     - 
+        id: h5-color
+        title: H5 color
+        type: variable-color
+        format: hex
+        default: '#E83E3E'
+    - 
         id: level-6-headings
         title: Level 6 Headings
         type: heading
@@ -5429,6 +5509,12 @@ settings:
         type: variable-number
         default: 400
     -
+        id: h6-color
+        title: H6 color
+        type: variable-color
+        format: hex
+        default: '#'
+    - 
         id: advanced
         title: Advanced
         type: heading
