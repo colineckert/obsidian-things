@@ -1431,7 +1431,8 @@ body.full-borders .side-dock-ribbon {
   padding: 0 calc(var(--nested-padding) / 2) 0 var(--nested-padding);
 }
 .markdown-embed-title {
-  height: 24px;
+  /* Remove height to fix cutoff bug */
+  /* height: 24px; */
   line-height: 18px;
 }
 .markdown-embed .markdown-preview-sizer:first-child ul {
