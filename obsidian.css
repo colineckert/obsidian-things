@@ -408,6 +408,12 @@ Desktop Styling
   padding-right: 5px;
 }
 
+.is-live-preview .HyperMD-header-2 {
+  border-bottom: 1px solid var(--background-modifier-border);
+  width: 100%;
+  padding-bottom: 2px;
+}
+
 /* ---------------------- */
 
 /* Headings and fonts */
@@ -453,7 +459,7 @@ h4 {
 }
 
 h2 {
-  border-bottom: 1px solid var(--background-modifier-border);
+  border-bottom: 2px solid var(--background-modifier-border);
   width: 100%;
   padding-bottom: 2px;
 }
