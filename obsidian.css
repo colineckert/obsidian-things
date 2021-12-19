@@ -221,7 +221,14 @@ body {
     var(--base-l),
     0
   );
-  --background-translucent: rgba(255, 255, 255, 0.85);
+  /* --background-translucent: rgba(255, 255, 255, 0.85); */
+  --background-translucent: hsla(
+    var(--base-h),
+    var(--base-s),
+    calc(var(--base-l) + 0%),
+    0.8
+  );
+  --opacity-translucency: 1;
 
   --icon-color: var(--text-muted);
   --icon-hex: 000;
@@ -341,8 +348,10 @@ body {
     var(--base-h),
     var(--base-s),
     var(--base-d),
-    0.85
+    0.8
   );
+  --opacity-translucency: 1;
+
   --background-match-highlight: hsla(var(--accent-h), 40%, 62%, 0.2);
   --background-modifier-accent: hsl(
     var(--accent-h),
@@ -1293,14 +1302,6 @@ body.hider-frameless .titlebar {
   align-items: center;
   padding: 2px 15px;
 }
-
-/* --------------- */
-/* Translucent window enabled */
-/* --------------- */
-
-/* .is-translucent .workspace {
-  background-color: var(--background-translucent) !important;
-} */
 
 /* --------------- */
 /* Title Bar */
@@ -5233,6 +5234,84 @@ body .kanban-plugin__markdown-preview-view ul,
   border: none;
 }
 
+/* --------------- */
+/* MacOs-like Translucency */
+/* --------------- */
+
+.is-translucent:not(.macOS-translucent).theme-light {
+  --opacity-translucency: 0.6;
+}
+
+.is-translucent:not(.macOS-translucent).theme-dark {
+  --opacity-translucency: 0.7;
+}
+
+.is-translucent .workspace-leaf-resize-handle {
+  opacity: var(--opacity-translucency);
+  background-color: transparent;
+}
+
+.macOS-translucent.is-translucent.is-translucent ::-webkit-scrollbar {
+  display: none;
+}
+
+.macOS-translucent.is-translucent .titlebar,
+.macOS-translucent.is-translucent .status-bar {
+  background-color: var(--background-translucent) !important;
+}
+
+.macOS-translucent.is-translucent .titlebar-button:hover {
+  background-color: var(--background-primary);
+}
+
+.macOS-translucent.is-translucent .workspace {
+  background-color: var(--background-translucent) !important;
+}
+
+.macOS-translucent.is-translucent .workspace-split .workspace-tabs {
+  background: var(--background-primary) !important;
+}
+
+.macOS-translucent.is-translucent .workspace-tab-container-inner {
+  background-color: transparent !important;
+  border: transparent;
+}
+
+.macOS-translucent.is-translucent .workspace-split .workspace-tabs,
+.macOS-translucent.is-translucent .graph-controls,
+.macOS-translucent.is-translucent .nav-file-title.is-active {
+  background-color: transparent !important;
+  box-shadow: inset -10px 0 4px -10px rgba(0, 0, 0, 0.04);
+}
+
+.focus-mode.macOS-translucent.is-translucent .workspace {
+  background-color: var(--background-primary) !important;
+}
+
+.macOS-translucent.is-translucent .workspace-ribbon.mod-right,
+.macOS-translucent.is-translucent .workspace-ribbon.mod-left {
+  background: transparent;
+}
+
+.macOS-translucent.is-translucent .mod-horizontal .workspace-leaf {
+  border-bottom: 0px;
+  background-color: transparent;
+  box-shadow: none !important;
+}
+
+.macOS-translucent.is-translucent.theme-light .workspace {
+  --text-muted: hsl(
+    var(--base-h),
+    calc(var(--base-s) - 3%),
+    calc(var(--base-l) - 50%)
+  );
+  --svg-faint: hsl(
+    var(--base-h),
+    calc(var(--base-s) - 3%),
+    calc(var(--base-l) - 38%)
+  );
+}
+
 /* --------------------------------------------------------------------------------
 Icon replacement
 Thanks to Kepano, Matthew Meyers, and Chetachi Ezikeuzor
@@ -6358,6 +6437,11 @@ settings:
         type: heading
         level: 2
         collapsed: true
+    -
+        title: MacOS-Like Translucent Window
+        description: Give workspace a MacOS-like translucency
+        id: macOS-translucent
+        type: class-toggle
     -
         id: cursor
         title: Cursor style
