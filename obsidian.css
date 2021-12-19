@@ -6164,7 +6164,7 @@ settings:
         default: '#1D694B' 
     - 
         id: tag-font-color-d
-        title: Tag background color (Dark mode)
+        title: Tag font color (Dark mode)
         type: variable-color
         format: hex
         default: '#' 
