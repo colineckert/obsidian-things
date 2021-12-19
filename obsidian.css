@@ -627,8 +627,10 @@ span.cm-formatting-highlight {
 
 .theme-light .frontmatter-container .tag,
 .theme-light a.tag {
+  /* background-color: rgb(189, 225, 211); */
   background-color: var(--tag-background-color-l);
   color: var(--tag-font-color-l);
+  /* color: rgb(29, 105, 75); */
   font-size: var(--font-adaptive-smaller);
   font-weight: 500;
   font-family: var(--font-ui);
@@ -645,8 +647,10 @@ span.cm-formatting-highlight {
 }
 .theme-dark .frontmatter-container .tag,
 .theme-dark a.tag {
+  /* background-color: rgb(29, 105, 75); */
   background-color: var(--tag-background-color-d);
   color: var(--tag-font-color-d);
+  /* color: var(--text-normal); */
   font-size: var(--font-adaptive-smaller);
   font-weight: 500;
   font-family: var(--font-ui);
@@ -664,6 +668,8 @@ span.cm-formatting-highlight {
 .theme-light .cm-s-obsidian span.cm-hashtag {
   background-color: var(--tag-background-color-l);
   color: var(--tag-font-color-l);
+  /* background-color: rgb(189, 225, 211);
+  color: rgb(29, 105, 75); */
   font-size: var(--font-adaptive-small);
   font-family: var(--font-ui);
   font-weight: 500;
@@ -681,6 +687,8 @@ span.cm-formatting-highlight {
 .theme-dark .cm-s-obsidian span.cm-hashtag {
   background-color: var(--tag-background-color-d);
   color: var(--tag-font-color-d);
+  /* background-color: rgb(29, 105, 75);
+  color: var(--text-normal); */
   font-size: var(--font-adaptive-small);
   font-family: var(--font-ui);
   font-weight: 500;
@@ -2933,6 +2941,10 @@ pre .copy-code-button:hover {
 .cm-s-obsidian .cm-hmd-frontmatter {
   font-size: var(--font-adaptive-small);
   color: var(--text-muted);
+}
+.markdown-source-view.mod-cm6 .code-block-flair {
+  color: var(--text-muted);
+  padding: 5px;
 }
 
 /* Atom coloring */
