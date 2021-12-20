@@ -1,9 +1,8 @@
 /*───────────────────────────────────────────────────────
 THINGS
-Version 1.6.1
+Version 1.6.2
 https://github.com/colineckert/obsidian-things
 Created by @colineckert (GitHub)
-MIT License
 ─────────────────────────────────────────────────────────
 For help and/or CSS snippets, thanks to:
 - @kepano
@@ -6462,7 +6461,7 @@ settings:
         id: credits
         title: Credits
         type: heading
-        description: Created with ❤︎ by @colineckert. Support my work at buymeacoffee.com/colineckert
+        description: Created with ❤︎ by @kepano and @colineckert. Support @kepano at buymeacoffee.com/kepano and me at buymeacoffee.com/colineckert
         level: 2
         collapsed: true
 

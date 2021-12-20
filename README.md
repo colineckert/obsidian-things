@@ -1,10 +1,14 @@
 # Things
 
+### Notes on this theme
+
+This theme was built using code from **@kepano's** great Minimal theme. Please support @kepano's work!
+
+Support development: **@kepano** on [Twitter](https://www.twitter.com/kepano) or [Buy @kepano a coffee](https://www.buymeacoffee.com/kepano)
+
+<a href="https://www.buymeacoffee.com/kepano"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=kepano&button_colour=5F7FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00"></a>
+
 ![](assets/main-demo.png)
-
-_Things was written during [Obsidian October 2021](https://forum.obsidian.md/t/obsidian-october-2021-make-plugins-and-themes-together-and-win-awards/24471)._
-
-> ✅ Status: Available in Obsidian's Community themes 🎉.
 
 I love [Things 3](https://culturedcode.com/things/). It's been the task manager I've trusted and used for years, partly because the design makes using the app so enjoyable. I wanted to bring that same joy to Obsidian by creating a Things-inspired design that looked and felt native on MacOS and iOS.
 
@@ -61,10 +65,10 @@ If you have any issues and/or suggestions, please submit an issue or raise a PR.
 
 ## Credits
 
-I owe a huge hat tip to both `@kepano` and his Minimal Theme, which served as the base for this theme, and to `@chetachiezikeuzor` and her Yin and Yang Theme for inspiration on building an elegant, native-feeling design!
+Again, I owe a huge hat tip to **@kepano** and his Minimal Theme, which served as the base for this theme, as well as to **@chetachiezikeuzor** and her Yin and Yang Theme for further inspiration on building an elegant, native-feeling design!
 
 ## Support
 
-🎉 You can help me keep creating _things_ like this by supporting development: **@colineckert** on [Twitter](https://www.twitter.com/colineckert) or [Buy me a coffee](https://www.buymeacoffee.com/colineckert).
+🎉 You can help me keep improving _things_ like this by supporting development: **@colineckert** on [Twitter](https://www.twitter.com/colineckert) or [Buy me a coffee](https://www.buymeacoffee.com/colineckert).
 
 <a href="https://www.buymeacoffee.com/colineckert"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=colineckert&button_colour=5F7FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00"></a>
