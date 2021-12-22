@@ -4,7 +4,7 @@
 
 This theme was built using code from **@kepano's** great Minimal theme. Please support @kepano's work!
 
-Support development: **@kepano** on [Twitter](https://www.twitter.com/kepano) or [Buy @kepano a coffee](https://www.buymeacoffee.com/kepano)
+Support **@kepano** on [Twitter](https://www.twitter.com/kepano) or [Buy @kepano a coffee](https://www.buymeacoffee.com/kepano)
 
 <a href="https://www.buymeacoffee.com/kepano"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=kepano&button_colour=5F7FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00"></a>
 
