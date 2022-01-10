@@ -462,6 +462,11 @@ Desktop Styling
   padding-bottom: 2px;
 }
 
+/* Temp fix to match Live Preview checkbox color */
+.is-live-preview input[type='checkbox']:checked {
+  background-color: #00a8c5 !important;
+}
+
 /* ---------------------- */
 
 /* Headings and fonts */
