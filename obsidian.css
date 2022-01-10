@@ -479,9 +479,10 @@ body {
   --preview-font-weight: var(--normal-weight);
 }
 
+.markdown-reading-view,
 .markdown-preview-view {
   font-family: var(--text);
-  font-size: var(--preview-font-size);
+  font-size: var(--preview-font-size) !important;
   font-weight: var(--preview-font-weight);
   line-height: var(--preview-line-heightline-height);
 }
@@ -6278,13 +6279,6 @@ settings:
         type: variable-color
         format: hex
         default: '#' 
-    - 
-        id: font-normal
-        title: Note titles, modals, and alt text size
-        description: Font size in px (main editor/preview text size now controlled via slider in Appearance settings)
-        type: variable-number
-        default: 16
-        format: px
     - 
         id: font-small
         title: Sidebar and tag font size
