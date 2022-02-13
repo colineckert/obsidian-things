@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 THINGS
-Version 1.6.4
+Version 1.6.5
 Created by @colineckert
 
 Readme:
@@ -933,7 +933,7 @@ input.prompt-input:hover {
 .menu-item {
   font-size: var(--font-adaptive-small);
   border-radius: 5px;
-  padding: 3px 12px 3px 8px;
+  padding: 2px 12px 3px 10px;
   height: 26px;
   cursor: var(--cursor);
   line-height: 20px;
@@ -1008,12 +1008,17 @@ input.prompt-input:hover {
 .theme-light .frontmatter .token,
 .markdown-preview-section .frontmatter code {
   font-family: var(--text);
-  color: var(--text-faint) !important;
 }
 
 .markdown-source-view .cm-s-obsidian .cm-hmd-frontmatter {
-  font-family: var(--text-editor);
-  color: var(--text-muted);
+  font-family: var(--font-monospace);
+}
+
+.theme-light .cm-def {
+  color: #dd4a68 !important;
+}
+.theme-light .cm-number {
+  color: #905 !important;
 }
 
 /* --------------- */
@@ -1406,7 +1411,6 @@ body.full-borders .side-dock-ribbon {
   border: none;
   border-right: 2px solid var(--text-accent);
 }
-
 .markdown-source-view.mod-cm6,
 .markdown-source-view.mod-cm5,
 .markdown-source-view {
@@ -1417,11 +1421,6 @@ body.full-borders .side-dock-ribbon {
 }
 .CodeMirror-lines {
   padding-bottom: 170px;
-}
-.CodeMirror pre.CodeMirror-line,
-.CodeMirror pre.CodeMirror-line-like {
-  padding-left: 0;
-  padding-right: 0;
 }
 .cm-s-obsidian pre.HyperMD-list-line {
   padding-top: 0;
@@ -1443,7 +1442,6 @@ body.full-borders .side-dock-ribbon {
 .cm-s-obsidian pre.HyperMD-header {
   padding-left: 0 !important;
   font-size: 1em !important;
-  /* TODO */
 }
 .CodeMirror-linenumber {
   font-size: var(--font-adaptive-small) !important;
@@ -1929,6 +1927,11 @@ input[type='checkbox']:checked {
   padding: 0 10px 0 16px;
   line-height: 1.5;
   cursor: var(--cursor);
+}
+.nav-folder-children .nav-folder-children {
+  margin-left: 20px;
+  padding-left: 0;
+  border-left: 1px solid var(--background-modifier-border);
 }
 .nav-folder.mod-root > .nav-folder-title.is-being-dragged-over {
   background-color: var(--text-selection);
@@ -2818,9 +2821,9 @@ iframe {
   font-style: italic;
 }
 
-/* --------------- */
-/* TEXT MARKINGS*/
-/* --------------- */
+/* ---------------
+TEXT MARKINGS
+--------------- */
 
 /* Hashes */
 
@@ -2900,6 +2903,23 @@ del,
   border-bottom: none;
 }
 
+/* Number Tables */
+.numbertable table {
+  counter-reset: section;
+}
+.numbertable table > tbody > tr > td:first-child::before {
+  counter-increment: section;
+  content: counter(section) '. ';
+}
+
+/* Color rows */
+.color-rows tr:nth-child(even) {
+  background: var(--background-primary);
+}
+.color-rows tr:nth-child(odd) {
+  background: var(--background-secondary);
+}
+
 /* Preview Mode Lists  */
 
 ul {
@@ -2976,14 +2996,10 @@ pre .copy-code-button:hover {
   padding: 5px;
 }
 
-/* Fix editor code indenting */
-/* .HyperMD-codeblock .cm-tab {
-  margin-left: -3px;
-  align-self: left;
-} */
-
+/* ------------------- */
 /* Atom coloring */
 /* Source: https://github.com/AGMStudio/prism-theme-one-dark */
+/* ------------------- */
 
 .token.comment,
 .token.prolog,
@@ -4206,18 +4222,48 @@ body:not(.is-ios).is-mobile .workspace-drawer-ribbon {
 /* Mobile toolbar button */
 /* ---------------- */
 
-.is-mobile [aria-label='Edit (⌘+Click to edit in new pane)'],
-.is-mobile [aria-label='Edit (Ctrl+Click to edit in new pane)'],
-.is-mobile [aria-label='Preview (⌘+Click to open in new pane)'],
-.is-mobile [aria-label='Preview (Ctrl+Click to open in new pane)'] {
+body:not(.floating-button-off):not(.advanced-toolbar).is-mobile
+  [aria-label='Edit (⌘+Click to edit in new pane)'],
+body:not(.floating-button-off):not(.advanced-toolbar).is-mobile
+  [aria-label='Edit (Ctrl+Click to edit in new pane)'],
+body:not(.floating-button-off):not(.advanced-toolbar).is-mobile
+  [aria-label='Preview (⌘+Click to open in new pane)'],
+body:not(.floating-button-off):not(.advanced-toolbar).is-mobile
+  [aria-label='Preview (Ctrl+Click to open in new pane)'] {
   color: white;
   background-color: var(--blue);
   opacity: 1;
-  /* filter: brightness(97%); */
-  top: calc(100vh - 88px);
+  top: calc(100vh - 90px);
   display: flex;
   padding: 5px;
   position: fixed;
+  left: 87vw;
+  transform: translate(-40%, -18%);
+  justify-content: center;
+  align-items: center;
+  width: 53px;
+  height: 53px;
+  border-radius: 50% !important;
+  box-shadow: 0.9px 0.9px 3.6px rgba(0, 0, 0, 0.07),
+    2.5px 2.4px 10px rgba(0, 0, 0, 0.1), 6px 5.7px 24.1px rgba(0, 0, 0, 0.13),
+    20px 19px 80px rgba(0, 0, 0, 0.2);
+}
+
+body:not(.floating-button-off).advanced-toolbar.is-mobile
+  [aria-label='Edit (⌘+Click to edit in new pane)'],
+body:not(.floating-button-off).advanced-toolbar.is-mobile
+  [aria-label='Edit (Ctrl+Click to edit in new pane)'],
+body:not(.floating-button-off).advanced-toolbar.is-mobile
+  [aria-label='Preview (⌘+Click to open in new pane)'],
+body:not(.floating-button-off).advanced-toolbar.is-mobile
+  [aria-label='Preview (Ctrl+Click to open in new pane)'] {
+  color: white;
+  background-color: var(--blue);
+  opacity: 1;
+  position: fixed;
+  top: calc(100vh - 138px);
+  display: flex;
+  padding: 5px;
   left: 87vw;
   transform: translate(-40%, -18%);
   justify-content: center;
@@ -4971,6 +5017,8 @@ body .kanban-plugin__markdown-preview-view ul,
     -webkit-transform: rotate(360deg);
   }
 }
+
+/* READER VIEW */
 .markdown-preview-view
   ul
   > li.task-list-item
@@ -5031,6 +5079,53 @@ body .kanban-plugin__markdown-preview-view ul,
   > input[type='checkbox']:hover {
   background-color: rgba(180, 194, 240, 0.5) !important;
 }
+
+/* LIVE PREVIEW */
+.is-live-preview ul > li.task-list-item .todoist-p1 > input[type='checkbox'] {
+  border: 1px solid #ff75c6 !important;
+  background-color: rgba(255, 117, 221, 0.25) !important;
+}
+.is-live-preview
+  ul
+  > li.task-list-item
+  .todoist-p1
+  > input[type='checkbox']:hover {
+  background-color: rgba(255, 117, 193, 0.5) !important;
+}
+.is-live-preview ul > li.task-list-item .todoist-p2 > input[type='checkbox'] {
+  border: 1px solid #ffa3a3 !important;
+  background-color: rgba(255, 139, 119, 0.25) !important;
+}
+.is-live-preview
+  ul
+  > li.task-list-item
+  .todoist-p2
+  > input[type='checkbox']:hover {
+  background-color: rgba(255, 154, 154, 0.5) !important;
+}
+.is-live-preview ul > li.task-list-item .todoist-p3 > input[type='checkbox'] {
+  border: 1px solid #35bfff !important;
+  background-color: rgba(67, 233, 255, 0.308) !important;
+}
+.is-live-preview
+  ul
+  > li.task-list-item
+  .todoist-p3
+  > input[type='checkbox']:hover {
+  background-color: rgba(53, 223, 253, 0.5) !important;
+}
+.is-live-preview ul > li.task-list-item .todoist-p4 > input[type='checkbox'] {
+  border: 1px solid #89c6ffd5 !important;
+  background-color: rgba(150, 170, 179, 0.192) !important;
+}
+.is-live-preview
+  ul
+  > li.task-list-item
+  .todoist-p4
+  > input[type='checkbox']:hover {
+  background-color: rgba(166, 182, 194, 0.418) !important;
+}
+
 .task-metadata {
   font-size: var(--font-todoist-metadata-size);
   color: #7a88cf;
@@ -5144,7 +5239,10 @@ body .kanban-plugin__markdown-preview-view ul,
 }
 .checklist-plugin-main .group .classic,
 .checklist-plugin-main .group .compact {
-  font-size: var(--font-adaptive-small);
+  font-size: var(--font-adaptive-small) !important;
+}
+.checklist-plugin-main .content {
+  font-size: var(--font-adaptive-small) !important;
 }
 .checklist-plugin-main .group .classic,
 .checklist-plugin-main .group .compact {
@@ -5177,7 +5275,6 @@ body .kanban-plugin__markdown-preview-view ul,
 }
 .checklist-plugin-main .group .count {
   font-size: var(--font-adaptive-smaller);
-  padding: 0;
   background: transparent;
   font-weight: 400;
   color: var(--text-faint);
@@ -5186,18 +5283,42 @@ body .kanban-plugin__markdown-preview-view ul,
   color: var(--text-muted);
 }
 .checklist-plugin-main .group .checkbox {
-  border: 2px solid var(--background-modifier-border-hover);
+  border: 2px solid var(--background-modifier-border-focus);
   min-height: 18px;
   min-width: 18px;
   height: 18px;
   width: 18px;
   border-radius: 30%;
 }
+
 .checklist-plugin-main .group .checkbox:hover {
   border: 2px solid var(--background-modifier-border-focus);
 }
+
 .checklist-plugin-main .toggle:hover {
   box-shadow: none;
+}
+
+.checklist-plugin-main .container .search {
+  font-size: var(--font-adaptive-small) !important;
+  border: 1px solid var(--background-modifier-border) !important;
+}
+
+.checklist-plugin-main .container .settings-container > svg {
+  width: 100%;
+}
+
+.checklist-plugin-main .checkbox .checked {
+  border-radius: 30% !important;
+  background-color: var(--background-modifier-border-focus) !important;
+  top: calc(
+    calc(var(--checklist-checkboxSize) - var(--checklist-checkboxCheckedSize)) /
+      6
+  );
+  left: calc(
+    calc(var(--checklist-checkboxSize) - var(--checklist-checkboxCheckedSize)) /
+      6
+  );
 }
 
 /* Checklist mobile styling */
@@ -6465,10 +6586,17 @@ settings:
         level: 2
         collapsed: true
     -
-        title: MacOS-Like Translucent Window
+        title: Mobile floating-action button
+        description: Disable the mobile edit/preview floating button
+        id: floating-button-off
+        type: class-toggle
+        default: false
+    -
+        title: MacOS-like translucent window
         description: Give workspace a MacOS-like translucency
         id: macOS-translucent
         type: class-toggle
+        default: false
     -
         id: cursor
         title: Cursor style
