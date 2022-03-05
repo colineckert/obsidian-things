@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 THINGS
-Version 1.6.5
+Version 1.6.6
 Created by @colineckert
 
 Readme:
@@ -595,7 +595,7 @@ button,
 .cm-header-1 {
   letter-spacing: -0.02em;
   line-height: 1.3;
-  font-size: var(--h1);
+  font-size: var(--h1) !important;
   color: var(--h1-color);
   font-weight: var(--h1-weight) !important;
 }
@@ -604,7 +604,7 @@ button,
 .cm-header-2 {
   letter-spacing: -0.02em;
   line-height: 1.3;
-  font-size: var(--h2);
+  font-size: var(--h2) !important;
   color: var(--h2-color);
   font-weight: var(--h2-weight) !important;
 }
@@ -613,7 +613,7 @@ button,
 .cm-header-3 {
   letter-spacing: -0em;
   line-height: 1.4;
-  font-size: var(--h3);
+  font-size: var(--h3) !important;
   color: var(--h3-color);
   font-weight: var(--h3-weight) !important;
 }
@@ -621,7 +621,7 @@ button,
 .HyperMD-header-4,
 .cm-s-obsidian .cm-header-4 {
   letter-spacing: 0.02em;
-  font-size: var(--h4);
+  font-size: var(--h4) !important;
   color: var(--h4-color);
   font-weight: var(--h4-weight) !important;
   text-transform: uppercase;
@@ -630,7 +630,7 @@ button,
 .HyperMD-header-5,
 .cm-s-obsidian .cm-header-5 {
   letter-spacing: 0.02em;
-  font-size: var(--h5);
+  font-size: var(--h5) !important;
   color: var(--h5-color);
   font-weight: var(--h5-weight) !important;
 }
@@ -638,7 +638,7 @@ button,
 .HyperMD-header-6,
 .cm-s-obsidian .cm-header-6 {
   letter-spacing: 0.02em;
-  font-size: var(--h6);
+  font-size: var(--h6) !important;
   color: var(--h6-color);
   font-weight: var(--h6-weight) !important;
 }
@@ -6586,8 +6586,8 @@ settings:
         level: 2
         collapsed: true
     -
-        title: Mobile floating-action button
-        description: Disable the mobile edit/preview floating button
+        title: Disable mobile floating-action button
+        description: Revert placement of edit/preview button to default in header (mobile)
         id: floating-button-off
         type: class-toggle
         default: false
