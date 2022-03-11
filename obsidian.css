@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 THINGS
-Version 1.6.6
+Version 1.6.7
 Created by @colineckert
 
 Readme:
@@ -451,9 +451,17 @@ Desktop Styling
   background-color: var(--background-primary);
 }
 
-/* Align list bullets */
-.is-live-preview .list-bullet {
-  bottom: 3px;
+/* Live Preview list bullets */
+body:not(.is-mobile) .markdown-source-view.mod-cm6 .list-bullet:after {
+  left: -5px;
+}
+.mod-cm6 .HyperMD-list-line .list-bullet::after,
+.mod-cm6 span.list-bullet::after {
+  line-height: 0.95em;
+  font-size: 1.4em;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  vertical-align: middle;
+  color: var(--text-faint);
 }
 
 .is-live-preview .HyperMD-header-2 {
