@@ -116,6 +116,10 @@ For help and/or CSS snippets, thanks to:
   --font-smallest: 10px;
   --editor-font-size: 1rem;
 
+  --font-settings: 15px;
+  --font-settings-small: 13px;
+  --font-inputs: 14px;
+
   --h1: 1.5em;
   --h2: 1.3em;
   --h3: 1.1em;
@@ -853,6 +857,28 @@ body:not(.is-mobile)
   padding-bottom: 0;
   padding-right: 0;
 }
+.modal.mod-settings,
+.modal.mod-settings .vertical-tab-container {
+  max-width: 1000px;
+  width: 60vw;
+  min-height: 20vh;
+  width: 90vw;
+  height: 100vh;
+  max-height: 80vh;
+  overflow-y: hidden;
+  border: 1px solid var(--background-modifier-border) !important;
+}
+.modal.mod-settings .vertical-tab-content-container,
+.modal.mod-settings .vertical-tab-header {
+  height: 80vh;
+}
+body:not(.is-mobile) .modal.mod-community-theme.mod-community-theme,
+.modal.mod-community-plugin {
+  width: 80vw;
+  max-width: 80vw;
+  min-height: 80vh;
+  overflow: hidden;
+}
 .modal-title {
   text-align: left;
   font-size: var(--h2);
@@ -866,6 +892,42 @@ body:not(.is-mobile)
 .modal-content .u-center-text {
   text-align: left;
   font-size: 13px;
+}
+.community-plugin-name,
+.modal.mod-settings .vertical-tab-content-container,
+.setting-item-name {
+  font-size: var(--font-settings);
+  line-height: 1.4;
+}
+.community-plugin-downloads,
+.community-plugin-item .community-plugin-author,
+.community-plugin-item .community-plugin-desc,
+.community-plugin-search-summary,
+.setting-item-description {
+  font-size: var(--font-settings-small);
+  line-height: 1.4;
+  font-weight: 400;
+}
+.setting-item-description {
+  padding-top: 4px;
+}
+.setting-item-control button,
+button {
+  font-family: var(--font-ui);
+  font-size: var(--font-inputs);
+  font-weight: 400;
+}
+.modal button,
+.modal button.mod-cta a,
+button.mod-cta {
+  font-size: var(--font-settings-small);
+  margin-right: 3px;
+  margin-left: 3px;
+}
+.dropdown,
+body .addChoiceBox #addChoiceTypeSelector {
+  font-family: var(--font-ui);
+  font-size: var(--font-settings-small);
 }
 .progress-bar-message {
   color: var(--text-faint);
@@ -1178,9 +1240,9 @@ body.is-dragging {
   transition: opacity 0.1s ease-in-out;
   cursor: var(--cursor);
 }
-.view-header-icon {
+/* .view-header-icon {
   opacity: 0;
-}
+} */
 .workspace-leaf-content[data-type='search'] .nav-action-button.is-active,
 .workspace-leaf-content[data-type='backlink'] .nav-action-button.is-active,
 .workspace-leaf-content[data-type='tag'] .nav-action-button.is-active,
@@ -1726,17 +1788,24 @@ input.document-replace-input:focus {
 /* Form inputs */
 /* --------------- */
 
-textarea,
+/* textarea,
 input[type='text'],
 input[type='search'],
 input[type='email'],
 input[type='password'],
 input[type='number'],
-button,
-.dropdown,
-.setting-item-control button {
+button {
   font-size: var(--font-normal);
   font-family: var(--font-ui);
+} */
+input[type='email'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='text'],
+textarea {
+  font-family: var(--font-ui);
+  font-size: var(--font-inputs);
 }
 textarea {
   padding: 5px 10px;
@@ -2093,9 +2162,9 @@ ul {
 }
 .markdown-preview-view ul ul::before {
   content: '';
-  border-left: 1px solid var(--background-modifier-border);
+  border-right: 1px solid var(--background-modifier-border);
   position: absolute;
-  left: -0.85em;
+  left: -0.85em !important;
   top: 0;
   bottom: 0;
 }
@@ -3374,10 +3443,10 @@ input[type='range']::-webkit-slider-thumb:active {
   padding-bottom: 25px;
 }
 .vertical-tab-header-group-title {
-  color: var(--text-normal);
+  color: var(--text-faint);
   font-size: 12px;
   letter-spacing: 0.05em;
-  font-weight: 500;
+  font-weight: var(--bold-weight);
 }
 .vertical-tab-nav-item {
   padding: 4px 10px 4px 17px;
@@ -3385,6 +3454,8 @@ input[type='range']::-webkit-slider-thumb:active {
   border: none;
   background: var(--background-secondary);
   cursor: var(--cursor);
+  font-size: var(--font-small);
+  line-height: 1.4;
 }
 .vertical-tab-nav-item:hover,
 .vertical-tab-nav-item.is-active {
@@ -4704,7 +4775,7 @@ body.plugin-sliding-panes .mod-root .graph-controls {
 }
 
 /* Title bar / traffic light icons */
-
+/* TODO: fix for Live Preview */
 .mod-macos.hider-frameless.hider-ribbon:not(.plugin-sliding-panes-rotate-header) {
   --traffic-space: 80px;
   --traffic-padding: 60px;
@@ -5027,6 +5098,7 @@ body .kanban-plugin__markdown-preview-view ul,
 }
 
 /* READER VIEW */
+
 .markdown-preview-view
   ul
   > li.task-list-item
@@ -5089,6 +5161,7 @@ body .kanban-plugin__markdown-preview-view ul,
 }
 
 /* LIVE PREVIEW */
+
 .is-live-preview ul > li.task-list-item .todoist-p1 > input[type='checkbox'] {
   border: 1px solid #ff75c6 !important;
   background-color: rgba(255, 117, 221, 0.25) !important;
@@ -5875,8 +5948,13 @@ body:not(.minimal-icons-off) svg.dice {
 body:not(.minimal-icons-off) svg.disk {
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4' /%3E%3C/svg%3E");
 }
-body:not(.minimal-icons-off) svg.document {
-  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 100"><path fill="black" d="M83.071 36.167c-0.046 -0.133 -0.083 -0.263 -0.138 -0.392c-0.204 -0.442 -0.458 -0.863 -0.817 -1.221l-25 -25c-0.358 -0.358 -0.779 -0.613 -1.221 -0.817c-0.125 -0.058 -0.258 -0.092 -0.392 -0.138c-0.35 -0.117 -0.708 -0.192 -1.079 -0.212C54.333 8.379 54.254 8.333 54.167 8.333H25C20.404 8.333 16.667 12.071 16.667 16.667v66.667c0 4.596 3.738 8.333 8.333 8.333h50c4.596 0 8.333 -3.738 8.333 -8.333V37.5c0 -0.088 -0.046 -0.167 -0.054 -0.258C83.258 36.875 83.188 36.517 83.071 36.167zM69.108 33.333H58.333V22.558L69.108 33.333zM25 83.333V16.667h25v20.833c0 2.304 1.863 4.167 4.167 4.167h20.833l0.008 41.667H25z"></path></svg>');
+body:not(.no-svg-replace) svg.document {
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 100"><path fill="red" d="M83.071 36.167c-0.046 -0.133 -0.083 -0.263 -0.138 -0.392c-0.204 -0.442 -0.458 -0.863 -0.817 -1.221l-25 -25c-0.358 -0.358 -0.779 -0.613 -1.221 -0.817c-0.125 -0.058 -0.258 -0.092 -0.392 -0.138c-0.35 -0.117 -0.708 -0.192 -1.079 -0.212C54.333 8.379 54.254 8.333 54.167 8.333H25C20.404 8.333 16.667 12.071 16.667 16.667v66.667c0 4.596 3.738 8.333 8.333 8.333h50c4.596 0 8.333 -3.738 8.333 -8.333V37.5c0 -0.088 -0.046 -0.167 -0.054 -0.258C83.258 36.875 83.188 36.517 83.071 36.167zM69.108 33.333H58.333V22.558L69.108 33.333zM25 83.333V16.667h25v20.833c0 2.304 1.863 4.167 4.167 4.167h20.833l0.008 41.667H25z"></path></svg>');
+}
+body:not(.no-svg-replace)
+  .workspace-leaf-content[data-type='starred']
+  svg.document {
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path fill="red" d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"/><path fill="red" d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z"></path></svg>');
 }
 body:not(.minimal-icons-off)
   .nav-action-button[aria-label='New note']
@@ -5886,6 +5964,22 @@ body:not(.minimal-icons-off) svg.create-new {
 }
 body:not(.minimal-icons-off) svg.documents {
   -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 100"><path fill="black" d="M83.333 8.333H41.667C37.071 8.333 33.333 12.071 33.333 16.667v16.667H16.667c-4.596 0 -8.333 3.738 -8.333 8.333v41.667c0 4.596 3.738 8.333 8.333 8.333h41.667c4.596 0 8.333 -3.738 8.333 -8.333v-16.667h16.667c4.596 0 8.333 -3.738 8.333 -8.333V16.667C91.667 12.071 87.929 8.333 83.333 8.333zM16.667 83.333V41.667h41.667l0.008 41.667H16.667zM83.333 58.333h-16.667v-16.667c0 -4.596 -3.738 -8.333 -8.333 -8.333h-16.667V16.667h41.667V58.333z M25 50H50V58.333H25zM25 66.667H50V75H25z"></path></svg>');
+}
+body:not(.minimal-icons-off)
+  .workspace-leaf-content[data-type='video']
+  .view-header
+  .view-header-icon
+  svg.document {
+  background-color: currentColor;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' enable-background='new 0 0 32 32' viewBox='0 0 32 32' xml:space='preserve'%3E%3Cpath d='M10 6h4v4h-4zm8 0h4v4h-4zm-8 8h4v4h-4zm8 0h4v4h-4zm-8 8h4v4h-4zm8 0h4v4h-4z'/%3E%3Cpath fill='none' d='M0 0h32v32H0z'/%3E%3C/svg%3E");
+}
+body:not(.minimal-icons-off)
+  .workspace-leaf-content[data-type='markdown']
+  .view-header
+  .view-header-icon
+  svg.document {
+  background-color: currentColor;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' enable-background='new 0 0 32 32' viewBox='0 0 32 32' xml:space='preserve'%3E%3Cpath d='M10 6h4v4h-4zm8 0h4v4h-4zm-8 8h4v4h-4zm8 0h4v4h-4zm-8 8h4v4h-4zm8 0h4v4h-4z'/%3E%3Cpath fill='none' d='M0 0h32v32H0z'/%3E%3C/svg%3E");
 }
 body:not(.minimal-icons-off) svg.dot-network {
   -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 100"><path fill="black" d="M81.25 12.5C75.504 12.5 70.833 17.171 70.833 22.917c0 1.488 0.325 2.9 0.892 4.188l-8.146 9.162C60.896 34.425 57.663 33.333 54.167 33.333c-3.083 0 -5.933 0.9 -8.413 2.358L36.279 26.221L36.183 26.317C37 24.658 37.5 22.813 37.5 20.833c0 -6.904 -5.596 -12.5 -12.5 -12.5S12.5 13.929 12.5 20.833s5.596 12.5 12.5 12.5c1.979 0 3.821 -0.5 5.483 -1.317L30.388 32.113L39.863 41.583C38.396 44.067 37.5 46.921 37.5 50c0 4.154 1.583 7.913 4.104 10.838l-10.738 10.733C29.692 71.108 28.421 70.833 27.083 70.833C21.342 70.833 16.667 75.504 16.667 81.25S21.342 91.667 27.083 91.667S37.5 86.996 37.5 81.25c0 -1.338 -0.275 -2.608 -0.738 -3.788l11.825 -11.825C50.342 66.263 52.2 66.667 54.167 66.667c9.192 0 16.667 -7.475 16.667 -16.667c0 -2.65 -0.679 -5.121 -1.783 -7.35l8.821 -9.929C78.938 33.087 80.063 33.333 81.25 33.333C86.996 33.333 91.667 28.663 91.667 22.917S86.996 12.5 81.25 12.5zM54.167 58.333c-4.596 0 -8.333 -3.738 -8.333 -8.333s3.738 -8.333 8.333 -8.333c4.596 0 8.333 3.738 8.333 8.333S58.763 58.333 54.167 58.333z"></path></svg>');
