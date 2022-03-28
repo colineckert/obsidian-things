@@ -16,7 +16,7 @@ I love [Things 3](https://culturedcode.com/things/). It's been the task manager 
 
 - Things-inspired color palette
 - Light and dark theme
-- Quick preview/edit mode button in mobile
+- Quick preview/edit floating action button on mobile
 - Customizable colors for bold, italic, highlighters, and block-quotes
 - Atom code syntax higlighting
 - Tag pills for readability
@@ -38,6 +38,7 @@ This theme has support for the following Obsidian community plugins:
 - [Checklist](https://github.com/delashum/obsidian-checklist-plugin)
 - [Todoist](https://github.com/jamiebrynes7/obsidian-todoist-plugin) (ironic, I know)
 - [Style Settings](https://github.com/mgmeyers/obsidian-style-settings)
+- [Advanced Mobile Toolbar](https://github.com/phibr0/obsidian-advanced-toolbar)
 
 ## Installation
 
