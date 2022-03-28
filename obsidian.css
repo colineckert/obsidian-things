@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 THINGS
-Version 1.6.8
+Version 1.7.0
 Created by @colineckert
 
 Readme:
@@ -4301,14 +4301,10 @@ body:not(.is-ios).is-mobile .workspace-drawer-ribbon {
 /* Mobile toolbar button */
 /* ---------------- */
 
-body:not(.floating-button-off):not(.advanced-toolbar).is-mobile
-  [aria-label='Edit (⌘+Click to edit in new pane)'],
-body:not(.floating-button-off):not(.advanced-toolbar).is-mobile
-  [aria-label='Edit (Ctrl+Click to edit in new pane)'],
-body:not(.floating-button-off):not(.advanced-toolbar).is-mobile
-  [aria-label='Preview (⌘+Click to open in new pane)'],
-body:not(.floating-button-off):not(.advanced-toolbar).is-mobile
-  [aria-label='Preview (Ctrl+Click to open in new pane)'] {
+body.is-mobile:not(.floating-button-off):not(.advanced-toolbar)
+  .view-action:nth-last-of-type(5),
+body.is-mobile:not(.floating-button-off):not(.advanced-toolbar)
+  .view-action:nth-last-of-type(4) {
   color: white;
   background-color: var(--blue);
   opacity: 1;
@@ -4328,14 +4324,10 @@ body:not(.floating-button-off):not(.advanced-toolbar).is-mobile
     20px 19px 80px rgba(0, 0, 0, 0.2);
 }
 
-body:not(.floating-button-off).advanced-toolbar.is-mobile
-  [aria-label='Edit (⌘+Click to edit in new pane)'],
-body:not(.floating-button-off).advanced-toolbar.is-mobile
-  [aria-label='Edit (Ctrl+Click to edit in new pane)'],
-body:not(.floating-button-off).advanced-toolbar.is-mobile
-  [aria-label='Preview (⌘+Click to open in new pane)'],
-body:not(.floating-button-off).advanced-toolbar.is-mobile
-  [aria-label='Preview (Ctrl+Click to open in new pane)'] {
+body.is-mobile:not(.floating-button-off).advanced-toolbar
+  .view-action:nth-last-of-type(5),
+body.is-mobile:not(.floating-button-off).advanced-toolbar
+  .view-action:nth-last-of-type(4) {
   color: white;
   background-color: var(--blue);
   opacity: 1;
@@ -4353,16 +4345,6 @@ body:not(.floating-button-off).advanced-toolbar.is-mobile
   box-shadow: 0.9px 0.9px 3.6px rgba(0, 0, 0, 0.07),
     2.5px 2.4px 10px rgba(0, 0, 0, 0.1), 6px 5.7px 24.1px rgba(0, 0, 0, 0.13),
     20px 19px 80px rgba(0, 0, 0, 0.2);
-}
-
-/* Shrink FAB on small displays */
-@media screen and (max-height: 400px) {
-  [aria-label='Edit (⌘+Click to edit in new pane)'],
-  [aria-label='Edit (Ctrl+Click to edit in new pane)'],
-  [aria-label='Preview (⌘+Click to open in new pane)'],
-  [aria-label='Preview (Ctrl+Click to open in new pane)'] {
-    transform: scale(0.8) translate(-50%, -50%);
-  }
 }
 
 /* --------------- */
@@ -5718,7 +5700,8 @@ body:not(.minimal-icons-off) svg.workspace-glyph,
 body:not(.minimal-icons-off) svg.box-glyph,
 body:not(.minimal-icons-off) svg.wand,
 body:not(.minimal-icons-off) svg.longform,
-body:not(.minimal-icons-off) svg.changelog {
+body:not(.minimal-icons-off) svg.changelog,
+body:not(.no-sanctum-icons) svg.reading-glasses {
   background-color: currentColor;
 }
 
@@ -5866,7 +5849,8 @@ body:not(.minimal-icons-off) svg.workspace-glyph > path,
 body:not(.minimal-icons-off) svg.box-glyph > path,
 body:not(.minimal-icons-off) svg.wand > path,
 body:not(.minimal-icons-off) svg.longform > path,
-body:not(.minimal-icons-off) svg.changelog > path {
+body:not(.minimal-icons-off) svg.changelog > path, 
+body:not(.no-sanctum-icons) svg.reading-glasses > path {
   display: none;
 }
 
@@ -6349,6 +6333,9 @@ body:not(.minimal-icons-off) svg.longform {
 body:not(.minimal-icons-off) svg.changelog {
   -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10s10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8s8 3.589 8 8s-3.589 8-8 8z" fill="currentColor"/><path d="M11 11h2v6h-2zm0-4h2v2h-2z" fill="currentColor"/></svg>');
 }
+body:not(.minimal-icons-off) svg.reading-glasses {
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 100"><path fill="black" d="M83.333 12.5H16.667c-4.596 0 -8.333 3.738 -8.333 8.333v58.333c0 4.596 3.738 8.333 8.333 8.333h66.667c4.596 0 8.333 -3.738 8.333 -8.333V20.833c0 -4.596 -3.738 -8.333 -8.333 -8.333zM16.667 79.167V20.833h66.667l0.008 58.333H16.667z M25 29.167h50v8.333H25zm0 16.667h50v8.333H25zm0 16.667h25v8.333H25z"></path></svg>');
+}
 
 /* ─────────────────────────────────────────────────── */
 /* Plugin Compatibility info for the Obsidian Hub */
@@ -6719,7 +6706,7 @@ settings:
         id: credits
         title: Credits
         type: heading
-        description: Created with ❤︎ @colineckert. This theme uses code from Minimal by @kepano. Support @kepano at buymeacoffee.com/kepano and me at buymeacoffee.com/colineckert
+        description: Created with ❤︎ by @colineckert. This theme uses code from Minimal by @kepano. Support @kepano at buymeacoffee.com/kepano and @colineckert at buymeacoffee.com/colineckert
         level: 2
         collapsed: true
 
