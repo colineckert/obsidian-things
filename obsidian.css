@@ -469,9 +469,13 @@ body:not(.is-mobile) .markdown-source-view.mod-cm6 .list-bullet:after {
 }
 
 .is-live-preview .HyperMD-header-2 {
-  border-bottom: 1px solid var(--background-modifier-border);
+  border-bottom: 2px solid var(--background-modifier-border);
   width: 100%;
   padding-bottom: 2px;
+}
+
+.is-live-preview .HyperMD-header {
+  padding-top: 0.25em;
 }
 
 /* Temp fix to match Live Preview checkbox color */
@@ -3039,6 +3043,27 @@ ol > li {
 .theme-light pre[class*='language-'] {
   text-shadow: none;
 }
+/* Horizontal scroll */
+code[class*='language-'],
+pre[class*='language-'] {
+  text-align: left !important;
+  white-space: pre !important;
+  word-spacing: normal !important;
+  word-break: normal !important;
+  word-wrap: normal !important;
+  line-height: 1.5 !important;
+  -moz-tab-size: 4 !important;
+  -o-tab-size: 4 !important;
+  tab-size: 4 !important;
+  -webkit-hyphens: none !important;
+  -moz-hyphens: none !important;
+  -ms-hyphens: none !important;
+  hyphens: none !important;
+}
+pre[class*='language-'] {
+  overflow: auto !important;
+}
+/* ------------------ */
 pre .copy-code-button {
   border-radius: 5px;
   background-color: var(--background-secondary-alt);
