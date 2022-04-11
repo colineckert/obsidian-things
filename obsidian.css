@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 THINGS
-Version 1.7.0
+Version 1.7.1
 Created by @colineckert
 
 Readme:
@@ -2893,15 +2893,18 @@ iframe {
   border: solid var(--quote-opening-modifier);
   border-width: 0px 0px 0px 2px;
   background-color: transparent;
-  color: var(--green);
   font-style: italic;
   padding: 0 0 0 calc(var(--nested-padding) / 2);
   margin-inline-start: var(--nested-padding);
 }
 
 .cm-s-obsidian span.cm-quote {
-  color: var(--green);
   font-style: italic;
+}
+
+body:not(.default-font-color) .cm-s-obsidian span.cm-quote,
+body:not(.default-font-color) .markdown-preview-view blockquote {
+  color: var(--green);
 }
 
 /* ---------------
@@ -2916,45 +2919,45 @@ span.cm-formatting {
 
 /* Italics */
 
-em,
-.cm-s-obsidian .cm-em.cm-header,
-.cm-s-obsidian .cm-em.cm-header.cm-header-1,
-.cm-s-obsidian .cm-em.cm-header.cm-header-2,
-.cm-s-obsidian .cm-em.cm-header.cm-header-3,
-.cm-s-obsidian .cm-em.cm-header.cm-header-4,
-.cm-s-obsidian .cm-em.cm-header.cm-header-5,
-.cm-s-obsidian .cm-em.cm-header.cm-header-6,
-.cm-s-obsidian .cm-em.cm-header.cm-header-1,
-.cm-s-obsidian .cm-em.cm-header.cm-header-2,
-.cm-s-obsidian .cm-em.cm-header.cm-header-3,
-.cm-s-obsidian .cm-em.cm-header.cm-header-4,
-.cm-s-obsidian .cm-em.cm-header.cm-header-5,
-.cm-s-obsidian .cm-em.cm-header.cm-header-6,
-.markdown-preview-section em,
-.cm-s-obsidian .cm-em {
+body:not(.default-font-color) em,
+body:not(.default-font-color) .cm-s-obsidian .cm-em.cm-header,
+body:not(.default-font-color) .cm-s-obsidian .cm-em.cm-header.cm-header-1,
+body:not(.default-font-color) .cm-s-obsidian .cm-em.cm-header.cm-header-2,
+body:not(.default-font-color) .cm-s-obsidian .cm-em.cm-header.cm-header-3,
+body:not(.default-font-color) .cm-s-obsidian .cm-em.cm-header.cm-header-4,
+body:not(.default-font-color) .cm-s-obsidian .cm-em.cm-header.cm-header-5,
+body:not(.default-font-color) .cm-s-obsidian .cm-em.cm-header.cm-header-6,
+body:not(.default-font-color) .cm-s-obsidian .cm-em.cm-header.cm-header-1,
+body:not(.default-font-color) .cm-s-obsidian .cm-em.cm-header.cm-header-2,
+body:not(.default-font-color) .cm-s-obsidian .cm-em.cm-header.cm-header-3,
+body:not(.default-font-color) .cm-s-obsidian .cm-em.cm-header.cm-header-4,
+body:not(.default-font-color) .cm-s-obsidian .cm-em.cm-header.cm-header-5,
+body:not(.default-font-color) .cm-s-obsidian .cm-em.cm-header.cm-header-6,
+body:not(.default-font-color) .markdown-preview-section em,
+body:not(.default-font-color) .cm-s-obsidian .cm-em {
   font-style: italic;
   color: var(--em-color);
 }
 
 /* Bold */
 
-strong,
-.cm-s-obsidian .cm-strong.cm-header,
-.cm-s-obsidian .cm-strong.cm-header.cm-header-1,
-.cm-s-obsidian .cm-strong.cm-header.cm-header-2,
-.cm-s-obsidian .cm-strong.cm-header.cm-header-3,
-.cm-s-obsidian .cm-strong.cm-header.cm-header-4,
-.cm-s-obsidian .cm-strong.cm-header.cm-header-5,
-.cm-s-obsidian .cm-strong.cm-header.cm-header-6,
-.cm-s-obsidian .cm-strong.cm-header.cm-header-1,
-.cm-s-obsidian .cm-strong.cm-header.cm-header-2,
-.cm-s-obsidian .cm-strong.cm-header.cm-header-3,
-.cm-s-obsidian .cm-strong.cm-header.cm-header-4,
-.cm-s-obsidian .cm-strong.cm-header.cm-header-5,
-.cm-s-obsidian .cm-strong.cm-header.cm-header-6,
-.cm-header.cm-header-3.cm-hmd-internal-link,
-.markdown-preview-section strong,
-.cm-s-obsidian .cm-strong {
+body:not(.default-font-color) strong,
+body:not(.default-font-color) .cm-s-obsidian .cm-strong.cm-header,
+body:not(.default-font-color) .cm-s-obsidian .cm-strong.cm-header.cm-header-1,
+body:not(.default-font-color) .cm-s-obsidian .cm-strong.cm-header.cm-header-2,
+body:not(.default-font-color) .cm-s-obsidian .cm-strong.cm-header.cm-header-3,
+body:not(.default-font-color) .cm-s-obsidian .cm-strong.cm-header.cm-header-4,
+body:not(.default-font-color) .cm-s-obsidian .cm-strong.cm-header.cm-header-5,
+body:not(.default-font-color) .cm-s-obsidian .cm-strong.cm-header.cm-header-6,
+body:not(.default-font-color) .cm-s-obsidian .cm-strong.cm-header.cm-header-1,
+body:not(.default-font-color) .cm-s-obsidian .cm-strong.cm-header.cm-header-2,
+body:not(.default-font-color) .cm-s-obsidian .cm-strong.cm-header.cm-header-3,
+body:not(.default-font-color) .cm-s-obsidian .cm-strong.cm-header.cm-header-4,
+body:not(.default-font-color) .cm-s-obsidian .cm-strong.cm-header.cm-header-5,
+body:not(.default-font-color) .cm-s-obsidian .cm-strong.cm-header.cm-header-6,
+body:not(.default-font-color) .cm-header.cm-header-3.cm-hmd-internal-link,
+body:not(.default-font-color) .markdown-preview-section strong,
+body:not(.default-font-color) .cm-s-obsidian .cm-strong {
   color: var(--strong-color);
 }
 
@@ -6424,6 +6427,12 @@ settings:
         type: class-toggle
         default:  false
     - 
+        id: default-font-color
+        title: Default font colors
+        description: Use default font colors for bold and italics instead of Things colors
+        type: class-toggle
+        default:  false
+    - 
         id: full-file-names
         title: Show full file names
         description: Turn off trimming on files in sidebar
@@ -6519,11 +6528,25 @@ settings:
         format: hex
         default: '#' 
     - 
+        id: editor-font-size
+        title: Editor font size
+        description: Font size in em for editor and preview overall font size
+        type: variable-number
+        default: 1
+        format: em
+    - 
         id: font-small
         title: Sidebar and tag font size
         description: Font size in px of sidebar, tags, and small text
         type: variable-number
         default: 13
+        format: px
+    - 
+        id: font-smaller
+        title: Smaller font size
+        description: Font size in px of smaller text
+        type: variable-number
+        default: 11
         format: px
     - 
         id: line-height
