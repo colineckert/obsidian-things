@@ -6427,12 +6427,6 @@ settings:
         type: class-toggle
         default:  false
     - 
-        id: default-font-color
-        title: Default font colors
-        description: Use default font colors for bold and italics instead of Things colors
-        type: class-toggle
-        default:  false
-    - 
         id: full-file-names
         title: Show full file names
         description: Turn off trimming on files in sidebar
@@ -6485,6 +6479,12 @@ settings:
         type: heading
         level: 2
         collapsed: true
+    - 
+        id: default-font-color
+        title: Default font colors
+        description: Use the default font color styling for bold, italics, and quotes
+        type: class-toggle
+        default:  false
     - 
         id: strong-color
         title: Bold font color
