@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 THINGS
-Version 1.7.1
+Version 1.7.2
 Created by @colineckert
 
 Readme:
@@ -141,7 +141,7 @@ For help and/or CSS snippets, thanks to:
   --line-height: 1.5;
   --border-width: 1px;
   --border-width-alt: 1px;
-  --max-width: 85%; /* Amount of padding around the text, use 90% for narrower padding */
+  --max-width: 90%; /* Amount of padding around the text, use 90% for narrower padding */
   --nested-padding: 3.5%; /* Amount of padding for quotes and transclusions */
   --input-height: 36px;
 
@@ -6492,6 +6492,15 @@ settings:
         type: class-toggle
         default:  false
     - 
+        id: accent-h
+        title: Link hue color
+        description: Hue of both internal and external links
+        type: variable-number-slider
+        default: 215
+        min: 0
+        max: 360
+        step: 1
+    - 
         id: strong-color
         title: Bold font color
         type: variable-color
@@ -6572,7 +6581,7 @@ settings:
         title: Maximum line width
         description: Percentage of space inside a pane that a line can fill. Recommended values between 80 to 100
         type: variable-number
-        default: 85
+        default: 90
         format: '%'
     -
         id: headings
