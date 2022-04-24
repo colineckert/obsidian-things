@@ -2350,7 +2350,7 @@ span[title='Unfold line']:hover,
 /* --------------- */
 
 .outline {
-  padding: 15px 10px 20px 0;
+  padding: 15px 10px 20px 5px;
   font-size: var(--font-adaptive-small);
 }
 .outline .pane-empty {
@@ -2587,6 +2587,12 @@ input.search-input:focus {
   width: 15px;
   margin-left: -15px;
 }
+.outline .tree-item-self .collapse-icon {
+  margin-left: -20px;
+}
+.tag-container .collapse-icon {
+  margin-left: -20px;
+}
 .tree-item-self:hover .collapse-icon {
   color: var(--text-normal);
 }
@@ -2681,7 +2687,7 @@ input.search-input:focus {
 /* --------------- */
 
 .tag-container {
-  padding: 10px;
+  padding: 10px 15px;
 }
 .tag-pane-tag-count {
   margin-right: 10px;
