@@ -1929,10 +1929,11 @@ input[type='checkbox']:checked {
 .markdown-preview-section > .contains-task-list {
   padding-bottom: 0.5em;
 }
-.markdown-preview-view ul > li.task-list-item.is-checked {
+/* ! Remove strikethrough and muted text */
+/* .markdown-preview-view ul > li.task-list-item.is-checked {
   text-decoration: none;
   color: var(--text-normal);
-}
+} */
 .markdown-preview-view .task-list-item-checkbox {
   width: 16px;
   height: 16px;
