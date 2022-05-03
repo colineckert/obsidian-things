@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 THINGS
-Version 1.7.2
+Version 1.7.3
 Created by @colineckert
 
 Readme:
@@ -445,7 +445,7 @@ Desktop Styling
 /* ---------------------- */
 
 .is-live-preview {
-  padding: 0 1em !important;
+  padding: 0 0.5em !important;
 }
 
 /* Quote blocks */
@@ -457,7 +457,7 @@ Desktop Styling
 
 /* Live Preview list bullets */
 body:not(.is-mobile) .markdown-source-view.mod-cm6 .list-bullet:after {
-  left: -5px;
+  left: -3px;
 }
 .mod-cm6 .HyperMD-list-line .list-bullet::after,
 .mod-cm6 span.list-bullet::after {
@@ -2657,9 +2657,9 @@ input.search-input:focus {
 .backlink-pane > .tree-item-self {
   padding-left: 15px;
   color: var(--text-muted);
-  /* text-transform: uppercase; */
+  text-transform: uppercase;
   letter-spacing: 0.05em;
-  font-size: var(--font-adaptive-small);
+  font-size: var(--font-adaptive-smaller);
   font-weight: 500;
   padding: 10px 7px 5px 10px;
   background: transparent;
@@ -2716,11 +2716,17 @@ input.search-input:focus {
 /* --------------- */
 
 .status-bar {
-  transition: color 200ms linear;
+  transition: color 0.2s linear;
   color: var(--text-faint);
   font-size: var(--font-adaptive-smaller);
+  border-top: var(--border-width) solid var(--background-divider);
   line-height: 1;
   max-height: 24px;
+}
+.minimal-status-off .status-bar {
+  background-color: var(--background-secondary);
+  border-width: var(--border-width);
+  padding: 2px 6px 4px;
 }
 .status-bar {
   background-color: var(--background-primary);
@@ -2735,17 +2741,20 @@ input.search-input:focus {
   max-height: 26px;
   padding: 2px 8px 6px 3px;
 }
-.sync-status-icon.mod-working,
-.sync-status-icon.mod-success {
+.sync-status-icon.mod-success,
+.sync-status-icon.mod-working {
   color: var(--text-faint);
-  transition: color 200ms linear;
   cursor: var(--cursor);
 }
-.status-bar:hover .sync-status-icon.mod-working,
+.status-bar:hover,
 .status-bar:hover .sync-status-icon.mod-success,
-.status-bar:hover {
+.status-bar:hover .sync-status-icon.mod-working {
   color: var(--text-muted);
-  transition: color 200ms linear;
+  transition: color 0.2s linear;
+}
+.status-bar .plugin-sync:hover .sync-status-icon.mod-success,
+.status-bar .plugin-sync:hover .sync-status-icon.mod-working {
+  color: var(--text-normal);
 }
 .status-bar-item {
   padding: 0 5px;
@@ -2753,24 +2762,24 @@ input.search-input:focus {
 .status-bar-item-segment {
   margin-right: 10px;
 }
-.status-bar-item.mod-clickable {
-  cursor: var(--cursor);
-}
-.status-bar-item.mod-clickable:hover {
-  background-color: var(--background-tertiary);
-  border-radius: 4px;
-}
 .status-bar-item {
-  padding: 7px 5px;
-  margin: 0 2px 0 0;
+  cursor: var(--cursor) !important;
+}
+/* .status-bar-item.cMenu-statusbar-button:hover,
+.status-bar-item.mod-clickable:hover,
+.status-bar-item.plugin-sync:hover {
+  text-align: center;
+  background-color: var(--background-tertiary) !important;
+  border-radius: 4px;
+} */
+.status-bar-item {
+  padding: 7px 4px;
+  margin: 0;
 }
 .status-bar-item,
 .sync-status-icon {
   display: flex;
   align-items: center;
-}
-.status-bar-item.plugin-sync {
-  padding-right: 0;
 }
 .status-bar-item.plugin-sync svg {
   height: 15px;
@@ -3716,7 +3725,7 @@ body.is-mobile .view-header-title,
   transform: none !important;
 }
 .is-mobile .workspace-drawer:not(.is-pinned) {
-  width: 90vw;
+  width: 100vw;
   max-width: 360pt;
   border: none;
   box-shadow: 0 5px 50px 5px rgba(0, 0, 0, 0.05);
@@ -3805,11 +3814,13 @@ body:not(.is-ios).is-mobile .workspace-drawer-ribbon {
 .is-mobile .workspace-drawer-header-name {
   font-weight: var(--bold-weight);
   color: var(--text-normal);
+  font-size: 1.125em;
+  margin-top: 3px;
 }
 .is-mobile .workspace-drawer-header-info {
   color: var(--text-faint);
-  font-size: var(--font-adaptive-small);
-  margin-bottom: 5px;
+  font-size: var(--font-adaptive-smaller);
+  margin-bottom: 0;
 }
 .is-mobile .mod-left .workspace-drawer-header-info,
 .is-mobile.hider-status .workspace-drawer-header-info {
@@ -3818,7 +3829,6 @@ body:not(.is-ios).is-mobile .workspace-drawer-ribbon {
 .is-mobile .workspace-drawer-active-tab-header {
   margin: 2px 12px 2px;
   padding: 8px 0 8px 8px;
-  border-radius: 8px;
 }
 .is-mobile .workspace-leaf-content .item-list,
 .is-mobile .tag-container,
@@ -3884,7 +3894,31 @@ body:not(.is-ios).is-mobile .workspace-drawer-ribbon {
 .is-mobile .modal.mod-community-plugin,
 .is-mobile .modal.mod-settings {
   width: 100vw;
-  max-height: 80vh;
+  max-height: 90vh;
+  padding: 0;
+}
+.is-mobile .modal.mod-settings .vertical-tab-header:before {
+  content: 'Settings';
+  font-weight: 600;
+  font-size: var(--font-settings);
+  position: sticky;
+  display: flex;
+  height: 54px;
+  margin-top: 8px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-bottom: 1px solid var(--background-modifier-border);
+  background: var(--background-primary);
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+.is-mobile .modal .vertical-tab-header-group-title {
+  padding: 15px 20px 10px 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 .is-mobile .nav-buttons-container {
   padding: 0 0 10px 15px;
@@ -3995,8 +4029,12 @@ body:not(.is-ios).is-mobile .workspace-drawer-ribbon {
 .is-mobile.focus-mode .view-actions {
   opacity: 1;
 }
+.is-mobile .workspace-drawer-header-icon {
+  align-self: start;
+}
 .is-mobile .workspace-drawer-header-icon svg {
   width: 22px;
+  height: 100%;
 }
 .is-mobile .workspace-drawer-tab-options {
   padding-top: 10px;
@@ -4138,7 +4176,6 @@ body:not(.is-ios).is-mobile .workspace-drawer-ribbon {
   border: 0;
   background-color: var(--background-secondary);
 }
-
 .is-mobile .view-header-icon .three-horizontal-bars {
   opacity: 0;
 }
@@ -4256,7 +4293,8 @@ body:not(.is-ios).is-mobile .workspace-drawer-ribbon {
     font-size: 18px;
   }
   .is-mobile .workspace-drawer-header-name-text {
-    font-size: 18px;
+    font-size: var(--font-settings-title);
+    letter-spacing: -0.015em;
   }
   .is-mobile .menu-item.is-label {
     font-size: 18px;
