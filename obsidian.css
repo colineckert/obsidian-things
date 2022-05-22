@@ -3637,7 +3637,7 @@ input[type='range']::-webkit-slider-thumb:active {
 /* --------------- */
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px !important;
 }
 ::-webkit-scrollbar-track {
   background-color: var(--background-primary);
