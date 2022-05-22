@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 THINGS
-Version 1.7.3
+Version 1.7.4
 Created by @colineckert
 
 Readme:
@@ -970,7 +970,6 @@ input.prompt-input:hover {
 }
 .theme-dark .modal-container .suggestion-item.is-selected {
   border-radius: 6px;
-  /* background: var(--blue-highlighter); */
   background: var(--blue);
 }
 .menu-item {
@@ -1700,13 +1699,18 @@ span.cm-formatting.cm-formatting-quote {
 .document-search-close-button:before {
   font-weight: 200;
 }
-.document-search-container {
-  position: fixed;
-  padding-top: 10px;
-  height: 50px;
+body .document-search-container {
+  margin-top: 12px;
+  padding: 0;
+  height: 38px;
   background-color: var(--background-primary);
-  border-top: var(--border-width-alt) solid var(--background-modifier-border);
+  border-top: none;
   width: 100%;
+}
+.markdown-reading-view.is-searching,
+.markdown-source-view.is-replacing,
+.markdown-source-view.is-searching {
+  flex-direction: column-reverse;
 }
 input.document-search-input,
 input.document-replace-input {
@@ -2843,16 +2847,10 @@ a[href*="obsidian://search"]
 /* Style settings to toggle link underlines */
 body:not(.links-int-on) a[href*="obsidian://"],
 body:not(.links-int-on) .markdown-preview-view .internal-link,
-body:not(.links-int-on) .external-link {
+body:not(.links-int-on) .markdown-source-view.mod-cm6 .cm-hmd-internal-link .cm-underline,
+body:not(.links-ext-on) .external-link,
+body:not(.links-ext-on) .markdown-source-view.mod-cm6 .cm-link .cm-underline {
   text-decoration: none;
-}
-body.links-int-on .markdown-preview-view .internal-link,
-.markdown-preview-view .internal-link {
-  text-decoration: underline;
-}
-body.links-ext-on .external-link,
-.external-link {
-  text-decoration: underline;
 }
 
 .footnotes-list {
@@ -3116,7 +3114,6 @@ pre .copy-code-button:hover {
 }
 .markdown-source-view.mod-cm6 .code-block-flair {
   color: var(--text-muted);
-  padding: 5px;
 }
 
 /* ------------------- */
