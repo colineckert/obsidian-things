@@ -306,7 +306,7 @@ body {
   /* --tag-font-color: rgb(29, 105, 75); */
   --tag-font-color-l: #1d694b;
 
-  --code-color: #383a42;
+  --code-color: #C7254E;
   --atom-gray-1: #383a42;
   --atom-gray-2: #383a42;
   --atom-red: #e75545;
@@ -424,7 +424,7 @@ body {
   --tag-background-color-d: rgb(29, 105, 75);
   --tag-font-color-d: var(--text-normal);
 
-  --code-color: #c9d1d9;
+  --code-color: #C7254E;
   --atom-gray-1: #5c6370;
   --atom-gray-2: #abb2bf;
   --atom-red: #e06c75;
