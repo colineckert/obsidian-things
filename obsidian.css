@@ -492,11 +492,6 @@ body:not(.is-mobile) .markdown-source-view.mod-cm6 .list-bullet:after {
   top: 2px !important;
 }
 
-/* Better header spacing */
-.markdown-source-view.mod-cm6 .cm-content > .HyperMD-header {
-  margin: 0.3em 0 0.45em 0 !important;
-}
-
 /* Cursor color */
 /* .markdown-source-view.mod-cm6.is-live-preview div.cm-editor .cm-cursor {
   border-left-color: var(--text-accent);
@@ -1493,12 +1488,12 @@ body.full-borders .side-dock-ribbon {
 /* EDITOR MODE */
 /* --------------- */
 
-/* Fancy cursor */
-.CodeMirror-cursor,
+/* Fancy cursor - commented out due to text selection behavior */
+/* .CodeMirror-cursor,
 .cm-s-obsidian .cm-cursor {
   border: none;
   border-right: 2px solid var(--text-accent);
-}
+} */
 .markdown-source-view.mod-cm6,
 .markdown-source-view.mod-cm5,
 .markdown-source-view {
