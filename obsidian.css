@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 THINGS
-Version 1.7.4
+Version 1.7.5
 Created by @colineckert
 
 Readme:
@@ -8,6 +8,9 @@ https://github.com/colineckert/obsidian-things
 
 Support my work:
 https://www.buymeacoffee.com/colineckert
+
+Support @kepano
+https://www.buymeacoffee.com/kepano
 
 ----------------------------------------------------------------
 
@@ -474,13 +477,9 @@ body:not(.is-mobile) .markdown-source-view.mod-cm6 .list-bullet:after {
   padding-bottom: 2px;
 }
 
-.is-live-preview .HyperMD-header {
-  padding-top: 0.25em;
-}
-
 /* Temp fix to match Live Preview checkbox color */
 .is-live-preview input[type='checkbox']:checked {
-  background-color: #00a8c5 !important;
+  background-color: #00a7c4 !important;
 }
 
 /* Align checkboxes */
@@ -492,6 +491,20 @@ body:not(.is-mobile) .markdown-source-view.mod-cm6 .list-bullet:after {
 .is-live-preview .collapse-indicator.collapse-icon {
   top: 2px !important;
 }
+
+/* Better header spacing */
+.markdown-source-view.mod-cm6 .cm-content > .HyperMD-header {
+  margin: 0.3em 0 0.45em 0 !important;
+}
+
+/* Cursor color */
+/* .markdown-source-view.mod-cm6.is-live-preview div.cm-editor .cm-cursor {
+  border-left-color: var(--text-accent);
+  border-width: 2px;
+}
+.markdown-source-view.mod-cm6.is-live-preview div.cm-editor div {
+  caret-color: var(--text-accent);
+} */
 
 /* ---------------------- */
 
@@ -1515,7 +1528,8 @@ body.full-borders .side-dock-ribbon {
 }
 .cm-s-obsidian .HyperMD-header,
 .cm-s-obsidian pre.HyperMD-header {
-  padding-left: 0 !important;
+  /* Commenting to better align header and content */
+  /* padding-left: 0 !important; */
   font-size: 1em !important;
 }
 .CodeMirror-linenumber {
@@ -1933,11 +1947,11 @@ input[type='checkbox']:checked {
 .markdown-preview-section > .contains-task-list {
   padding-bottom: 0.5em;
 }
-/* ! Remove strikethrough and muted text */
-/* .markdown-preview-view ul > li.task-list-item.is-checked {
+.markdown-preview-view ul > li.task-list-item.is-checked,
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task='x'],
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task='X'] {
   text-decoration: none;
-  color: var(--text-normal);
-} */
+}
 .markdown-preview-view .task-list-item-checkbox {
   width: 16px;
   height: 16px;
