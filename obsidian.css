@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 THINGS
-Version 1.7.5
+Version 1.7.6
 Created by @colineckert
 
 Readme:
@@ -1095,13 +1095,6 @@ input.prompt-input:hover {
 
 .markdown-source-view .cm-s-obsidian .cm-hmd-frontmatter {
   font-family: var(--font-monospace);
-}
-
-.theme-light .cm-def {
-  color: #dd4a68 !important;
-}
-.theme-light .cm-number {
-  color: #905 !important;
 }
 
 /* --------------- */
@@ -2803,9 +2796,47 @@ input.search-input:focus {
 /* Workplace ribbon & sidedock icons */
 /* --------------- */
 
+.workspace-ribbon {
+  flex: 0 0 42px;
+  padding-top: 7px;
+}
+.workspace-ribbon.mod-right {
+  right: 4px;
+  bottom: 0;
+  height: 32px;
+  padding-top: 6px;
+  position: absolute;
+  background: 0 0;
+  border: 0;
+}
 .workspace-ribbon-collapse-btn {
   margin: 0;
-  padding: 12px 5px;
+  padding: 2px 4px;
+}
+.mod-right .workspace-ribbon-collapse-btn {
+  background-color: var(--background-primary);
+}
+.mod-right .workspace-ribbon-collapse-btn:hover {
+  background-color: var(--background-tertiary);
+}
+.workspace-ribbon.mod-left .workspace-ribbon-collapse-btn,
+.workspace-ribbon.mod-right .workspace-ribbon-collapse-btn {
+  opacity: 1;
+  position: fixed;
+  width: 26px;
+  display: flex;
+  align-items: center;
+  top: auto;
+  text-align: center;
+  bottom: 42px;
+  right: 15px;
+  z-index: 9;
+}
+.workspace-ribbon.mod-left .workspace-ribbon-collapse-btn {
+  left: 8px;
+}
+.side-dock-settings {
+  padding-bottom: 30px;
 }
 .workspace-ribbon-collapse-btn,
 .view-action,
@@ -3136,11 +3167,15 @@ pre .copy-code-button:hover {
 .token.cdata {
   color: var(--atom-gray-1) !important;
 }
-.token.punctuation {
+.token.punctuation,
+.cm-hmd-codeblock {
   color: var(--atom-gray-2) !important;
 }
+code[class*='language-'],
 .token.selector,
-.token.tag {
+.token.tag,
+.cm-def,
+.cm-property {
   color: var(--atom-red) !important;
 }
 .token.property,
@@ -3149,17 +3184,20 @@ pre .copy-code-button:hover {
 .token.constant,
 .token.symbol,
 .token.attr-name,
-.token.deleted {
+.token.deleted,
+.cm-number {
   color: var(--atom-orange) !important;
 }
 .token.string,
 .token.char,
 .token.attr-value,
 .token.builtin,
-.token.inserted {
+.token.inserted,
+.cm-string {
   color: var(--atom-green) !important;
 }
 .token.operator,
+.cm-operator,
 .token.entity,
 .token.url,
 .language-css .token.string,
@@ -3167,14 +3205,20 @@ pre .copy-code-button:hover {
   color: var(--atom-aqua) !important;
 }
 .token.atrule,
-.token.keyword {
+.token.keyword,
+.cm-keyword {
   color: var(--atom-purple) !important;
 }
 .token.function,
-.token.macro.property {
+.token.macro.property,
+.cm-variable {
   color: var(--atom-blue) !important;
 }
-.token.class-name {
+.token.class-name,
+.cm-atom,
+.cm-tag,
+.cm-type,
+.theme-dark .cm-variable-2 {
   color: var(--atom-yellow) !important;
 }
 .token.regex,
@@ -3225,6 +3269,9 @@ pre.line-numbers > code {
   display: block !important;
   padding-right: 0.8em !important;
   text-align: right !important;
+}
+.cm-s-obsidian .HyperMD-codeblock {
+  line-height: 1.5 !important;
 }
 
 /* --------------- */
