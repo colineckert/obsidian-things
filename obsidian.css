@@ -2811,7 +2811,8 @@ input.search-input:focus {
 }
 .workspace-ribbon-collapse-btn {
   margin: 0;
-  padding: 2px 4px;
+  padding: 5px 4px;
+  border-radius: 5px;
 }
 .mod-right .workspace-ribbon-collapse-btn {
   background-color: var(--background-primary);
@@ -3168,14 +3169,15 @@ pre .copy-code-button:hover {
   color: var(--atom-gray-1) !important;
 }
 .token.punctuation,
-.cm-hmd-codeblock {
+.cm-hmd-codeblock,
+.cm-bracket {
   color: var(--atom-gray-2) !important;
 }
 code[class*='language-'],
 .token.selector,
 .token.tag,
-.cm-def,
-.cm-property {
+code .cm-property,
+.cm-def {
   color: var(--atom-red) !important;
 }
 .token.property,
@@ -3193,7 +3195,7 @@ code[class*='language-'],
 .token.attr-value,
 .token.builtin,
 .token.inserted,
-.cm-string {
+code .cm-string {
   color: var(--atom-green) !important;
 }
 .token.operator,
@@ -3216,7 +3218,7 @@ code[class*='language-'],
 }
 .token.class-name,
 .cm-atom,
-.cm-tag,
+code .cm-tag,
 .cm-type,
 .theme-dark .cm-variable-2 {
   color: var(--atom-yellow) !important;
