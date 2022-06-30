@@ -1246,9 +1246,9 @@ body.is-dragging {
   transition: opacity 0.1s ease-in-out;
   cursor: var(--cursor);
 }
-/* .view-header-icon {
+.view-header-icon {
   opacity: 0;
-} */
+}
 .workspace-leaf-content[data-type='search'] .nav-action-button.is-active,
 .workspace-leaf-content[data-type='backlink'] .nav-action-button.is-active,
 .workspace-leaf-content[data-type='tag'] .nav-action-button.is-active,
@@ -4732,7 +4732,7 @@ body.plugin-sliding-panes.plugin-sliding-panes-rotate-header
   > .workspace-leaf-content
   > .view-header
   .view-actions {
-  padding-bottom: 33px;
+  margin-bottom: 16px;
 }
 /* Space for the hover ribbon in the bottom left with Hider */
 body.hider-ribbon.plugin-sliding-panes.plugin-sliding-panes-rotate-header
@@ -4754,7 +4754,7 @@ body.plugin-sliding-panes.plugin-sliding-panes-rotate-header
   > .workspace-leaf-content
   > .view-header
   .view-action {
-  margin: 3px 0;
+  margin: 5px 0 !important;
   padding: 4px 1px;
   width: 26px;
 }
