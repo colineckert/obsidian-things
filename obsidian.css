@@ -147,6 +147,7 @@ For help and/or CSS snippets, thanks to:
   --max-width: 90%; /* Amount of padding around the text, use 90% for narrower padding */
   --nested-padding: 3.5%; /* Amount of padding for quotes and transclusions */
   --input-height: 36px;
+  --list-indent: 2em;
 
   --font-todoist-title-size: 1em;
   --font-todoist-metadata-size: small;
@@ -2762,9 +2763,6 @@ input.search-input:focus {
 .status-bar .plugin-sync:hover .sync-status-icon.mod-working {
   color: var(--text-normal);
 }
-.status-bar-item {
-  padding: 0 5px;
-}
 .status-bar-item-segment {
   margin-right: 10px;
 }
@@ -3061,16 +3059,32 @@ del,
   background: var(--background-secondary);
 }
 
-/* Preview Mode Lists  */
-
+/* Lists  */
 ul {
-  padding-inline-start: 2em;
+  padding-inline-start: var(--list-indent);
 }
 ol {
-  padding-inline-start: 1em;
-  margin-left: 1em;
+  padding-inline-start: var(--list-indent);
+  margin-left: 0;
   list-style: default;
-  position: relative;
+}
+.is-mobile ul > li:not(.task-list-item)::marker {
+  font-size: 0.8em;
+}
+.is-mobile .markdown-rendered ol,
+.is-mobile .markdown-rendered ul {
+  padding-inline-start: var(--list-indent);
+}
+.is-mobile .markdown-rendered div > ol,
+.is-mobile .markdown-rendered div > ul {
+  padding-inline-start: 2em;
+}
+.is-mobile .el-ol > ol,
+.is-mobile .el-ul > ul {
+  margin-left: 0;
+}
+.cm-line:not(.HyperMD-codeblock) {
+  tab-size: var(--list-indent);
 }
 ul > li {
   min-height: 1.4em;
@@ -4887,7 +4901,6 @@ body.plugin-sliding-panes .mod-root .graph-controls {
 }
 
 /* Title bar / traffic light icons */
-/* TODO: fix for Live Preview */
 .mod-macos.hider-frameless.hider-ribbon:not(.plugin-sliding-panes-rotate-header) {
   --traffic-space: 80px;
   --traffic-padding: 60px;
@@ -4911,6 +4924,51 @@ body.plugin-sliding-panes .mod-root .graph-controls {
   .workspace-leaf-content:not([data-type='graph'])
   .view-header-icon {
   margin-left: var(--traffic-padding);
+}
+
+body:not(.plugin-sliding-panes-rotate-header)
+  .app-container
+  .workspace-split.mod-root
+  > .workspace-leaf
+  .view-header {
+  transition: height linear 0.1s;
+}
+
+:root {
+  --traffic-x-space: 0px;
+}
+.mod-macos.hider-frameless:not(.is-fullscreen):not(.plugin-sliding-panes-rotate-header)
+  .workspace-split.mod-left-split.is-collapsed
+  + .mod-root
+  .workspace-leaf:first-of-type
+  .view-header-title-container {
+  max-width: calc(100% - (var(--traffic-x-space) * 2) - 30px);
+}
+.mod-macos.is-popout-window.hider-frameless:not(.is-fullscreen):not(.plugin-sliding-panes-rotate-header)
+  .mod-root
+  .workspace-leaf:first-of-type
+  .view-header-title-container {
+  max-width: calc(100% - (var(--traffic-x-space) * 2) - 30px);
+}
+.mod-macos.hider-ribbon.hider-frameless:not(.is-fullscreen):not(.plugin-sliding-panes-rotate-header)
+  .workspace-split.mod-left-split.is-collapsed
+  + .mod-root
+  .workspace-leaf:first-of-type {
+  --traffic-x-space: 64px;
+}
+.mod-macos.is-popout-window.hider-ribbon.hider-frameless:not(.is-fullscreen):not(.plugin-sliding-panes-rotate-header)
+  .mod-root
+  .workspace-leaf:first-of-type {
+  --traffic-x-space: 64px;
+}
+.mod-macos.hider-frameless:not(.is-fullscreen):not(.plugin-sliding-panes-rotate-header)
+  .workspace-split.mod-left-split.is-collapsed
+  + .mod-root
+  .workspace-leaf:first-of-type {
+  --traffic-x-space: 22px;
+}
+.mod-macos.hider-frameless .workspace-ribbon {
+  border: none;
 }
 
 /* --------------- */
@@ -5559,6 +5617,20 @@ body .kanban-plugin__markdown-preview-view ul,
   border-bottom: 1px solid var(--text-faint);
   cursor: var(--cursor);
   font-family: var(--font-monospace);
+}
+
+/* --------------- */
+/* Day Planner */
+/* --------------- */
+
+.plugin-obsidian-day-planner {
+  display: flex !important;
+  align-items: center;
+}
+.day-planner {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 /* --------------- */
