@@ -954,6 +954,7 @@ input.prompt-input {
   padding-left: 10px;
   height: 40px;
   line-height: 4;
+  font-size: var(--font-adaptive-normal);
 }
 input.prompt-input:hover {
   border: 0;
@@ -1482,7 +1483,7 @@ body.full-borders .side-dock-ribbon {
 /* EDITOR MODE */
 /* --------------- */
 
-/* Fancy cursor - commented out due to text selection behavior */
+/* Fancy cursor */
 /* .CodeMirror-cursor,
 .cm-s-obsidian .cm-cursor {
   border: none;
@@ -1801,21 +1802,11 @@ input.document-replace-input:focus {
 /* Form inputs */
 /* --------------- */
 
-/* textarea,
-input[type='text'],
-input[type='search'],
-input[type='email'],
-input[type='password'],
-input[type='number'],
-button {
-  font-size: var(--font-normal);
-  font-family: var(--font-ui);
-} */
 input[type='email'],
 input[type='number'],
 input[type='password'],
 input[type='search'],
-input[type='text'],
+/* input[type='text'], */
 textarea {
   font-family: var(--font-ui);
   font-size: var(--font-inputs);
@@ -3209,7 +3200,7 @@ code .cm-property,
 .token.attr-value,
 .token.builtin,
 .token.inserted,
-code .cm-string {
+.cm-hmd-codeblock.cm-string {
   color: var(--atom-green) !important;
 }
 .token.operator,
@@ -3288,6 +3279,18 @@ pre.line-numbers > code {
 }
 .cm-s-obsidian .HyperMD-codeblock {
   line-height: 1.5 !important;
+}
+.markdown-source-view.mod-cm6.is-readable-line-width
+  .cm-editor
+  .HyperMD-codeblock.cm-line,
+.mod-cm6 .cm-editor .HyperMD-codeblock.cm-line {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.markdown-source-view.mod-cm6 .code-block-flair {
+  font-size: var(--font-smaller);
+  padding: 5px 0;
+  color: var(--text-muted);
 }
 
 /* --------------- */
@@ -4634,100 +4637,44 @@ body.plugin-sliding-panes-rotate-header {
 body.plugin-sliding-panes-rotate-header .view-header-title:before {
   display: none;
 }
-body.plugin-sliding-panes.plugin-sliding-panes-rotate-header
+body:not(.is-popout-window).plugin-sliding-panes .workspace-split.mod-root {
+  background-color: var(--background-primary);
+}
+body:not(.is-popout-window).plugin-sliding-panes
+  .mod-horizontal
+  .workspace-leaf {
+  box-shadow: none !important;
+}
+body:not(.is-popout-window).plugin-sliding-panes:not(.is-fullscreen)
+  .workspace-split.is-collapsed
+  ~ .workspace-split.mod-root
+  .view-header {
+  transition: padding 0.1s ease;
+}
+body:not(.is-popout-window).plugin-sliding-panes .view-header-title:before {
+  background: 0 0;
+}
+body:not(.is-popout-window).plugin-sliding-panes .view-header {
+  background: 0 0;
+}
+body:not(.is-popout-window).plugin-sliding-panes.plugin-sliding-panes-rotate-header
+  .workspace
+  > .mod-root
+  > .workspace-leaf.mod-active
+  > .workspace-leaf-content
+  > .view-header {
+  border: none;
+}
+body:not(.is-popout-window).plugin-sliding-panes.plugin-sliding-panes-rotate-header
   .workspace
   > .mod-root
   > .workspace-leaf
   > .workspace-leaf-content
   > .view-header {
   border: none;
-}
-body.plugin-sliding-panes.plugin-sliding-panes-rotate-header
-  .workspace
-  > .mod-root
-  > .workspace-leaf
-  > .workspace-leaf-content
-  > .view-header
-  > .view-header-title-container:before,
-body.plugin-sliding-panes.plugin-sliding-panes-rotate-header
-  .app-container
-  .workspace
-  > .mod-root
-  > .workspace-leaf.mod-active
-  > .workspace-leaf-content
-  > .view-header
-  > .view-header-title-container:before {
-  background: none !important;
-}
-body.plugin-sliding-panes-rotate-header .workspace > .mod-root .view-header {
   text-orientation: sideways;
 }
-body.plugin-sliding-panes.plugin-sliding-panes-rotate-header
-  .workspace
-  > .mod-root
-  > .workspace-leaf.mod-active
-  > .workspace-leaf-content
-  > .view-header {
-  border-right: none;
-}
-body.plugin-sliding-panes-stacking .workspace > .mod-root > .workspace-leaf,
-body.plugin-sliding-panes .workspace-split.mod-vertical > .workspace-leaf {
-  box-shadow: 0 0 0 1px var(--background-modifier-border),
-    1px 0px 15px 0px var(--shadow-color) !important;
-}
-body.plugin-sliding-panes .mod-horizontal .workspace-leaf {
-  box-shadow: none !important;
-}
-body.plugin-sliding-panes:not(.is-fullscreen)
-  .workspace-split.is-collapsed
-  ~ .workspace-split.mod-root
-  .view-header {
-  transition: padding 0.1s ease;
-}
-body.plugin-sliding-panes .view-header-title:before {
-  background: none;
-}
-body.plugin-sliding-panes .view-header {
-  background: none;
-}
-body.plugin-sliding-panes-rotate-header
-  .workspace
-  > .mod-root
-  .view-header-title-container
-  body.plugin-sliding-panes-rotate-header.plugin-sliding-panes-header-alt
-  .workspace
-  > .mod-root
-  .view-header-title {
-  margin-top: 0;
-}
-body.plugin-sliding-panes-rotate-header
-  .workspace
-  > .mod-root
-  .view-header-title-container {
-  margin-left: 0;
-  padding-top: 0;
-}
-body.plugin-sliding-panes-rotate-header .view-header-title-container {
-  position: static;
-}
-body.plugin-sliding-panes-rotate-header
-  .app-container
-  .workspace
-  > .mod-root
-  > .workspace-leaf
-  > .workspace-leaf-content
-  > .view-header
-  > div {
-  margin-left: 0px;
-  bottom: 0;
-}
-body.plugin-sliding-panes-rotate-header .view-header-icon {
-  opacity: var(--icon-muted);
-}
-body.plugin-sliding-panes-rotate-header .view-header-icon:hover {
-  opacity: 1;
-}
-body.plugin-sliding-panes.plugin-sliding-panes-rotate-header
+body:not(.is-popout-window).plugin-sliding-panes.plugin-sliding-panes-rotate-header
   .workspace
   > .mod-root
   > .workspace-leaf
@@ -4739,16 +4686,98 @@ body.plugin-sliding-panes.plugin-sliding-panes-rotate-header
   left: 0;
   width: 26px;
 }
-body.plugin-sliding-panes.plugin-sliding-panes-rotate-header
+body:not(.is-popout-window).plugin-sliding-panes.plugin-sliding-panes-rotate-header
   .workspace
   > .mod-root
   > .workspace-leaf
   > .workspace-leaf-content
   > .view-header
   .view-actions {
-  margin-bottom: 16px;
+  padding-bottom: 33px;
+  margin-left: 0;
+  height: auto;
 }
-/* Space for the hover ribbon in the bottom left with Hider */
+body:not(.is-popout-window).plugin-sliding-panes.plugin-sliding-panes-rotate-header
+  .workspace
+  > .mod-root
+  > .workspace-leaf
+  > .workspace-leaf-content
+  > .view-header
+  .view-action {
+  margin: 3px 0;
+  padding: 4px 1px;
+  width: 26px;
+}
+body:not(.is-popout-window).plugin-sliding-panes.plugin-sliding-panes-rotate-header
+  .app-container
+  .workspace
+  > .mod-root
+  > .workspace-leaf.mod-active
+  > .workspace-leaf-content
+  > .view-header
+  > .view-header-title-container:before,
+body:not(.is-popout-window).plugin-sliding-panes.plugin-sliding-panes-rotate-header
+  .workspace
+  > .mod-root
+  > .workspace-leaf
+  > .workspace-leaf-content
+  > .view-header
+  > .view-header-title-container:before {
+  background: 0 0 !important;
+}
+.workspace
+  > .mod-root
+  .view-header-title-container
+  body:not(.is-popout-window).plugin-sliding-panes.plugin-sliding-panes-rotate-header.plugin-sliding-panes-header-alt
+  .workspace
+  > .mod-root
+  .view-header-title {
+  margin-top: 0;
+}
+body:not(.is-popout-window).plugin-sliding-panes.plugin-sliding-panes-rotate-header
+  .workspace
+  > .mod-root
+  .view-header-title-container {
+  margin-left: 0;
+  padding-top: 0;
+}
+body:not(.is-popout-window).plugin-sliding-panes.plugin-sliding-panes-rotate-header
+  .view-header-title-container {
+  position: static;
+}
+body:not(.is-popout-window).plugin-sliding-panes.plugin-sliding-panes-rotate-header
+  .app-container
+  .workspace
+  > .mod-root
+  > .workspace-leaf
+  > .workspace-leaf-content
+  > .view-header
+  > div {
+  margin-left: 0;
+  bottom: 0;
+}
+body:not(.is-popout-window).plugin-sliding-panes.plugin-sliding-panes-rotate-header
+  .view-header-icon {
+  opacity: var(--icon-muted);
+}
+body:not(.is-popout-window).plugin-sliding-panes.plugin-sliding-panes-rotate-header
+  .view-header-icon:hover {
+  opacity: 1;
+}
+body.plugin-sliding-panes .workspace-split.mod-vertical > .workspace-leaf,
+body.plugin-sliding-panes-stacking .workspace > .mod-root > .workspace-leaf {
+  box-shadow: 0 0 0 1px var(--background-modifier-border),
+    1px 0 15px 0 var(--shadow-color) !important;
+}
+body.is-mobile.plugin-sliding-panes.plugin-sliding-panes-rotate-header
+  .workspace
+  > .mod-root
+  > .workspace-leaf
+  > .workspace-leaf-content
+  > .view-header
+  .view-header-icon {
+  height: 30px;
+}
 body.hider-ribbon.plugin-sliding-panes.plugin-sliding-panes-rotate-header
   .workspace
   > .mod-root
@@ -4760,17 +4789,6 @@ body.hider-ribbon.plugin-sliding-panes.plugin-sliding-panes-rotate-header
 }
 body.plugin-sliding-panes.is-fullscreen .view-header-icon {
   padding-top: 8px;
-}
-body.plugin-sliding-panes.plugin-sliding-panes-rotate-header
-  .workspace
-  > .mod-root
-  > .workspace-leaf
-  > .workspace-leaf-content
-  > .view-header
-  .view-action {
-  margin: 5px 0 !important;
-  padding: 4px 1px;
-  width: 26px;
 }
 body.plugin-sliding-panes .mod-root .graph-controls {
   top: 20px;
@@ -4901,6 +4919,7 @@ body.plugin-sliding-panes .mod-root .graph-controls {
 }
 
 /* Title bar / traffic light icons */
+/* TODO: fix for Live Preview */
 .mod-macos.hider-frameless.hider-ribbon:not(.plugin-sliding-panes-rotate-header) {
   --traffic-space: 80px;
   --traffic-padding: 60px;
