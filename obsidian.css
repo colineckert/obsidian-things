@@ -1392,7 +1392,7 @@ body.hider-frameless .titlebar {
   transition: opacity 100ms ease-out;
 }
 .titlebar-button {
-  opacity: 0.5;
+  opacity: 1;
   cursor: var(--cursor);
   color: var(--text-muted);
   padding: 2px 4px;
