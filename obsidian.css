@@ -1583,7 +1583,7 @@ body.full-borders .side-dock-ribbon {
 }
 .file-embed-link svg,
 .markdown-embed-link svg {
-  width: 16px;
+  width: 20px;
   opacity: 0;
 }
 .markdown-embed:hover .file-embed-link svg,
