@@ -1251,6 +1251,12 @@ body.is-dragging {
 .view-header-icon {
   opacity: 0;
 }
+.is-mobile.show-mobile-hamburger .view-header-icon {
+	opacity: 1;
+	transform: scale(1.4);
+	padding: 0px 15px;
+	top:5px;
+ } 
 .workspace-leaf-content[data-type='search'] .nav-action-button.is-active,
 .workspace-leaf-content[data-type='backlink'] .nav-action-button.is-active,
 .workspace-leaf-content[data-type='tag'] .nav-action-button.is-active,
@@ -4248,8 +4254,11 @@ body:not(.is-ios).is-mobile .workspace-drawer-ribbon {
   border: 0;
   background-color: var(--background-secondary);
 }
-.is-mobile .view-header-icon .three-horizontal-bars {
-  opacity: 0;
+.is-mobile.show-mobile-hamburger .view-header-icon .three-horizontal-bars {
+  opacity: 1;
+}
+.is-mobile.show-mobile-hamburger .view-header .view-header-title-container{
+	left: 50px;
 }
 .is-mobile.plugin-sliding-panes .view-header-title {
   mask-image: unset;
@@ -4296,8 +4305,8 @@ body:not(.is-ios).is-mobile .workspace-drawer-ribbon {
 /* --------------- */
 
 @media (max-width: 400pt) {
-  .view-header-icon {
-    display: none;
+  .is-mobile.show-mobile-hamburger .view-header-icon {
+	display: block;
   }
   .is-mobile .suggestion-hotkey {
     display: none;
@@ -6634,6 +6643,12 @@ settings:
         description: Show underlines on external links
         type: class-toggle
         default:  true
+	-
+		id: show-mobile-hamburger
+		title: Display hamburger menu on mobile
+		description: Display the top-left hamburger menu on mobile
+		type: class-toggle
+		default: false
     -
         id: fonts
         title: Fonts
