@@ -6698,7 +6698,7 @@ settings:
         format: hex
         default: '#FF82B2' 
     - 
-        id: green
+        id: code-color
         title: Blockquotes font color
         type: variable-color
         format: hex
