@@ -153,6 +153,7 @@ For help and/or CSS snippets, thanks to:
   --font-todoist-metadata-size: small;
 
   --cursor: default;
+  --h4-transform: uppercase;
 }
 
 /* Desktop fonts */
@@ -651,7 +652,7 @@ button,
   font-size: var(--h4) !important;
   color: var(--h4-color);
   font-weight: var(--h4-weight) !important;
-  text-transform: uppercase;
+  text-transform: var(--h4-transform);
 }
 .markdown-preview-view h5,
 .HyperMD-header-5 .cm-header-5,
@@ -6870,6 +6871,19 @@ settings:
         type: variable-color
         format: hex
         default: '#E5B567'
+    -
+        id: h4-transform
+        title: H4 transform
+        description: Transform the H4 heading text
+        type: variable-select
+        default: uppercase
+        options:
+            -
+                label: Uppercase
+                value: uppercase
+            -
+                label: None
+                value: none
     - 
         id: level-5-headings
         title: Level 5 Headings
