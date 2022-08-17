@@ -310,7 +310,8 @@ body {
   /* --tag-font-color: rgb(29, 105, 75); */
   --tag-font-color-l: #1d694b;
 
-  --code-color: #5c5c5c;
+  --code-color-l: #5c5c5c;
+  --code-color: var(--code-color-l);
   --atom-gray-1: #383a42;
   --atom-gray-2: #383a42;
   --atom-red: #e75545;
@@ -428,7 +429,8 @@ body {
   --tag-background-color-d: rgb(29, 105, 75);
   --tag-font-color-d: var(--text-normal);
 
-  --code-color: #a6a6a6;
+  --code-color-d: #a6a6a6;
+  --code-color: var(--code-color-d);
   --atom-gray-1: #5c6370;
   --atom-gray-2: #abb2bf;
   --atom-red: #e06c75;
@@ -6703,6 +6705,18 @@ settings:
         type: variable-color
         format: hex
         default: '#3EB4BF' 
+    -
+        id: code-color-l
+        title: Inline code blocks font color (Light mode)
+        type: variable-color
+        format: hex
+        default: '#5C5C5C'
+    -
+        id: code-color-d
+        title: Inline code blocks font color (Dark mode)
+        type: variable-color
+        format: hex
+        default: '#A6A6A6'
     - 
         id: tag-background-color-l
         title: Tag background color (Light mode)
