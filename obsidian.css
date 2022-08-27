@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 THINGS
-Version 1.7.6
+Version 1.7.7
 Created by @colineckert
 
 Readme:
@@ -77,30 +77,6 @@ For help and/or CSS snippets, thanks to:
   --orange-highlighter: #ffb86ca6;
   --grey-highlighter: #cacfd9a6;
 
-  /*----------------------------------------------------------------
-  FONTS
-  ----------------------------------------------------------------*/
-
-  /* Preview mode */
-
-  --text: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans,
-    Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-
-  /* Editor mode */
-
-  --text-editor: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-
-  /* Code */
-
-  --font-monospace: 'JetBrains Mono', SFMono-Regular, Consolas, 'Roboto Mono',
-    monospace;
-
-  /* UI */
-
-  --font-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans,
-    Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-
   /* Colors, sizes, weights, padding */
 
   --h1-color: var(--text-normal);
@@ -117,7 +93,6 @@ For help and/or CSS snippets, thanks to:
   --font-small: 13px;
   --font-smaller: 11px;
   --font-smallest: 10px;
-  --editor-font-size: 1rem;
 
   --font-settings: 15px;
   --font-settings-small: 13px;
@@ -158,11 +133,22 @@ For help and/or CSS snippets, thanks to:
 
 /* Desktop fonts */
 body {
-  --font-adaptive-normal: var(--font-normal);
+  --font-adaptive-normal: var(--font-text-size, var(--editor-font-size));
   --font-adaptive-small: var(--font-small);
   --font-adaptive-smaller: var(--font-smaller);
   --font-adaptive-smallest: var(--font-smallest);
   --line-width-adaptive: var(--line-width);
+
+  --font-text-theme: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Inter, Ubuntu, sans-serif;
+  --font-editor-theme: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Inter, Ubuntu, sans-serif;
+  --font-monospace-theme: 'JetBrains', Menlo, SFMono-Regular, Consolas,
+    'Roboto Mono', monospace;
+  --font-interface-theme: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Inter, Ubuntu, sans-serif;
+  --font-editor: var(--font-editor-override), var(--font-text-override),
+    var(--font-editor-theme);
 }
 
 /* Tablet fonts */
@@ -505,26 +491,12 @@ body:not(.is-mobile) .markdown-source-view.mod-cm6 .list-bullet:after {
   caret-color: var(--text-accent);
 } */
 
-/* ---------------------- */
-
-/* Headings and fonts */
-html {
-  font-size: var(--editor-font-size);
-}
-
 body {
   -webkit-font-smoothing: auto;
 }
 
-body {
-  --preview-font-size: var(--editor-font-size);
-  --preview-line-height: var(--line-height);
-  --preview-font-weight: var(--normal-weight);
-}
-
 .markdown-reading-view,
 .markdown-preview-view {
-  font-family: var(--text);
   font-size: var(--preview-font-size) !important;
   font-weight: var(--preview-font-weight);
   line-height: var(--preview-line-heightline-height);
@@ -556,12 +528,6 @@ h2 {
   padding-bottom: 2px;
 }
 
-body,
-input,
-button {
-  font-family: var(--font-ui);
-}
-
 .popover,
 .vertical-tab-content-container,
 .workspace-leaf-content[data-type='markdown'] {
@@ -579,14 +545,22 @@ button,
   line-height: var(--line-height);
   -webkit-font-smoothing: subpixel-antialiased;
 }
+
 .markdown-source-view.mod-cm6 .cm-scroller,
 .markdown-source-view,
 .cm-s-obsidian .cm-formatting-hashtag,
 .cm-s-obsidian,
 .cm-s-obsidian span.cm-formatting-task {
   line-height: var(--line-height);
-  font-family: var(--text-editor);
+  font-family: var(--font-editor);
+  -webkit-font-smoothing: subpixel-antialiased;
 }
+
+/* Use reading font in live preview */
+.lp-reading-font .markdown-source-view.mod-cm6.is-live-preview .cm-scroller {
+  font-family: var(--font-text);
+}
+
 .cm-s-obsidian span.cm-formatting-task {
   font-family: var(--font-monospace); /* Editor task is monospace */
   line-height: var(--line-height);
@@ -717,7 +691,6 @@ span.cm-formatting-highlight {
   color: var(--tag-font-color-l);
   font-size: var(--font-adaptive-small);
   font-weight: 500;
-  font-family: var(--font-ui);
   padding: 3px 8px;
   text-align: center;
   text-decoration: none;
@@ -733,7 +706,6 @@ span.cm-formatting-highlight {
   color: var(--tag-font-color-d);
   font-size: var(--font-adaptive-small);
   font-weight: 500;
-  font-family: var(--font-ui);
   padding: 3px 8px;
   text-align: center;
   text-decoration: none;
@@ -747,7 +719,6 @@ span.cm-formatting-highlight {
   background-color: var(--tag-background-color-l);
   color: var(--tag-font-color-l);
   font-size: var(--font-adaptive-small);
-  font-family: var(--font-ui);
   font-weight: 500;
   text-align: center;
   text-decoration: none;
@@ -761,7 +732,6 @@ span.cm-formatting-highlight {
   background-color: var(--tag-background-color-d);
   color: var(--tag-font-color-d);
   font-size: var(--font-adaptive-small);
-  font-family: var(--font-ui);
   font-weight: 500;
   text-align: center;
   text-decoration: none;
@@ -931,7 +901,6 @@ body:not(.is-mobile) .modal.mod-community-theme.mod-community-theme,
 }
 .setting-item-control button,
 button {
-  font-family: var(--font-ui);
   font-size: var(--font-inputs);
   font-weight: 400;
 }
@@ -944,7 +913,6 @@ button.mod-cta {
 }
 .dropdown,
 body .addChoiceBox #addChoiceTypeSelector {
-  font-family: var(--font-ui);
   font-size: var(--font-settings-small);
 }
 .progress-bar-message {
@@ -1255,11 +1223,11 @@ body.is-dragging {
   opacity: 0;
 }
 .is-mobile.show-mobile-hamburger .view-header-icon {
-	opacity: 1;
-	transform: scale(1.4);
-	padding: 0px 15px;
-	top:5px;
- } 
+  opacity: 1;
+  transform: scale(1.4);
+  padding: 0px 15px;
+  top: 5px;
+}
 .workspace-leaf-content[data-type='search'] .nav-action-button.is-active,
 .workspace-leaf-content[data-type='backlink'] .nav-action-button.is-active,
 .workspace-leaf-content[data-type='tag'] .nav-action-button.is-active,
@@ -1551,6 +1519,11 @@ body.full-borders .side-dock-ribbon {
   color: var(--text-faint) !important;
 }
 
+/* Mermaid */
+.mermaid svg {
+  width: 100%;
+}
+
 /* Transcluded notes and embeds */
 
 .markdown-preview-view.is-readable-line-width
@@ -1817,7 +1790,6 @@ input[type='password'],
 input[type='search'],
 /* input[type='text'], */
 textarea {
-  font-family: var(--font-ui);
   font-size: var(--font-inputs);
 }
 textarea {
@@ -3474,8 +3446,6 @@ input[type='range'] {
   margin: 0;
   border-radius: 0px;
 }
-/* input[type='range']:focus {
-} */
 input[type='range']::-webkit-slider-runnable-track {
   background: var(--background-modifier-border-hover);
   height: 2px;
@@ -3597,7 +3567,6 @@ input[type='range']::-webkit-slider-thumb:active {
 }
 .dropdown {
   border-color: var(--background-modifier-border);
-  font-family: var(--font-ui);
   background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
 }
 .theme-dark .dropdown {
@@ -3771,13 +3740,6 @@ Mobile styling
 /* Reset podding */
 body.is-mobile {
   padding: 0 !important;
-}
-/* Fix large edit mode headers in mobile */
-/* .is-mobile .cm-header {
-  font-size: 1em;
-} */
-.is-mobile .follow-link-popover {
-  font-family: var(--font-ui);
 }
 .hider-tooltips .follow-link-popover {
   display: none;
@@ -4260,8 +4222,8 @@ body:not(.is-ios).is-mobile .workspace-drawer-ribbon {
 .is-mobile.show-mobile-hamburger .view-header-icon .three-horizontal-bars {
   opacity: 1;
 }
-.is-mobile.show-mobile-hamburger .view-header .view-header-title-container{
-	left: 50px;
+.is-mobile.show-mobile-hamburger .view-header .view-header-title-container {
+  left: 50px;
 }
 .is-mobile.plugin-sliding-panes .view-header-title {
   mask-image: unset;
@@ -4309,7 +4271,7 @@ body:not(.is-ios).is-mobile .workspace-drawer-ribbon {
 
 @media (max-width: 400pt) {
   .is-mobile.show-mobile-hamburger .view-header-icon {
-	display: block;
+    display: block;
   }
   .is-mobile .suggestion-hotkey {
     display: none;
