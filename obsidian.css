@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 THINGS
-Version 1.7.7
+Version 1.7.8
 Created by @colineckert
 
 Readme:
@@ -44,6 +44,7 @@ For help and/or CSS snippets, thanks to:
 
 ────────────────────────────────────────────────────── */
 
+@charset "UTF-8";
 :root {
   /*----------------------------------------------------------------
   COLORS
@@ -482,15 +483,6 @@ body:not(.is-mobile) .markdown-source-view.mod-cm6 .list-bullet:after {
   top: 2px !important;
 }
 
-/* Cursor color */
-/* .markdown-source-view.mod-cm6.is-live-preview div.cm-editor .cm-cursor {
-  border-left-color: var(--text-accent);
-  border-width: 2px;
-}
-.markdown-source-view.mod-cm6.is-live-preview div.cm-editor div {
-  caret-color: var(--text-accent);
-} */
-
 body {
   -webkit-font-smoothing: auto;
 }
@@ -860,12 +852,19 @@ body:not(.is-mobile)
 .modal.mod-settings .vertical-tab-header {
   height: 80vh;
 }
-body:not(.is-mobile) .modal.mod-community-theme.mod-community-theme,
-.modal.mod-community-plugin {
-  width: 80vw;
-  max-width: 80vw;
-  min-height: 80vh;
-  overflow: hidden;
+body .modal.mod-community-theme {
+  max-width: 1000px;
+}
+.modal.mod-community-theme {
+  padding: 0;
+}
+body:not(.is-mobile) .theme-list .community-theme {
+  width: 100%;
+  padding: 18px;
+  border: 2px solid transparent;
+}
+.modal.mod-community-theme .modal-content {
+  padding: 30px;
 }
 .modal-title {
   text-align: left;
@@ -3505,7 +3504,8 @@ input[type='range']::-webkit-slider-thumb:active {
 /* --------------- */
 
 .modal-close-button {
-  top: 0;
+  top: 2px;
+  padding: 0;
   cursor: var(--cursor);
   font-size: 24px;
   color: var(--text-faint);
