@@ -134,12 +134,7 @@ For help and/or CSS snippets, thanks to:
 
 /* Desktop fonts */
 body {
-  --font-adaptive-normal: var(--font-text-size, var(--editor-font-size));
-  --font-adaptive-small: var(--font-small);
-  --font-adaptive-smaller: var(--font-smaller);
-  --font-adaptive-smallest: var(--font-smallest);
-  --line-width-adaptive: var(--line-width);
-
+  /* Font families */
   --font-text-theme: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Inter, Ubuntu, sans-serif;
   --font-editor-theme: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
@@ -150,27 +145,34 @@ body {
     Inter, Ubuntu, sans-serif;
   --font-editor: var(--font-editor-override), var(--font-text-override),
     var(--font-editor-theme);
+
+  /* Font sizes */
+  --font-adaptive-normal: var(--font-text-size, var(--editor-font-size));
+  --font-adaptive-small: var(--font-small);
+  --font-adaptive-smaller: var(--font-smaller);
+  --font-adaptive-smallest: var(--font-smallest);
+  --line-width-adaptive: var(--line-width);
+  --line-width-wide: calc(var(--line-width) + 12.5%);
+  --font-code: calc(var(--font-adaptive-normal) * 0.9);
 }
 
-/* Tablet fonts */
-@media (min-width: 400pt) {
-  .is-mobile {
-    --font-adaptive-normal: calc(var(--font-normal) + 4px);
-    --font-adaptive-small: calc(var(--font-small) + 3px);
-    --font-adaptive-smaller: calc(var(--font-smaller) + 2px);
-    --font-adaptive-smallest: calc(var(--font-smallest) + 2px);
-    --line-width-adaptive: calc(var(--line-width) + 6rem);
-    --max-width: 90%;
-  }
-}
-
-/* Phone fonts */
+/* Phone font sizes */
 @media (max-width: 400pt) {
   .is-mobile {
     --font-adaptive-small: calc(var(--font-small) + 2px);
     --font-adaptive-smaller: calc(var(--font-smaller) + 2px);
     --font-adaptive-smallest: calc(var(--font-smallest) + 2px);
-    --max-width: 85%;
+    --max-width: 88%;
+  }
+}
+/* Tablet font sizes */
+@media (min-width: 400pt) {
+  .is-mobile {
+    --font-adaptive-small: calc(var(--font-small) + 3px);
+    --font-adaptive-smaller: calc(var(--font-smaller) + 2px);
+    --font-adaptive-smallest: calc(var(--font-smallest) + 2px);
+    --line-width-adaptive: calc(var(--line-width) + 6rem);
+    --max-width: 90%;
   }
 }
 
@@ -481,25 +483,6 @@ body:not(.is-mobile) .markdown-source-view.mod-cm6 .list-bullet:after {
 /* Align collapse-indicators */
 .is-live-preview .collapse-indicator.collapse-icon {
   top: 2px !important;
-}
-
-body {
-  -webkit-font-smoothing: auto;
-}
-
-.markdown-reading-view,
-.markdown-preview-view {
-  font-size: var(--preview-font-size) !important;
-  font-weight: var(--preview-font-weight);
-  line-height: var(--preview-line-heightline-height);
-}
-
-.CodeMirror,
-.markdown-source-view,
-.cm-s-obsidian {
-  font-size: var(--editor-font-size) !important;
-  font-weight: var(--normal-weight);
-  line-height: var(--line-height);
 }
 
 .cm-strong,
@@ -854,6 +837,8 @@ body:not(.is-mobile)
 }
 body .modal.mod-community-theme {
   max-width: 1000px;
+  border: 1px solid var(--background-modifier-border);
+  overflow: hidden;
 }
 .modal.mod-community-theme {
   padding: 0;
@@ -861,7 +846,7 @@ body .modal.mod-community-theme {
 body:not(.is-mobile) .theme-list .community-theme {
   width: 100%;
   padding: 18px;
-  border: 2px solid transparent;
+  border: 1px solid var(--background-modifier-border);
 }
 .modal.mod-community-theme .modal-content {
   padding: 30px;
