@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 THINGS
-Version 1.7.8
+Version 1.8.0
 Created by @colineckert
 
 Readme:
@@ -3492,20 +3492,6 @@ input[type='range']::-webkit-slider-thumb:active {
 /* Settings */
 /* --------------- */
 
-.modal-close-button {
-  top: 2px;
-  padding: 0;
-  cursor: var(--cursor);
-  font-size: 24px;
-  color: var(--text-faint);
-}
-.modal-close-button:hover {
-  color: var(--text-normal);
-}
-.modal-close-button:before {
-  font-family: Inter, sans-serif;
-  font-weight: 200;
-}
 .horizontal-tab-content,
 .vertical-tab-content {
   background: var(--background-primary);
@@ -3726,14 +3712,12 @@ Mobile styling
   --font-settings-small: 13px;
   --input-height: 40px;
 }
-/* Reset podding */
 body.is-mobile {
   padding: 0 !important;
 }
 .hider-tooltips .follow-link-popover {
   display: none;
 }
-.is-mobile .ͼ1 .cm-line,
 .is-mobile .workspace-drawer-tab-container > *,
 body.is-mobile .view-header-title,
 .is-mobile .allow-fold-headings.markdown-preview-view .markdown-preview-sizer,
@@ -3824,15 +3808,25 @@ body.is-mobile .view-header-title,
   font-size: var(--font-adaptive-small);
 }
 
+/* Modal close button */
+
+.is-mobile .modal-close-button {
+  display: block;
+  z-index: 2;
+  top: 0;
+  right: 12px;
+  padding: 4px;
+  font-size: 34px;
+  width: 34px;
+  height: 34px;
+}
+.is-mobile .modal-close-button:before {
+  font-weight: 300;
+  color: var(--text-muted);
+}
+
 /* Folding on mobile */
 
-.ͼ1 .cm-foldGutter .cm-gutterElement {
-  cursor: var(--cursor);
-}
-.ͼ1 .cm-foldPlaceholder {
-  background: transparent;
-  border-color: transparent;
-}
 .is-mobile .empty-state-action {
   border-radius: 6px;
   font-size: var(--font-adaptive-small);
@@ -3928,6 +3922,11 @@ body:not(.is-ios).is-mobile .workspace-drawer-ribbon {
   width: 100vw;
   max-height: 90vh;
   padding: 0;
+}
+.is-mobile .vertical-tab-header-group:last-child,
+.is-mobile .vertical-tab-content,
+.is-mobile .minimal-donation {
+  padding-bottom: 70px !important;
 }
 .is-mobile .modal.mod-settings .vertical-tab-header:before {
   content: 'Settings';
@@ -4027,10 +4026,6 @@ body:not(.is-ios).is-mobile .workspace-drawer-ribbon {
 .is-mobile .workspace-drawer-active-tab-container {
   background-color: var(--background-secondary);
 }
-/* Hide expand workspace icon */
-/* .workspace-drawer-active-tab-icon {
-  display: none;
-} */
 .is-mobile .menu {
   border: none;
   width: 100%;
@@ -4600,27 +4595,25 @@ body.plugin-sliding-panes-rotate-header {
 body.plugin-sliding-panes-rotate-header .view-header-title:before {
   display: none;
 }
-body:not(.is-popout-window).plugin-sliding-panes .workspace-split.mod-root {
+body.plugin-sliding-panes .workspace-split.mod-root {
   background-color: var(--background-primary);
 }
-body:not(.is-popout-window).plugin-sliding-panes
-  .mod-horizontal
-  .workspace-leaf {
+body.plugin-sliding-panes .mod-horizontal .workspace-leaf {
   box-shadow: none !important;
 }
-body:not(.is-popout-window).plugin-sliding-panes:not(.is-fullscreen)
+body.plugin-sliding-panes:not(.is-fullscreen)
   .workspace-split.is-collapsed
   ~ .workspace-split.mod-root
   .view-header {
   transition: padding 0.1s ease;
 }
-body:not(.is-popout-window).plugin-sliding-panes .view-header-title:before {
+body.plugin-sliding-panes .view-header-title:before {
   background: 0 0;
 }
-body:not(.is-popout-window).plugin-sliding-panes .view-header {
+body.plugin-sliding-panes .view-header {
   background: 0 0;
 }
-body:not(.is-popout-window).plugin-sliding-panes.plugin-sliding-panes-rotate-header
+body.plugin-sliding-panes.plugin-sliding-panes-rotate-header
   .workspace
   > .mod-root
   > .workspace-leaf.mod-active
@@ -4628,7 +4621,7 @@ body:not(.is-popout-window).plugin-sliding-panes.plugin-sliding-panes-rotate-hea
   > .view-header {
   border: none;
 }
-body:not(.is-popout-window).plugin-sliding-panes.plugin-sliding-panes-rotate-header
+body.plugin-sliding-panes.plugin-sliding-panes-rotate-header
   .workspace
   > .mod-root
   > .workspace-leaf
@@ -4637,7 +4630,7 @@ body:not(.is-popout-window).plugin-sliding-panes.plugin-sliding-panes-rotate-hea
   border: none;
   text-orientation: sideways;
 }
-body:not(.is-popout-window).plugin-sliding-panes.plugin-sliding-panes-rotate-header
+body.plugin-sliding-panes.plugin-sliding-panes-rotate-header
   .workspace
   > .mod-root
   > .workspace-leaf
@@ -4647,9 +4640,8 @@ body:not(.is-popout-window).plugin-sliding-panes.plugin-sliding-panes-rotate-hea
   padding: 4px 1px;
   margin: 5px 0 0 0;
   left: 0;
-  width: 26px;
 }
-body:not(.is-popout-window).plugin-sliding-panes.plugin-sliding-panes-rotate-header
+body.plugin-sliding-panes.plugin-sliding-panes-rotate-header
   .workspace
   > .mod-root
   > .workspace-leaf
@@ -4660,7 +4652,7 @@ body:not(.is-popout-window).plugin-sliding-panes.plugin-sliding-panes-rotate-hea
   margin-left: 0;
   height: auto;
 }
-body:not(.is-popout-window).plugin-sliding-panes.plugin-sliding-panes-rotate-header
+body.plugin-sliding-panes.plugin-sliding-panes-rotate-header
   .workspace
   > .mod-root
   > .workspace-leaf
@@ -4669,9 +4661,8 @@ body:not(.is-popout-window).plugin-sliding-panes.plugin-sliding-panes-rotate-hea
   .view-action {
   margin: 3px 0;
   padding: 4px 1px;
-  width: 26px;
 }
-body:not(.is-popout-window).plugin-sliding-panes.plugin-sliding-panes-rotate-header
+body.plugin-sliding-panes.plugin-sliding-panes-rotate-header
   .app-container
   .workspace
   > .mod-root
@@ -4679,7 +4670,7 @@ body:not(.is-popout-window).plugin-sliding-panes.plugin-sliding-panes-rotate-hea
   > .workspace-leaf-content
   > .view-header
   > .view-header-title-container:before,
-body:not(.is-popout-window).plugin-sliding-panes.plugin-sliding-panes-rotate-header
+body.plugin-sliding-panes.plugin-sliding-panes-rotate-header
   .workspace
   > .mod-root
   > .workspace-leaf
@@ -4691,24 +4682,24 @@ body:not(.is-popout-window).plugin-sliding-panes.plugin-sliding-panes-rotate-hea
 .workspace
   > .mod-root
   .view-header-title-container
-  body:not(.is-popout-window).plugin-sliding-panes.plugin-sliding-panes-rotate-header.plugin-sliding-panes-header-alt
+  body.plugin-sliding-panes.plugin-sliding-panes-rotate-header.plugin-sliding-panes-header-alt
   .workspace
   > .mod-root
   .view-header-title {
   margin-top: 0;
 }
-body:not(.is-popout-window).plugin-sliding-panes.plugin-sliding-panes-rotate-header
+body.plugin-sliding-panes.plugin-sliding-panes-rotate-header
   .workspace
   > .mod-root
   .view-header-title-container {
   margin-left: 0;
   padding-top: 0;
 }
-body:not(.is-popout-window).plugin-sliding-panes.plugin-sliding-panes-rotate-header
+body.plugin-sliding-panes.plugin-sliding-panes-rotate-header
   .view-header-title-container {
   position: static;
 }
-body:not(.is-popout-window).plugin-sliding-panes.plugin-sliding-panes-rotate-header
+body.plugin-sliding-panes.plugin-sliding-panes-rotate-header
   .app-container
   .workspace
   > .mod-root
@@ -4719,11 +4710,10 @@ body:not(.is-popout-window).plugin-sliding-panes.plugin-sliding-panes-rotate-hea
   margin-left: 0;
   bottom: 0;
 }
-body:not(.is-popout-window).plugin-sliding-panes.plugin-sliding-panes-rotate-header
-  .view-header-icon {
+body.plugin-sliding-panes.plugin-sliding-panes-rotate-header .view-header-icon {
   opacity: var(--icon-muted);
 }
-body:not(.is-popout-window).plugin-sliding-panes.plugin-sliding-panes-rotate-header
+body.plugin-sliding-panes.plugin-sliding-panes-rotate-header
   .view-header-icon:hover {
   opacity: 1;
 }
