@@ -2001,6 +2001,10 @@ input[type='checkbox']:checked {
   margin-left: 12px;
   padding-right: 4px;
 }
+.workspace-leaf.mod-active .nav-folder.has-focus > .nav-folder-title,
+.workspace-leaf.mod-active .nav-file.has-focus {
+  border: 1px solid transparent;
+}
 .nav-file-title {
   width: calc(100% - 30px);
   margin: 0 8px 0 -4px;
