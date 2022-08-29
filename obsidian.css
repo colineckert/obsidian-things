@@ -526,7 +526,6 @@ button,
 .cm-s-obsidian .cm-formatting-hashtag,
 .cm-s-obsidian,
 .cm-s-obsidian span.cm-formatting-task {
-  line-height: var(--line-height);
   font-family: var(--font-editor);
   -webkit-font-smoothing: subpixel-antialiased;
 }
