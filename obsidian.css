@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 THINGS
-Version 1.8.0
+Version 1.8.1
 Created by @colineckert
 
 Readme:
@@ -3809,6 +3809,21 @@ body.is-mobile .view-header-title,
 }
 
 /* Modal close button */
+
+.modal-close-button {
+  top: 2px;
+  padding: 0;
+  cursor: var(--cursor);
+  font-size: 24px;
+  color: var(--text-faint);
+}
+.modal-close-button:hover {
+  color: var(--text-normal);
+}
+.modal-close-button:before {
+  font-family: Inter, sans-serif;
+  font-weight: 200;
+}
 
 .is-mobile .modal-close-button {
   display: block;
