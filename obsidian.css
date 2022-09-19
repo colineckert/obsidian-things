@@ -718,6 +718,8 @@ span.cm-formatting-highlight {
 span.cm-hashtag.cm-hashtag-begin {
   border-top-left-radius: 14px;
   border-bottom-left-radius: 14px;
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
   padding-left: 8px;
   border-right: none;
   border-left: 1px solid var(--background-modifier-border);
