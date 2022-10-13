@@ -8,11 +8,11 @@ Support **@kepano** on [Twitter](https://www.twitter.com/kepano) or [Buy @kepano
 
 # Things 2
 
-![](assets/things2.png)
+![](assets/Things2.png)
 
 I love [Things 3](https://culturedcode.com/things/). It's been the task manager I've trusted and used for years, partly because the design makes using the app so enjoyable. I wanted to bring that same joy to Obsidian by creating a Things-inspired design that looked and felt native on MacOS and iOS.
 
-The lastest release of Things leverages much of the newly improved design scheme released in Obsidian 1.0, adding the Things V1 theme's thoughtful color scheme and flair.
+The lastest release of Things leverages much of the newly improved design scheme released in Obsidian 1.0, adding the Things V1 theme's thoughtful color scheme, helpful floating action button, customization options, and unique flair.
 
 ## Features
 
