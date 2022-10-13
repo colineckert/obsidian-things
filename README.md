@@ -1,35 +1,33 @@
-# Things
+### Notes on V1 of this theme
 
-### Notes on this theme
-
-This theme was built using code from **@kepano's** great Minimal theme. Please support @kepano's work!
+V1 of this theme was built using code from **@kepano's** great Minimal theme. Please support @kepano's work!
 
 Support **@kepano** on [Twitter](https://www.twitter.com/kepano) or [Buy @kepano a coffee](https://www.buymeacoffee.com/kepano)
 
 <a href="https://www.buymeacoffee.com/kepano"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=kepano&button_colour=5F7FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00"></a>
 
-![](assets/main-demo.png)
+# Things 2
+
+![](assets/things2.png)
 
 I love [Things 3](https://culturedcode.com/things/). It's been the task manager I've trusted and used for years, partly because the design makes using the app so enjoyable. I wanted to bring that same joy to Obsidian by creating a Things-inspired design that looked and felt native on MacOS and iOS.
+
+The lastest release of Things leverages much of the newly improved design scheme released in Obsidian 1.0, adding the Things V1 theme's thoughtful color scheme and flair.
 
 ## Features
 
 - Things-inspired color palette
 - Light and dark theme
 - Quick preview/edit floating action button on mobile
-- Customizable colors for bold, italic, highlighters, and block-quotes
+- Customizable colors for bold, italic, highlighters, and block-quotes via the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) community plugin
 - Atom code syntax higlighting
 - Tag pills for readability
-- Minimal icons
 - Better designed image cards
-- Bullet and number list relationship lines
-- Fancy cursor based on Things cursor color
-- Publish and Sync support
 - [JetBrains Mono](https://www.jetbrains.com/lp/mono/) font and ligatures for code
 
 ## Supported Plugins
 
-This theme has support for the following Obsidian community plugins:
+This theme has support for the following Obsidian community plugins (Things V1):
 
 - [Sliding Panes (Andy's Mode)](https://github.com/deathau/sliding-panes-obsidian)
 - [Calendar](https://github.com/liamcain/obsidian-calendar-plugin)
@@ -53,7 +51,7 @@ This theme has support for the following Obsidian community plugins:
 ### Manual
 
 1. Download this repo
-1. Copy the `obsidian.css` file into your vault's `/.obsidian/themes` directory
+1. Copy the `theme.css` file into your vault's `/.obsidian/themes` directory
 1. Rename the file to `Things.css` so it will have a unique name in the theme selection dropdown
 1. Open the **Settings** in Obsidian
 1. Navigate to **Appearances** tab under **Options**
