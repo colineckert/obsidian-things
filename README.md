@@ -8,7 +8,7 @@ Support **@kepano** on [Twitter](https://www.twitter.com/kepano) or [Buy @kepano
 
 # Things 2
 
-![](assets/Things2.png)
+![](assets/main-demo.png)
 
 I love [Things 3](https://culturedcode.com/things/). It's been the task manager I've trusted and used for years, partly because the design makes using the app so enjoyable. I wanted to bring that same joy to Obsidian by creating a Things-inspired design that looked and felt native on MacOS and iOS.
 
