@@ -329,7 +329,6 @@ code[class*='language-'],
 .cm-qualifier {
   color: var(--atom-red);
 }
-.token.property,
 .token.boolean,
 .token.number,
 .token.constant,
@@ -367,6 +366,7 @@ code[class*='language-'],
   color: var(--atom-blue);
 }
 .token.class-name,
+.token.property,
 .cm-atom,
 code .cm-tag,
 .theme-dark .cm-variable-2,
