@@ -323,6 +323,7 @@ code[class*='language-'],
 .token.selector,
 .token.tag,
 .token.parameter,
+.token.property-access,
 .cm-def,
 .cm-property,
 .cm-qualifier {
