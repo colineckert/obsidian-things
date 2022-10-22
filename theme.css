@@ -241,6 +241,14 @@ body {
   --atom-blue: #61afef;
   --atom-yellow: #e5c07b;
 }
+/* Make exported PDFs render correctly */ 
+@media print {
+  .theme-dark {
+    --highlight-mix-blend-mode: darken;
+	--color-base-30: #ebedf0;
+	--h1-color: var(--color-base-00);
+  }
+}
 
 /* H2 styling */
 h2,
