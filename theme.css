@@ -245,8 +245,8 @@ body {
 @media print {
   .theme-dark {
     --highlight-mix-blend-mode: darken;
-	--color-base-30: #ebedf0;
-	--h1-color: var(--color-base-00);
+    --color-base-30: #ebedf0;
+    --h1-color: var(--color-base-00);
   }
 }
 
@@ -648,7 +648,7 @@ settings:
         format: hex
         default: '#3EB4BF' 
     -
-        id: code-color-l
+        id: code-normal
         title: Inline code blocks font color (Light mode)
         type: variable-color
         format: hex
