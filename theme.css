@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 THINGS
-Version 2.0.5
+Version 2.0.6
 Created by @colineckert
 
 Readme:
@@ -258,8 +258,8 @@ body.is-mobile.theme-dark.mobile-black-background {
 }
 
 /* H2 styling */
-h2,
-.HyperMD-header.HyperMD-header-2.cm-line {
+body.h2-underline h2,
+body.h2-underline .HyperMD-header.HyperMD-header-2.cm-line {
   border-bottom: 2px solid var(--background-modifier-border);
   width: 100%;
   padding-bottom: 2px;
@@ -771,6 +771,12 @@ settings:
         format: hex
         default: '#2E80F2'
     - 
+        id: h2-underline
+        title: H2 underline
+        description: Toggle H2 underline (border-bottom)
+        type: class-toggle
+        default: true
+    -
         id: level-3-headings
         title: Level 3 Headings
         type: heading
