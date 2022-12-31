@@ -21,6 +21,7 @@ The lastest release of Things leverages much of the newly improved design scheme
 - Quick preview/edit floating action button on mobile
 - Customizable colors for bold, italic, highlighters, and block-quotes via the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) community plugin
 - Atom code syntax higlighting
+- Enhanced code blocks with line numbers
 - Tag pills for readability
 - Checkbox styling and icons
 - Better designed image cards
