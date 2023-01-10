@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 THINGS
-Version 2.1.4
+Version 2.1.5
 Created by @colineckert
 
 Readme:
@@ -470,6 +470,14 @@ body:not(.no-codeblock-line-numbers)
   margin-top: var(--size-4-2);
   border: var(--codeblock-border);
   border-radius: var(--codeblock-roundness);
+}
+
+.markdown-reading-view .markdown-preview-view pre code {
+  display: block;
+}
+
+body:not(.no-codeblock-line-numbers) .markdown-preview-view pre code {
+  padding: var(--size-4-1) var(--size-4-5);
 }
 
 /* ------------------- */
