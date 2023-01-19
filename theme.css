@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 THINGS
-Version 2.1.5
+Version 2.1.6
 Created by @colineckert
 
 Readme:
@@ -338,9 +338,16 @@ img {
   background: var(--blue);
 }
 
-/* Highlight active line */
-body.active-line .cm-active {
-  background-color: var(--color-base-25);
+/* Focus active line */
+body.active-line
+  .cm-active:not(.HyperMD-quote, .HyperMD-header, .HyperMD-codeblock)::before {
+  content: '';
+  height: 100%;
+  position: absolute;
+  left: -1.125em;
+  border-left: 3px solid var(--color-accent);
+  border-radius: 10px 0 0 10px;
+  opacity: 0.85;
 }
 
 /* Highlight styling */
