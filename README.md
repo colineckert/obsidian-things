@@ -40,6 +40,12 @@ This theme has support for the following Obsidian community plugins (Things V1):
 - [Style Settings](https://github.com/mgmeyers/obsidian-style-settings)
 - [Advanced Mobile Toolbar](https://github.com/phibr0/obsidian-advanced-toolbar)
 
+## Checkbox Styling
+
+Things supports a wide number of alternate checkbox types. These allow you to call out tasks that are incomplete, canceled, rescheduled, etc.
+
+![](assets/checkbox-styles.png)
+
 ## Installation
 
 ### Obsidian Marketplace (Recommended)
