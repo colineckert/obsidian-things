@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 THINGS
-Version 2.1.6
+Version 2.1.7
 Created by @colineckert
 
 Readme:
@@ -1022,7 +1022,7 @@ li[data-task='b'] > p > input:checked {
 /* --------------- */
 
 .kanban-plugin {
-  --dot-color: hsl(0 0% 40% / 25%);
+  --dot-color: hsl(0 0% 40% / 10%);
   --dot-spacing: 9px;
   --dot-size: 1px;
 }
@@ -1035,6 +1035,44 @@ li[data-task='b'] > p > input:checked {
   border-top: var(--thin-border);
   background-size: var(--dot-spacing) var(--dot-spacing);
   background-attachment: local;
+}
+
+body .kanban-plugin__board > div {
+  margin: 0 auto;
+}
+.kanban-plugin__item-form {
+  border-top: none;
+}
+body .kanban-plugin__lane-header-wrapper {
+  border-bottom: 0;
+}
+body .kanban-plugin button {
+  box-shadow: none;
+}
+body .kanban-plugin__item-button-wrapper > button:hover {
+  color: var(--text-normal);
+  background: var(--background-modifier-hover);
+}
+body .kanban-plugin__item-button-wrapper {
+  border-top: none;
+}
+body .kanban-plugin__lane {
+  border: 1px solid transparent;
+}
+body .kanban-plugin__item-content-wrapper {
+  box-shadow: none;
+}
+
+body:not(.is-mobile) .kanban-plugin__grow-wrap > textarea:focus {
+  box-shadow: none;
+}
+.kanban-plugin__item-input-actions button,
+.kanban-plugin__lane-input-actions button {
+  font-size: var(--font-adaptive-small);
+}
+body .kanban-plugin__lane-header-wrapper .kanban-plugin__grow-wrap > textarea,
+body .kanban-plugin__lane-input-wrapper .kanban-plugin__grow-wrap > textarea {
+  background: transparent;
 }
 
 /* ─────────────────────────────────────────────────── */
