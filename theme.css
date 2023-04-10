@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 THINGS
-Version 2.1.7
+Version 2.1.8
 Created by @colineckert
 
 Readme:
@@ -35,7 +35,7 @@ body {
   --purple: #9e86c8;
 
   --h1-color: var(--text-normal);
-  --h2-color: var(--blue);
+  --h2-color: var(--text-normal);
   --h3-color: var(--blue);
   --h4-color: var(--yellow);
   --h5-color: var(--red);
@@ -62,6 +62,13 @@ body {
   --font-editor: var(--font-editor-override), var(--font-text-override),
     var(--font-editor-theme);
 
+  --h1-size: 1.7rem;
+  --h2-size: 1.5rem;
+  --h3-size: 1.2rem;
+  --h4-size: 1.1rem;
+  --h5-size: 1rem;
+  --h6-size: 0.9rem;
+
   /* Misc */
   --checkbox-radius: 30%;
   --link-external-decoration: underline;
@@ -72,6 +79,17 @@ body {
   --radius-m: 8px;
   --radius-l: 10px;
   --radius-xl: 16px;
+
+  --line-width: 40rem;
+  --line-height: 1.5;
+  --max-width: 90%;
+  --max-col-width: 18em;
+  --icon-muted: 0.5;
+  --nested-padding: 1.1em;
+  --folding-offset: 10px;
+
+  --line-width-adaptive: var(--line-width);
+  --line-width-wide: calc(var(--line-width) + 12.5%);
 }
 
 /* COLOR SCHEMES
@@ -211,6 +229,7 @@ body.theme-dark.is-mobile {
     var(--accent-s),
     calc(var(--accent-l) + 3.8%)
   );
+  --titlebar-background-focused: var(--color-base-10);
   --background-modifier-form-field: var(--color-base-25);
   --background-secondary-alt: var(--color-base-30);
   --interactive-normal: var(--color-base-30);
@@ -357,6 +376,17 @@ span.search-result-file-matched-text {
   padding: 0.1em 0;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
+}
+
+/* Inline title align */
+.markdown-source-view.mod-cm6.is-readable-line-width .inline-title {
+  width: calc(var(--line-width-adaptive) - var(--folding-offset));
+  max-width: calc(var(--max-width) - var(--folding-offset));
+  margin-right: auto;
+  margin-left: max(
+    calc(50% + var(--folding-offset) - var(--line-width-adaptive) / 2),
+    calc(50% + var(--folding-offset) - var(--max-width) / 2)
+  ) !important;
 }
 
 /* Code blocks */
@@ -586,9 +616,9 @@ code .cm-tag,
 /* --------------------- */
 
 body.is-mobile:not(.floating-button-off):not(.advanced-toolbar)
-  .view-action:nth-last-of-type(5),
+  .view-action:nth-last-of-type(2),
 body.is-mobile:not(.floating-button-off):not(.advanced-toolbar)
-  .view-action:nth-last-of-type(4) {
+  .view-action:nth-last-of-type(2) {
   color: white;
   background-color: var(--blue);
   opacity: 1;
@@ -610,9 +640,9 @@ body.is-mobile:not(.floating-button-off):not(.advanced-toolbar)
 }
 
 body.is-mobile:not(.floating-button-off).advanced-toolbar
-  .view-action:nth-last-of-type(5),
+  .view-action:nth-last-of-type(2),
 body.is-mobile:not(.floating-button-off).advanced-toolbar
-  .view-action:nth-last-of-type(4) {
+  .view-action:nth-last-of-type(2) {
   color: white;
   background-color: var(--blue);
   opacity: 1;
@@ -1226,7 +1256,7 @@ settings:
         title: H1 font size
         description: Accepts any CSS font-size value
         type: variable-text
-        default: 2em
+        default: 1.7em
     - 
         id: h1-weight
         title: H1 font weight
@@ -1280,7 +1310,7 @@ settings:
         title: H3 font size
         description: Accepts any CSS font-size value
         type: variable-text
-        default: 1.3em
+        default: 1.2em
     - 
         id: h3-weight
         title: H3 font weight
@@ -1304,7 +1334,7 @@ settings:
         title: H4 font size
         description: Accepts any CSS font-size value
         type: variable-text
-        default: 1.2em
+        default: 1.1em
     - 
         id: h4-weight
         title: H4 font weight
@@ -1341,7 +1371,7 @@ settings:
         title: H5 font size
         description: Accepts any CSS font-size value
         type: variable-text
-        default: 1.1em
+        default: 1em
     - 
         id: h5-weight
         title: H5 font weight
@@ -1365,7 +1395,7 @@ settings:
         title: H6 font size
         description: Accepts any CSS font-size value
         type: variable-text
-        default: 1.1em
+        default: 0.9em
     - 
         id: h6-weight
         title: H6 font weight
