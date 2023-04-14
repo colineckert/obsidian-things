@@ -354,7 +354,7 @@ img {
 }
 
 .theme-dark .modal-container .suggestion-item.is-selected {
-  background: var(--blue);
+  background: var(--color-accent);
 }
 
 /* Focus active line */
