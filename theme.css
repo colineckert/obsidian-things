@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 THINGS
-Version 2.1.8
+Version 2.1.9
 Created by @colineckert
 
 Readme:
@@ -358,8 +358,8 @@ img {
 }
 
 /* Focus active line */
-body.active-line
-  .cm-active:not(.HyperMD-quote, .HyperMD-header, .HyperMD-codeblock)::before {
+body.active-line .cm-active:not(.HyperMD-header, .HyperMD-codeblock)::before,
+body.active-line .cm-active.HyperMD-quote::before {
   content: '';
   height: 100%;
   position: absolute;
@@ -379,7 +379,9 @@ span.search-result-file-matched-text {
 }
 
 /* Inline title align */
-.markdown-source-view.mod-cm6.is-readable-line-width .inline-title {
+body:not(.is-mobile)
+  .markdown-source-view.mod-cm6.is-readable-line-width
+  .inline-title {
   width: calc(var(--line-width-adaptive) - var(--folding-offset));
   max-width: calc(var(--max-width) - var(--folding-offset));
   margin-right: auto;
@@ -913,6 +915,28 @@ li[data-task='b'] > p > input:checked {
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath d='M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z' /%3E%3C/svg%3E");
 }
 
+body:not(.tasks) li[data-task='>'].task-list-item.is-checked,
+body:not(.tasks) li[data-task='<'].task-list-item.is-checked,
+body:not(.tasks) li[data-task='b'].task-list-item.is-checked,
+body:not(.tasks) li[data-task='i'].task-list-item.is-checked,
+body:not(.tasks) li[data-task='*'].task-list-item.is-checked,
+body:not(.tasks) li[data-task='!'].task-list-item.is-checked,
+body:not(.tasks) li[data-task='S'].task-list-item.is-checked,
+body:not(.tasks) li[data-task='?'].task-list-item.is-checked,
+body:not(.tasks) li[data-task='/'].task-list-item.is-checked,
+body:not(.tasks) li[data-task='"'].task-list-item.is-checked,
+body:not(.tasks) li[data-task='l'].task-list-item.is-checked,
+body:not(.tasks) li[data-task='I'].task-list-item.is-checked,
+body:not(.tasks) li[data-task='p'].task-list-item.is-checked,
+body:not(.tasks) li[data-task='c'].task-list-item.is-checked,
+body:not(.tasks) li[data-task='f'].task-list-item.is-checked,
+body:not(.tasks) li[data-task='k'].task-list-item.is-checked,
+body:not(.tasks) li[data-task='w'].task-list-item.is-checked,
+body:not(.tasks) li[data-task='u'].task-list-item.is-checked,
+body:not(.tasks) li[data-task='d'].task-list-item.is-checked {
+  color: var(--text-normal);
+}
+
 /* ─────────────────────────────────────────────────── */
 /* Plugins */
 /* ─────────────────────────────────────────────────── */
@@ -1051,12 +1075,12 @@ li[data-task='b'] > p > input:checked {
 /* Kanban */
 /* --------------- */
 
-.kanban-plugin {
+body:not(.no-kanban-styles) .kanban-plugin {
   --dot-color: hsl(0 0% 40% / 10%);
   --dot-spacing: 9px;
   --dot-size: 1px;
 }
-.kanban-plugin__board {
+body:not(.no-kanban-styles) .kanban-plugin__board {
   background-image: radial-gradient(
     circle,
     var(--dot-color) var(--dot-size),
@@ -1067,41 +1091,49 @@ li[data-task='b'] > p > input:checked {
   background-attachment: local;
 }
 
-body .kanban-plugin__board > div {
+body:not(.no-kanban-styles) .kanban-plugin__board > div {
   margin: 0 auto;
 }
-.kanban-plugin__item-form {
+body:not(.no-kanban-styles) .kanban-plugin__item-form {
   border-top: none;
 }
-body .kanban-plugin__lane-header-wrapper {
+body:not(.no-kanban-styles) .kanban-plugin__lane-header-wrapper {
   border-bottom: 0;
 }
-body .kanban-plugin button {
+body:not(.no-kanban-styles) .kanban-plugin button {
   box-shadow: none;
 }
-body .kanban-plugin__item-button-wrapper > button:hover {
+body:not(.no-kanban-styles) .kanban-plugin__item-button-wrapper > button:hover {
   color: var(--text-normal);
   background: var(--background-modifier-hover);
 }
-body .kanban-plugin__item-button-wrapper {
+body:not(.no-kanban-styles) .kanban-plugin__item-button-wrapper {
   border-top: none;
 }
-body .kanban-plugin__lane {
+body:not(.no-kanban-styles) .kanban-plugin__lane {
   border: 1px solid transparent;
 }
-body .kanban-plugin__item-content-wrapper {
+body:not(.no-kanban-styles) .kanban-plugin__item-content-wrapper {
   box-shadow: none;
 }
 
-body:not(.is-mobile) .kanban-plugin__grow-wrap > textarea:focus {
+body:not(.no-kanban-styles):not(.is-mobile)
+  .kanban-plugin__grow-wrap
+  > textarea:focus {
   box-shadow: none;
 }
-.kanban-plugin__item-input-actions button,
-.kanban-plugin__lane-input-actions button {
+body:not(.no-kanban-styles) .kanban-plugin__item-input-actions button,
+body:not(.no-kanban-styles) .kanban-plugin__lane-input-actions button {
   font-size: var(--font-adaptive-small);
 }
-body .kanban-plugin__lane-header-wrapper .kanban-plugin__grow-wrap > textarea,
-body .kanban-plugin__lane-input-wrapper .kanban-plugin__grow-wrap > textarea {
+body:not(.no-kanban-styles)
+  .kanban-plugin__lane-header-wrapper
+  .kanban-plugin__grow-wrap
+  > textarea,
+body:not(.no-kanban-styles)
+  .kanban-plugin__lane-input-wrapper
+  .kanban-plugin__grow-wrap
+  > textarea {
   background: transparent;
 }
 
@@ -1141,6 +1173,12 @@ settings:
         title: Disable enhanced code blocks
         description: Remove line numbers and additional styling to code blocks
         id: no-codeblock-line-numbers
+        type: class-toggle
+        default: false
+    -
+        title: Disable Kanban board styles
+        description: Remove minimalist styling to the Kanban plugin
+        id: no-kanban-styles
         type: class-toggle
         default: false
     -
