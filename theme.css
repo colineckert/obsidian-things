@@ -347,6 +347,11 @@ body:not(.default-font-color) mark em {
   color: var(--text-faint);
 }
 
+/* Collapsing list checkboxes alignment */
+.markdown-rendered .list-collapse-indicator {
+    margin-left: -4em;
+}
+
 /* Image card */
 img {
   border-radius: 4px;
