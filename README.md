@@ -72,6 +72,9 @@ Things supports a wide number of alternate checkbox types. These allow you to ca
 - [w] win
 - [u] up
 - [d] down
+- [D] draft pull request
+- [P] open pull request
+- [M] merged pull request
 ```
 
 ## Installation
