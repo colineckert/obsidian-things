@@ -1,0 +1,23 @@
+{
+  "name": "obsidian-things",
+  "version": "2.1.10",
+  "description": "An Obsidian theme inspired by the beautifully-designed app, Things.",
+  "main": "index.js",
+  "scripts": {
+    "build": "sass --no-source-map styles/style.scss theme.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colineckert/obsidian-things.git"
+  },
+  "author": "Colin Eckert",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/colineckert/obsidian-things/issues"
+  },
+  "homepage": "https://github.com/colineckert/obsidian-things#readme",
+  "dependencies": {
+    "node-sass": "^9.0.0"
+  }
+}
