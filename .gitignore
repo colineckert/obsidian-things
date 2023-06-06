@@ -1,0 +1,12 @@
+# IDEs
+/.idea
+/.vscode
+
+# Vendords
+/node_modules
+
+# Extras
+.DS_Store
+.env
+.env.*
+!.env.example
