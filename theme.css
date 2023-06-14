@@ -961,7 +961,8 @@ body:not(.tasks) li[data-task='k'].task-list-item.is-checked,
 body:not(.tasks) li[data-task='w'].task-list-item.is-checked,
 body:not(.tasks) li[data-task='u'].task-list-item.is-checked,
 body:not(.tasks) li[data-task='d'].task-list-item.is-checked,
-body:not(.tasks) li[data-task='P'].task-list-item.is-checked {
+body:not(.tasks) li[data-task='P'].task-list-item.is-checked,
+body:not(.tasks) li[data-task='D'].task-list-item.is-checked {
   color: var(--text-normal);
 }
 
