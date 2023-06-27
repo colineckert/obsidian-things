@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 THINGS
-Version 2.1.10
+Version 2.1.11
 Created by @colineckert
 
 Readme:
@@ -390,134 +390,6 @@ body:not(.is-mobile)
     calc(50% + var(--folding-offset) - var(--line-width-adaptive) / 2),
     calc(50% + var(--folding-offset) - var(--max-width) / 2)
   ) !important;
-}
-
-/* Code blocks */
-.cm-inline-code,
-.cm-s-obsidian .HyperMD-codeblock,
-.markdown-preview-view.markdown-preview-view :is(pre, code) {
-  --codeblock-border: var(--color-base-30);
-  --codeblock-roundness: var(--radius-s);
-  --code-block-alt-bg: var(--color-base-30);
-  --slight-code-roundish: var(--radius-xs);
-}
-
-.cm-s-obsidian .HyperMD-codeblock {
-  line-height: 1.4em;
-}
-
-body .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
-  padding-left: var(--size-2-2);
-}
-
-body:not(.no-codeblock-line-numbers) .HyperMD-codeblock-begin {
-  counter-reset: codeblock-line-numbers;
-}
-
-body:not(.no-codeblock-line-numbers)
-  .HyperMD-codeblock:not(
-    .HyperMD-codeblock-begin,
-    .HyperMD-codeblock-end
-  )::before {
-  counter-increment: codeblock-line-numbers;
-  content: counter(codeblock-line-numbers);
-  font-size: 0.75em;
-  line-height: 2;
-  text-align: right;
-  height: 100%;
-  width: 1.7em;
-  color: var(--text-muted);
-  /* background-color: #1e2029; */
-  background-color: var(--code-background);
-  position: absolute;
-  left: 0;
-  padding-right: 1.4em;
-}
-
-body:not(.no-codeblock-line-numbers)
-  .HyperMD-codeblock.cm-line:not(
-    .HyperMD-codeblock-begin,
-    .HyperMD-codeblock-end
-  ) {
-  padding-left: 2.8em;
-}
-
-body:not(.no-codeblock-line-numbers)
-  .cm-s-obsidian
-  div.HyperMD-codeblock-begin-bg {
-  background-color: var(--code-block-alt-bg);
-  border: var(--codeblock-border);
-  border-bottom: none;
-  border-top-right-radius: var(--codeblock-roundness);
-  border-top-left-radius: var(--codeblock-roundness);
-}
-
-div.HyperMD-codeblock-bg:not(.HyperMD-codeblock-begin-bg) {
-  border-right: var(--codeblock-border);
-  border-left: var(--codeblock-border);
-}
-
-body:not(.no-codeblock-line-numbers)
-  .cm-line.HyperMD-codeblock
-  .code-block-flair {
-  font-size: calc(var(--code-size) * 0.9);
-  color: var(--text-muted);
-  padding: 0 1px;
-  top: 0;
-}
-
-body:not(.no-codeblock-line-numbers)
-  .markdown-reading-view
-  pre[class*='language-']::before {
-  display: block;
-  content: ' ';
-  line-height: 1.5em;
-  background-color: var(--code-block-alt-bg);
-  border-top-right-radius: calc(var(--codeblock-roundness) * 0.8);
-  border-top-left-radius: calc(var(--codeblock-roundness) * 0.8);
-}
-
-body:not(.no-codeblock-line-numbers) pre[class*='language-']::after {
-  content: attr(class);
-  font-size: 0.9rem;
-  text-shadow: none;
-  color: var(--text-muted);
-  position: absolute;
-  top: 2px;
-  right: 5px;
-}
-
-.markdown-reading-view .markdown-preview-view pre:not(.frontmatter) code {
-  white-space: pre;
-}
-
-body:not(.no-codeblock-line-numbers) .markdown-preview-view pre code {
-  padding: var(--size-4-1) var(--size-4-2);
-}
-
-body:not(.no-codeblock-line-numbers)
-  .copy-code-button.copy-code-button.copy-code-button {
-  background-color: var(--interactive-normal);
-  top: unset;
-  bottom: 0;
-  padding: 0 var(--size-2-2);
-}
-
-body:not(.no-codeblock-line-numbers)
-  .markdown-preview-view.markdown-preview-view
-  pre {
-  padding: 0;
-  margin-top: var(--size-4-2);
-  border: var(--codeblock-border);
-  border-radius: var(--codeblock-roundness);
-}
-
-.markdown-reading-view .markdown-preview-view pre code {
-  display: block;
-}
-
-body:not(.no-codeblock-line-numbers) .markdown-preview-view pre code {
-  padding: var(--size-4-1) var(--size-4-5);
 }
 
 /* ------------------- */
@@ -1197,12 +1069,6 @@ settings:
         title: Highlight active line
         description: Change background color of current working line
         id: active-line
-        type: class-toggle
-        default: false
-    -
-        title: Disable enhanced code blocks
-        description: Remove line numbers and additional styling to code blocks
-        id: no-codeblock-line-numbers
         type: class-toggle
         default: false
     -
