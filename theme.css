@@ -342,7 +342,8 @@ body:not(.default-font-color) mark em {
 /* Completed checkboxes */
 .markdown-preview-view ul > li.task-list-item.is-checked,
 .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task='x'],
-.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task='X'] {
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task='X'],
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task='M'] {
   text-decoration: none;
   color: var(--text-faint);
 }
@@ -962,7 +963,7 @@ body:not(.tasks) li[data-task='w'].task-list-item.is-checked,
 body:not(.tasks) li[data-task='u'].task-list-item.is-checked,
 body:not(.tasks) li[data-task='d'].task-list-item.is-checked,
 body:not(.tasks) li[data-task='P'].task-list-item.is-checked,
-body:not(.tasks) li[data-task='M'].task-list-item.is-checked {
+body:not(.tasks) li[data-task='D'].task-list-item.is-checked {
   color: var(--text-normal);
 }
 
