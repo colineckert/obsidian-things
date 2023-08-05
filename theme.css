@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 THINGS
-Version 2.1.11
+Version 2.1.12
 Created by @colineckert
 
 Readme:
@@ -374,22 +374,14 @@ body.active-line .cm-active.HyperMD-quote::before {
 span.cm-highlight,
 .markdown-preview-view mark,
 span.search-result-file-matched-text {
-  padding: 0.1em 0;
+  padding: 0.05em 0;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
 
-/* Inline title align */
-body:not(.is-mobile)
-  .markdown-source-view.mod-cm6.is-readable-line-width
-  .inline-title {
-  width: calc(var(--line-width-adaptive) - var(--folding-offset));
-  max-width: calc(var(--max-width) - var(--folding-offset));
-  margin-right: auto;
-  margin-left: max(
-    calc(50% + var(--folding-offset) - var(--line-width-adaptive) / 2),
-    calc(50% + var(--folding-offset) - var(--max-width) / 2)
-  ) !important;
+/* Code blocks horizontal scroll */
+.markdown-reading-view .markdown-preview-view pre:not(.frontmatter) code {
+  white-space: pre;
 }
 
 /* ------------------- */
