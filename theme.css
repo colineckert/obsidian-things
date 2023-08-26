@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 THINGS
-Version 2.1.13
+Version 2.1.14
 Created by @colineckert
 
 Readme:
@@ -341,6 +341,12 @@ span.search-result-file-matched-text {
   padding: 0.05em 0;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
+}
+
+/* Fancy highlight */
+body.fancy-highlight span.cm-highlight,
+body.fancy-highlight .markdown-preview-view mark,
+body.fancy-highlight span.search-result-file-matched-text {
   background-image: linear-gradient(
     0deg,
     var(--highlight-background-color-underline) 0%,
@@ -1073,6 +1079,12 @@ settings:
         title: Highlight active line
         description: Change background color of current working line
         id: active-line
+        type: class-toggle
+        default: false
+    -
+        title: Fancy highlighting
+        description: Enable fancy highlight styles with highlight underlines
+        id: fancy-highlight
         type: class-toggle
         default: false
     -
