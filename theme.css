@@ -406,10 +406,11 @@ body.active-line .cm-active.HyperMD-quote::before {
 /* One Dark Syntax Coloring */
 /* Source: https://github.com/AGMStudio/prism-theme-one-dark */
 /* ------------------- */
-.theme-light .token.comment {
+.theme-light .token.comment .theme-light .cm-comment {
   color: #ababab;
 }
 .theme-dark .token.comment,
+.theme-dark .cm-comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
@@ -417,33 +418,42 @@ body.active-line .cm-active.HyperMD-quote::before {
 }
 .token.punctuation,
 .token.plain-text,
-.token.parameter,
 .token.dom.variable,
 .cm-hmd-codeblock.cm-bracket {
-  color: var(--atom-gray-2) !important;
+  color: var(--atom-gray-2);
 }
+code[class*='language-'],
 .token.selector,
-.token.tag,
-.token.property,
-.token.property-access,
+.cm-tag,
 .token.dom.variable,
-span.token.variable,
-.cm-hmd-codeblock.cm-tag,
-.cm-variable,
+.token.tag,
+.cm-def,
+.token.parameter,
 .cm-property,
 .cm-qualifier {
   color: var(--atom-red);
 }
+.token.class-name,
+.token.maybe-class-name,
+.token.property-access,
+.token.constant,
+.token.builtin,
+.cm-variable-2,
+.cm-type,
+.cm-atom,
+code .cm-tag {
+  color: var(--atom-yellow);
+}
+.token.property,
 .token.boolean,
 .token.number,
 .token.symbol,
-.token.builtin,
 .token.attr-name,
 .token.deleted,
 .cm-attribute,
 .cm-number,
 .cm-property.cm-string {
-  color: var(--atom-orange) !important;
+  color: var(--atom-orange);
 }
 .token.string,
 .token.char,
@@ -466,19 +476,11 @@ span.token.variable,
 .cm-keyword {
   color: var(--atom-purple);
 }
-.cm-builtin,
+.cm-variable,
 .token.function,
 .token.method,
 .token.macro.property {
   color: var(--atom-blue);
-}
-.token.class-name,
-.token.constant,
-.cm-atom,
-code .cm-tag,
-.cm-variable-2,
-.cm-type {
-  color: var(--atom-yellow);
 }
 .token.regex,
 .token.important,
