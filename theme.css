@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 THINGS
-Version 2.1.16
+Version 2.1.17
 Created by @colineckert
 
 Readme:
@@ -331,7 +331,7 @@ body:not(.is-mobile) .view-actions .view-action:last-child {
 .view-header-title-container {
   opacity: 1;
 }
-.view-header-title-container {
+body:not(.no-minimal-title-bar) .view-header-title-container {
   opacity: 0;
   transition: opacity 0.1s ease-in-out;
 }
@@ -1138,6 +1138,12 @@ settings:
         title: Disable Kanban board styles
         description: Remove minimalist styling to the Kanban plugin
         id: no-kanban-styles
+        type: class-toggle
+        default: false
+    -
+        title: Always show title bar
+        description: Disable hiding of title bar until hover
+        id: no-minimal-title-bar
         type: class-toggle
         default: false
     -
