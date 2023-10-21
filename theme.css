@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 THINGS
-Version 2.1.18
+Version 2.1.19
 Created by @colineckert
 
 Readme:
@@ -293,51 +293,6 @@ body.is-mobile.theme-dark.mobile-black-background {
     --color-base-30: #ebedf0;
     --h1-color: var(--color-base-00);
   }
-}
-
-/* Header title */
-.view-header-title,
-.view-header-title-parent {
-  text-overflow: ellipsis;
-}
-.view-header-title-container:not(.mod-at-end):after {
-  display: none;
-}
-body:not(.is-mobile) .view-actions .view-action:last-child {
-  margin-left: -1px;
-}
-.workspace-ribbon:not(.is-collapsed)
-  ~ .mod-root
-  .view-header:hover
-  .view-actions,
-.mod-right.is-collapsed ~ .mod-root .view-header:hover .view-actions,
-.view-action.is-active:hover,
-.workspace-ribbon.mod-left.is-collapsed
-  ~ .mod-root
-  .view-header:hover
-  .view-actions,
-.workspace-ribbon:not(.is-collapsed) ~ .mod-root .view-actions {
-  opacity: 1;
-  transition: opacity 0.25s ease-in-out;
-}
-.view-header:hover .view-header-title-container,
-.workspace-tab-header-container:hover
-  + .workspace-tab-container
-  .view-header-title-container {
-  opacity: 1;
-  transition: opacity 0.1s ease-in-out;
-}
-.is-phone .view-header-title-container,
-.view-header-title-container {
-  opacity: 1;
-}
-body:not(.no-minimal-title-bar) .view-header-title-container {
-  opacity: 0;
-  transition: opacity 0.1s ease-in-out;
-}
-.view-header-title-container:focus-within {
-  opacity: 1;
-  transition: opacity 0.1s ease-in-out;
 }
 
 /* H2 styling */
@@ -1255,12 +1210,6 @@ settings:
         title: Disable Kanban board styles
         description: Remove minimalist styling to the Kanban plugin
         id: no-kanban-styles
-        type: class-toggle
-        default: false
-    -
-        title: Always show title bar
-        description: Disable hiding of title bar until hover
-        id: no-minimal-title-bar
         type: class-toggle
         default: false
     -
