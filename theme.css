@@ -54,6 +54,12 @@ body {
   --highlight-background-color-underline: hsl(50deg 100% 50% / 100%) !important;
   --highlight-background-color--active: hsl(50deg 100% 50% / 20%) !important;
 
+  --progress-color-1: #ad5758;
+  --progress-color-2: #b87f4c;
+  --progress-color-3: #d2b874;
+  --progress-color-4: #b0c07e;
+  --progress-color-5: #768399;
+
   /* Font families */
   --font-text-theme: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Inter, Ubuntu, sans-serif;
@@ -962,6 +968,51 @@ body:not(.tasks) li[data-task='D'].task-list-item.is-checked {
   color: var(--text-normal);
 }
 
+/* ------------------- */
+/* Progress bars styling. Credit Minimal theme: https://minimal.guide/progress-bars */
+/* Support @kepano - https://www.buymeacoffee.com/kepano */
+/* ------------------- */
+.progress-color{
+  .markdown-rendered progress,
+  .markdown-source-view.is-live-preview progress,
+  .markdown-preview-view progress {
+    
+    &[value^='1']::-webkit-progress-value,
+    &[value^='2']::-webkit-progress-value,
+    &[value^='3']::-webkit-progress-value {
+      background-color: var(--progress-color-1);
+    }
+    &[value^='4']::-webkit-progress-value,
+    &[value^='5']::-webkit-progress-value {
+      background-color: var(--progress-color-2);
+    }
+    &[value^='6']::-webkit-progress-value,
+    &[value^='7']::-webkit-progress-value {
+      background-color: var(--progress-color-3);
+    }
+    &[value^='8']::-webkit-progress-value,
+    &[value^='9']::-webkit-progress-value {
+      background-color: var(--progress-color-4);
+    }
+    &[value='1']::-webkit-progress-value,
+    &[value='100']::-webkit-progress-value {
+      background-color: var(--progress-color-5);
+    }
+    
+    &[value='0']::-webkit-progress-value,
+    &[value='2']::-webkit-progress-value,
+    &[value='3']::-webkit-progress-value,
+    &[value='4']::-webkit-progress-value,
+    &[value='5']::-webkit-progress-value,
+    &[value='6']::-webkit-progress-value,
+    &[value='7']::-webkit-progress-value,
+    &[value='8']::-webkit-progress-value,
+    &[value='9']::-webkit-progress-value {
+      background-color: var(--progress-color-1);
+    }
+  }
+}
+
 /* ─────────────────────────────────────────────────── */
 /* Plugins */
 /* ─────────────────────────────────────────────────── */
@@ -1308,6 +1359,47 @@ settings:
         type: variable-color
         format: hex
         default: '#FFFFFF' 
+    - 
+        id: progress-color
+        title: Progress colorful mode switcher
+        description: Toggle progress color scheme
+        type: class-toggle
+        default: false
+    - 
+        id: progress-color-1
+        title: progress 2-39% color
+        type: variable-color
+        opacity: true
+        format: hex
+        default: '#ad5758'
+    - 
+        id: progress-color-2
+        title: progress 40-59% color
+        type: variable-color
+        opacity: true
+        format: hex
+        default: '#b87f4c'
+    - 
+        id: progress-color-3
+        title: progress 60-79% color
+        type: variable-color
+        opacity: true
+        format: hex
+        default: '#d2b874'
+    - 
+        id: progress-color-4
+        title: progress 80-99% color
+        type: variable-color
+        opacity: true
+        format: hex
+        default: '#b0c07e'
+    - 
+        id: progress-color-5
+        title: progress 1,100% color
+        type: variable-color
+        opacity: true
+        format: hex
+        default: '#768399'
     - 
         id: headings
         title: Headings
