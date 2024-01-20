@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 THINGS
-Version 2.1.19
+Version 2.1.20
 Created by @colineckert
 
 Readme:
@@ -972,11 +972,10 @@ body:not(.tasks) li[data-task='D'].task-list-item.is-checked {
 /* Progress bars styling. Credit Minimal theme: https://minimal.guide/progress-bars */
 /* Support @kepano - https://www.buymeacoffee.com/kepano */
 /* ------------------- */
-.progress-color{
+.progress-color {
   .markdown-rendered progress,
   .markdown-source-view.is-live-preview progress,
   .markdown-preview-view progress {
-    
     &[value^='1']::-webkit-progress-value,
     &[value^='2']::-webkit-progress-value,
     &[value^='3']::-webkit-progress-value {
@@ -998,7 +997,7 @@ body:not(.tasks) li[data-task='D'].task-list-item.is-checked {
     &[value='100']::-webkit-progress-value {
       background-color: var(--progress-color-5);
     }
-    
+
     &[value='0']::-webkit-progress-value,
     &[value='2']::-webkit-progress-value,
     &[value='3']::-webkit-progress-value,
