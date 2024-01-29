@@ -340,15 +340,6 @@ body:not(.default-font-color) mark em {
   color: var(--text-normal);
 }
 
-/* Highlight styling */
-span.cm-highlight,
-.markdown-preview-view mark,
-span.search-result-file-matched-text {
-  padding: 0.05em 0;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-}
-
 /* Fancy highlight */
 body.fancy-highlight span.cm-highlight,
 body.fancy-highlight .markdown-preview-view mark,
