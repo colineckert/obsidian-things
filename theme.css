@@ -1202,6 +1202,23 @@ body:not(.no-kanban-styles)
   > textarea {
   background: transparent;
 }
+body .kanban-plugin__item-button-wrapper > button {
+  color: var(--text-muted);
+  font-weight: 400;
+  background: 0 0;
+  min-height: calc(var(--input-height) + 8px);
+}
+body .kanban-plugin__item-form .kanban-plugin__item-input-wrapper {
+  min-height: calc(var(--input-height) + 8px);
+  display: flex;
+  justify-content: center;
+}
+.kanban-plugin__item-input-wrapper textarea {
+  background-color: var(--background-primary);
+}
+.kanban-plugin__lane-items {
+  padding-bottom: 0;
+}
 
 /* ─────────────────────────────────────────────────── */
 /* Styles Settings */
