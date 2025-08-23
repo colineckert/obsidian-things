@@ -456,7 +456,7 @@ body.fancy-code
 }
 
 body.fancy-code
-  .HyperMD-codeblock.cm-line:not(
+  .HyperMD-codeblock.HyperMD-codeblock-bg.cm-line:not(
     .HyperMD-codeblock-begin,
     .HyperMD-codeblock-end
   ) {
