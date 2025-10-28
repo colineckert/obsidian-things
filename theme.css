@@ -438,11 +438,11 @@ body.fancy-code
 }
 
 body.fancy-code
-  .HyperMD-codeblock.cm-line:not(
+  .HyperMD-codeblock.HyperMD-codeblock-bg.cm-line:not(
     .HyperMD-codeblock-begin,
     .HyperMD-codeblock-end
   ) {
-  padding-left: 2.6em !important;
+  padding-left: 2.6em;
 }
 
 body.fancy-code .cm-s-obsidian div.HyperMD-codeblock-begin-bg {
