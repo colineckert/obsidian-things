@@ -61,15 +61,20 @@ body {
   --progress-color-5: #768399;
 
   /* Font families */
-  --font-text-theme: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Inter, Ubuntu, sans-serif;
-  --font-editor-theme: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Inter, Ubuntu, sans-serif;
-  --font-monospace-theme: 'JetBrains Mono', 'Fira Code', Menlo, SFMono-Regular,
-    Consolas, 'Roboto Mono', monospace;
-  --font-interface-theme: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Inter, Ubuntu, sans-serif;
-  --font-editor: var(--font-editor-override), var(--font-text-override),
+  --font-text-theme:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Ubuntu,
+    sans-serif;
+  --font-editor-theme:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Ubuntu,
+    sans-serif;
+  --font-monospace-theme:
+    "JetBrains Mono", "Fira Code", Menlo, SFMono-Regular, Consolas,
+    "Roboto Mono", monospace;
+  --font-interface-theme:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Ubuntu,
+    sans-serif;
+  --font-editor:
+    var(--font-editor-override), var(--font-text-override),
     var(--font-editor-theme);
 
   --h1-size: 1.7rem;
@@ -152,16 +157,20 @@ body.theme-light.is-mobile {
   --text-highlight-bg-l: rgba(255, 208, 0, 0.4);
   --text-highlight-bg: var(--text-highlight-bg-l);
   --text-highlight-bg-active: rgba(255, 128, 0, 0.4);
-  --input-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12),
-    0 2px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 1.5px 0 rgba(0, 0, 0, 0.03),
-    0 1px 2px 0 rgba(0, 0, 0, 0.04), 0 0 0 0 transparent;
-  --input-shadow-hover: inset 0 0 0 1px rgba(0, 0, 0, 0.17),
-    0 2px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 1.5px 0 rgba(0, 0, 0, 0.03),
-    0 1px 2px 0 rgba(0, 0, 0, 0.04), 0 0 0 0 transparent;
-  --shadow-s: 0px 1px 2px rgba(0, 0, 0, 0.028),
-    0px 3.4px 6.7px rgba(0, 0, 0, 0.042), 0px 15px 30px rgba(0, 0, 0, 0.07);
-  --shadow-l: 0px 1.8px 7.3px rgba(0, 0, 0, 0.071),
-    0px 6.3px 24.7px rgba(0, 0, 0, 0.112), 0px 30px 90px rgba(0, 0, 0, 0.2);
+  --input-shadow:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.12), 0 2px 3px 0 rgba(0, 0, 0, 0.05),
+    0 1px 1.5px 0 rgba(0, 0, 0, 0.03), 0 1px 2px 0 rgba(0, 0, 0, 0.04),
+    0 0 0 0 transparent;
+  --input-shadow-hover:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.17), 0 2px 3px 0 rgba(0, 0, 0, 0.1),
+    0 1px 1.5px 0 rgba(0, 0, 0, 0.03), 0 1px 2px 0 rgba(0, 0, 0, 0.04),
+    0 0 0 0 transparent;
+  --shadow-s:
+    0px 1px 2px rgba(0, 0, 0, 0.028), 0px 3.4px 6.7px rgba(0, 0, 0, 0.042),
+    0px 15px 30px rgba(0, 0, 0, 0.07);
+  --shadow-l:
+    0px 1.8px 7.3px rgba(0, 0, 0, 0.071), 0px 6.3px 24.7px rgba(0, 0, 0, 0.112),
+    0px 30px 90px rgba(0, 0, 0, 0.2);
 
   --tag-background: var(--tag-background-color-l);
   --tag-color: var(--tag-font-color-l);
@@ -188,6 +197,9 @@ body.theme-light.is-mobile {
     var(--accent-s),
     calc(var(--accent-l) - 10%)
   );
+
+  --titlebar-background: var(--color-base-10);
+  --titlebar-background-focused: var(--color-base-25);
 
   --atom-gray-1: #383a42;
   --atom-gray-2: #383a42;
@@ -239,7 +251,8 @@ body.theme-dark.is-mobile {
     var(--accent-s),
     calc(var(--accent-l) + 3.8%)
   );
-  --titlebar-background-focused: var(--color-base-10);
+  --titlebar-background: var(--color-base-10);
+  --titlebar-background-focused: var(--color-base-20);
   --background-modifier-form-field: var(--color-base-25);
   --background-secondary-alt: var(--color-base-30);
   --interactive-normal: var(--color-base-30);
@@ -248,16 +261,20 @@ body.theme-dark.is-mobile {
   --text-highlight-bg: var(--text-highlight-bg-d);
   --text-highlight-bg-active: rgba(255, 128, 0, 0.4);
   --text-selection: hsla(var(--interactive-accent-hsl), 0.25);
-  --input-shadow: inset 0 0.5px 0.5px 0.5px rgba(255, 255, 255, 0.09),
+  --input-shadow:
+    inset 0 0.5px 0.5px 0.5px rgba(255, 255, 255, 0.09),
     0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 1px 1.5px 0 rgba(0, 0, 0, 0.1),
     0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 0 0 0 transparent;
-  --input-shadow-hover: inset 0 0.5px 1px 0.5px rgba(255, 255, 255, 0.16),
+  --input-shadow-hover:
+    inset 0 0.5px 1px 0.5px rgba(255, 255, 255, 0.16),
     0 2px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 1.5px 0 rgba(0, 0, 0, 0.2),
     0 1px 2px 0 rgba(0, 0, 0, 0.4), 0 0 0 0 transparent;
-  --shadow-s: 0px 1px 2px rgba(0, 0, 0, 0.121),
-    0px 3.4px 6.7px rgba(0, 0, 0, 0.179), 0px 15px 30px rgba(0, 0, 0, 0.3);
-  --shadow-l: 0px 1.8px 7.3px rgba(0, 0, 0, 0.071),
-    0px 6.3px 24.7px rgba(0, 0, 0, 0.112), 0px 30px 90px rgba(0, 0, 0, 0.2);
+  --shadow-s:
+    0px 1px 2px rgba(0, 0, 0, 0.121), 0px 3.4px 6.7px rgba(0, 0, 0, 0.179),
+    0px 15px 30px rgba(0, 0, 0, 0.3);
+  --shadow-l:
+    0px 1.8px 7.3px rgba(0, 0, 0, 0.071), 0px 6.3px 24.7px rgba(0, 0, 0, 0.112),
+    0px 30px 90px rgba(0, 0, 0, 0.2);
 
   --tag-background: var(--tag-background-color-d);
   --tag-color: var(--tag-font-color-d);
@@ -301,12 +318,31 @@ body.is-mobile.theme-dark.mobile-black-background {
   }
 }
 
+/* Titlebar focused/unfocused states */
+body:not(.hider-frameless):not(.is-fullscreen):not(.is-mobile) .titlebar {
+  background-color: var(--titlebar-background);
+}
+body.is-focused:not(.hider-frameless):not(.is-fullscreen):not(.is-mobile)
+  .titlebar {
+  background-color: var(--titlebar-background-focused);
+}
+
+/* Breadcrumb: hidden by default, visible on hover */
+.view-header-title-container {
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+.view-header:hover .view-header-title-container {
+  opacity: 1;
+}
+
 /* H2 styling */
 body.h2-underline h2,
 body.h2-underline .HyperMD-header.HyperMD-header-2.cm-line {
   border-bottom: 2px solid var(--background-modifier-border);
   width: 100%;
   padding-bottom: 2px;
+  margin-bottom: 8px !important;
 }
 
 /* Hashtags font */
@@ -365,9 +401,9 @@ body.fancy-highlight span.search-result-file-matched-text {
 
 /* Completed checkboxes */
 .markdown-preview-view ul > li.task-list-item.is-checked,
-.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task='x'],
-.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task='X'],
-.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task='M'] {
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="x"],
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="X"],
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="M"] {
   text-decoration: none;
   color: var(--text-faint);
 }
@@ -375,7 +411,9 @@ body.fancy-highlight span.search-result-file-matched-text {
 /* Image card */
 img {
   border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 .theme-dark .modal-container .suggestion-item.is-selected {
@@ -385,7 +423,7 @@ img {
 /* Focus active line */
 body.active-line .cm-active:not(.HyperMD-header, .HyperMD-codeblock)::before,
 body.active-line .cm-active.HyperMD-quote::before {
-  content: '';
+  content: "";
   height: 100%;
   position: absolute;
   left: -1.125em;
@@ -465,16 +503,16 @@ body.fancy-code .cm-line.HyperMD-codeblock .code-block-flair {
   top: 0;
 }
 
-body.fancy-code .markdown-reading-view pre[class*='language-']::before {
+body.fancy-code .markdown-reading-view pre[class*="language-"]::before {
   display: block;
-  content: ' ';
+  content: " ";
   line-height: 1.5em;
   background-color: var(--code-block-alt-bg);
   border-top-right-radius: calc(var(--codeblock-roundness) * 0.8);
   border-top-left-radius: calc(var(--codeblock-roundness) * 0.8);
 }
 
-body.fancy-code pre[class*='language-']::after {
+body.fancy-code pre[class*="language-"]::after {
   content: attr(class);
   font-size: 0.9rem;
   text-shadow: none;
@@ -530,7 +568,7 @@ body.fancy-code .markdown-preview-view pre code {
 .cm-hmd-codeblock.cm-bracket {
   color: var(--atom-gray-2);
 }
-code[class*='language-'],
+code[class*="language-"],
 .token.selector,
 .cm-tag,
 .token.dom.variable,
@@ -628,10 +666,13 @@ body.is-mobile:not(.floating-button-off):not(.advanced-toolbar)
   width: 53px;
   height: 53px;
   border-radius: 50% !important;
-  box-shadow: 1.1px 0.3px 2.2px rgba(0, 0, 0, 0.02),
-    2.7px 0.7px 5.3px rgba(0, 0, 0, 0.028), 5px 1.3px 10px rgba(0, 0, 0, 0.035),
+  box-shadow:
+    1.1px 0.3px 2.2px rgba(0, 0, 0, 0.02),
+    2.7px 0.7px 5.3px rgba(0, 0, 0, 0.028),
+    5px 1.3px 10px rgba(0, 0, 0, 0.035),
     8.9px 2.2px 17.9px rgba(0, 0, 0, 0.042),
-    16.7px 4.2px 33.4px rgba(0, 0, 0, 0.05), 40px 10px 80px rgba(0, 0, 0, 0.07);
+    16.7px 4.2px 33.4px rgba(0, 0, 0, 0.05),
+    40px 10px 80px rgba(0, 0, 0, 0.07);
 }
 
 body.is-mobile:not(.floating-button-off).advanced-toolbar
@@ -652,10 +693,13 @@ body.is-mobile:not(.floating-button-off).advanced-toolbar
   width: 53px;
   height: 53px;
   border-radius: 50% !important;
-  box-shadow: 1.1px 0.3px 2.2px rgba(0, 0, 0, 0.02),
-    2.7px 0.7px 5.3px rgba(0, 0, 0, 0.028), 5px 1.3px 10px rgba(0, 0, 0, 0.035),
+  box-shadow:
+    1.1px 0.3px 2.2px rgba(0, 0, 0, 0.02),
+    2.7px 0.7px 5.3px rgba(0, 0, 0, 0.028),
+    5px 1.3px 10px rgba(0, 0, 0, 0.035),
     8.9px 2.2px 17.9px rgba(0, 0, 0, 0.042),
-    16.7px 4.2px 33.4px rgba(0, 0, 0, 0.05), 40px 10px 80px rgba(0, 0, 0, 0.07);
+    16.7px 4.2px 33.4px rgba(0, 0, 0, 0.05),
+    40px 10px 80px rgba(0, 0, 0, 0.07);
 }
 
 /* ------------------- */
@@ -725,24 +769,24 @@ li[data-task='D'] > p > input:checked {
   -webkit-mask-size: var(--checkbox-icon);
   -webkit-mask-position: 50% 50%;
 }
-input[data-task='>']:checked,
-li[data-task='>'] > input:checked,
-li[data-task='>'] > p > input:checked {
+input[data-task=">"]:checked,
+li[data-task=">"] > input:checked,
+li[data-task=">"] > p > input:checked {
   color: var(--text-faint);
   transform: rotate(90deg);
   -webkit-mask-position: 50% 100%;
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath d='M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z' /%3E%3C/svg%3E");
 }
-input[data-task='<']:checked,
-li[data-task='<'] > input:checked,
-li[data-task='<'] > p > input:checked {
+input[data-task="<"]:checked,
+li[data-task="<"] > input:checked,
+li[data-task="<"] > p > input:checked {
   color: var(--text-faint);
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z' clip-rule='evenodd' /%3E%3C/svg%3E");
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z' clip-rule='evenodd' /%3E%3C/svg%3E");
 }
-input[data-task='?']:checked,
-li[data-task='?'] > input:checked,
-li[data-task='?'] > p > input:checked {
+input[data-task="?"]:checked,
+li[data-task="?"] > input:checked,
+li[data-task="?"] > p > input:checked {
   --checkbox-marker-color: transparent;
   background-color: var(--color-yellow);
   border-color: var(--color-yellow);
@@ -750,25 +794,25 @@ li[data-task='?'] > p > input:checked {
   background-size: 200% 90%;
   background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16"%3E%3Cpath fill="white" fill-rule="evenodd" d="M4.475 5.458c-.284 0-.514-.237-.47-.517C4.28 3.24 5.576 2 7.825 2c2.25 0 3.767 1.36 3.767 3.215c0 1.344-.665 2.288-1.79 2.973c-1.1.659-1.414 1.118-1.414 2.01v.03a.5.5 0 0 1-.5.5h-.77a.5.5 0 0 1-.5-.495l-.003-.2c-.043-1.221.477-2.001 1.645-2.712c1.03-.632 1.397-1.135 1.397-2.028c0-.979-.758-1.698-1.926-1.698c-1.009 0-1.71.529-1.938 1.402c-.066.254-.278.461-.54.461h-.777ZM7.496 14c.622 0 1.095-.474 1.095-1.09c0-.618-.473-1.092-1.095-1.092c-.606 0-1.087.474-1.087 1.091S6.89 14 7.496 14Z"%2F%3E%3C%2Fsvg%3E');
 }
-.theme-dark input[data-task='?']:checked,
-.theme-dark li[data-task='?'] > input:checked,
-.theme-dark li[data-task='?'] > p > input:checked {
+.theme-dark input[data-task="?"]:checked,
+.theme-dark li[data-task="?"] > input:checked,
+.theme-dark li[data-task="?"] > p > input:checked {
   background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16"%3E%3Cpath fill="black" fill-opacity="0.8" fill-rule="evenodd" d="M4.475 5.458c-.284 0-.514-.237-.47-.517C4.28 3.24 5.576 2 7.825 2c2.25 0 3.767 1.36 3.767 3.215c0 1.344-.665 2.288-1.79 2.973c-1.1.659-1.414 1.118-1.414 2.01v.03a.5.5 0 0 1-.5.5h-.77a.5.5 0 0 1-.5-.495l-.003-.2c-.043-1.221.477-2.001 1.645-2.712c1.03-.632 1.397-1.135 1.397-2.028c0-.979-.758-1.698-1.926-1.698c-1.009 0-1.71.529-1.938 1.402c-.066.254-.278.461-.54.461h-.777ZM7.496 14c.622 0 1.095-.474 1.095-1.09c0-.618-.473-1.092-1.095-1.092c-.606 0-1.087.474-1.087 1.091S6.89 14 7.496 14Z"%2F%3E%3C%2Fsvg%3E');
 }
-input[data-task='/']:checked,
-li[data-task='/'] > input:checked,
-li[data-task='/'] > p > input:checked {
+input[data-task="/"]:checked,
+li[data-task="/"] > input:checked,
+li[data-task="/"] > p > input:checked {
   background-image: none;
   background-color: transparent;
   position: relative;
   overflow: hidden;
 }
-input[data-task='/']:checked:after,
-li[data-task='/'] > input:checked:after,
-li[data-task='/'] > p > input:checked:after {
+input[data-task="/"]:checked:after,
+li[data-task="/"] > input:checked:after,
+li[data-task="/"] > p > input:checked:after {
   top: 0;
   left: 0;
-  content: ' ';
+  content: " ";
   display: block;
   position: absolute;
   background-color: var(--color-accent);
@@ -776,18 +820,18 @@ li[data-task='/'] > p > input:checked:after {
   height: 100%;
   -webkit-mask-image: none;
 }
-input[data-task='!']:checked,
-li[data-task='!'] > input:checked,
-li[data-task='!'] > p > input:checked {
+input[data-task="!"]:checked,
+li[data-task="!"] > input:checked,
+li[data-task="!"] > p > input:checked {
   color: var(--color-orange);
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z' clip-rule='evenodd' /%3E%3C/svg%3E");
 }
 input[data-task='"']:checked,
-input[data-task='“']:checked,
+input[data-task="“"]:checked,
 li[data-task='"'] > input:checked,
 li[data-task='"'] > p > input:checked,
-li[data-task='“'] > input:checked,
-li[data-task='“'] > p > input:checked {
+li[data-task="“"] > input:checked,
+li[data-task="“"] > p > input:checked {
   --checkbox-marker-color: transparent;
   background-position: 50% 50%;
   background-color: var(--color-cyan);
@@ -797,45 +841,45 @@ li[data-task='“'] > p > input:checked {
   background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"%3E%3Cpath fill="white" d="M6.5 10c-.223 0-.437.034-.65.065c.069-.232.14-.468.254-.68c.114-.308.292-.575.469-.844c.148-.291.409-.488.601-.737c.201-.242.475-.403.692-.604c.213-.21.492-.315.714-.463c.232-.133.434-.28.65-.35l.539-.222l.474-.197l-.485-1.938l-.597.144c-.191.048-.424.104-.689.171c-.271.05-.56.187-.882.312c-.318.142-.686.238-1.028.466c-.344.218-.741.4-1.091.692c-.339.301-.748.562-1.05.945c-.33.358-.656.734-.909 1.162c-.293.408-.492.856-.702 1.299c-.19.443-.343.896-.468 1.336c-.237.882-.343 1.72-.384 2.437c-.034.718-.014 1.315.028 1.747c.015.204.043.402.063.539l.025.168l.026-.006A4.5 4.5 0 1 0 6.5 10zm11 0c-.223 0-.437.034-.65.065c.069-.232.14-.468.254-.68c.114-.308.292-.575.469-.844c.148-.291.409-.488.601-.737c.201-.242.475-.403.692-.604c.213-.21.492-.315.714-.463c.232-.133.434-.28.65-.35l.539-.222l.474-.197l-.485-1.938l-.597.144c-.191.048-.424.104-.689.171c-.271.05-.56.187-.882.312c-.317.143-.686.238-1.028.467c-.344.218-.741.4-1.091.692c-.339.301-.748.562-1.05.944c-.33.358-.656.734-.909 1.162c-.293.408-.492.856-.702 1.299c-.19.443-.343.896-.468 1.336c-.237.882-.343 1.72-.384 2.437c-.034.718-.014 1.315.028 1.747c.015.204.043.402.063.539l.025.168l.026-.006A4.5 4.5 0 1 0 17.5 10z"%2F%3E%3C%2Fsvg%3E');
 }
 .theme-dark input[data-task='"']:checked,
-.theme-dark input[data-task='“']:checked,
+.theme-dark input[data-task="“"]:checked,
 .theme-dark li[data-task='"'] > input:checked,
 .theme-dark li[data-task='"'] > p > input:checked,
-.theme-dark li[data-task='“'] > input:checked,
-.theme-dark li[data-task='“'] > p > input:checked {
+.theme-dark li[data-task="“"] > input:checked,
+.theme-dark li[data-task="“"] > p > input:checked {
   background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"%3E%3Cpath fill="black" fill-opacity="0.7" d="M6.5 10c-.223 0-.437.034-.65.065c.069-.232.14-.468.254-.68c.114-.308.292-.575.469-.844c.148-.291.409-.488.601-.737c.201-.242.475-.403.692-.604c.213-.21.492-.315.714-.463c.232-.133.434-.28.65-.35l.539-.222l.474-.197l-.485-1.938l-.597.144c-.191.048-.424.104-.689.171c-.271.05-.56.187-.882.312c-.318.142-.686.238-1.028.466c-.344.218-.741.4-1.091.692c-.339.301-.748.562-1.05.945c-.33.358-.656.734-.909 1.162c-.293.408-.492.856-.702 1.299c-.19.443-.343.896-.468 1.336c-.237.882-.343 1.72-.384 2.437c-.034.718-.014 1.315.028 1.747c.015.204.043.402.063.539l.025.168l.026-.006A4.5 4.5 0 1 0 6.5 10zm11 0c-.223 0-.437.034-.65.065c.069-.232.14-.468.254-.68c.114-.308.292-.575.469-.844c.148-.291.409-.488.601-.737c.201-.242.475-.403.692-.604c.213-.21.492-.315.714-.463c.232-.133.434-.28.65-.35l.539-.222l.474-.197l-.485-1.938l-.597.144c-.191.048-.424.104-.689.171c-.271.05-.56.187-.882.312c-.317.143-.686.238-1.028.467c-.344.218-.741.4-1.091.692c-.339.301-.748.562-1.05.944c-.33.358-.656.734-.909 1.162c-.293.408-.492.856-.702 1.299c-.19.443-.343.896-.468 1.336c-.237.882-.343 1.72-.384 2.437c-.034.718-.014 1.315.028 1.747c.015.204.043.402.063.539l.025.168l.026-.006A4.5 4.5 0 1 0 17.5 10z"%2F%3E%3C%2Fsvg%3E');
 }
-input[data-task='-']:checked,
-li[data-task='-'] > input:checked,
-li[data-task='-'] > p > input:checked {
+input[data-task="-"]:checked,
+li[data-task="-"] > input:checked,
+li[data-task="-"] > p > input:checked {
   color: var(--text-faint);
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z' clip-rule='evenodd' /%3E%3C/svg%3E");
 }
 body:not(.tasks)
   .markdown-preview-view
   ul
-  li[data-task='-'].task-list-item.is-checked,
+  li[data-task="-"].task-list-item.is-checked,
 body:not(.tasks)
   .markdown-source-view.mod-cm6
-  .HyperMD-task-line[data-task]:is([data-task='-']),
-body:not(.tasks) li[data-task='-'].task-list-item.is-checked {
+  .HyperMD-task-line[data-task]:is([data-task="-"]),
+body:not(.tasks) li[data-task="-"].task-list-item.is-checked {
   color: var(--text-faint);
   text-decoration: line-through solid var(--text-faint) 1px;
 }
-input[data-task='*']:checked,
-li[data-task='*'] > input:checked,
-li[data-task='*'] > p > input:checked {
+input[data-task="*"]:checked,
+li[data-task="*"] > input:checked,
+li[data-task="*"] > p > input:checked {
   color: var(--color-yellow);
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath d='M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z' /%3E%3C/svg%3E");
 }
-input[data-task='l']:checked,
-li[data-task='l'] > input:checked,
-li[data-task='l'] > p > input:checked {
+input[data-task="l"]:checked,
+li[data-task="l"] > input:checked,
+li[data-task="l"] > p > input:checked {
   color: var(--color-red);
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z' clip-rule='evenodd' /%3E%3C/svg%3E");
 }
-input[data-task='i']:checked,
-li[data-task='i'] > input:checked,
-li[data-task='i'] > p > input:checked {
+input[data-task="i"]:checked,
+li[data-task="i"] > input:checked,
+li[data-task="i"] > p > input:checked {
   --checkbox-marker-color: transparent;
   background-color: var(--color-blue);
   border-color: var(--color-blue);
@@ -843,119 +887,119 @@ li[data-task='i'] > p > input:checked {
   background-size: 100%;
   background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512"%3E%3Cpath fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="40" d="M196 220h64v172"%2F%3E%3Cpath fill="none" stroke="white" stroke-linecap="round" stroke-miterlimit="10" stroke-width="40" d="M187 396h138"%2F%3E%3Cpath fill="white" d="M256 160a32 32 0 1 1 32-32a32 32 0 0 1-32 32Z"%2F%3E%3C%2Fsvg%3E');
 }
-.theme-dark input[data-task='i']:checked,
-.theme-dark li[data-task='i'] > input:checked,
-.theme-dark li[data-task='i'] > p > input:checked {
+.theme-dark input[data-task="i"]:checked,
+.theme-dark li[data-task="i"] > input:checked,
+.theme-dark li[data-task="i"] > p > input:checked {
   background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512"%3E%3Cpath fill="none" stroke="black" stroke-opacity="0.8" stroke-linecap="round" stroke-linejoin="round" stroke-width="40" d="M196 220h64v172"%2F%3E%3Cpath fill="none" stroke="black" stroke-opacity="0.8" stroke-linecap="round" stroke-miterlimit="10" stroke-width="40" d="M187 396h138"%2F%3E%3Cpath fill="black" fill-opacity="0.8" d="M256 160a32 32 0 1 1 32-32a32 32 0 0 1-32 32Z"%2F%3E%3C%2Fsvg%3E');
 }
-input[data-task='S']:checked,
-li[data-task='S'] > input:checked,
-li[data-task='S'] > p > input:checked {
+input[data-task="S"]:checked,
+li[data-task="S"] > input:checked,
+li[data-task="S"] > p > input:checked {
   --checkbox-marker-color: transparent;
   border-color: var(--color-green);
   background-color: var(--color-green);
   background-size: 100%;
   background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 48 48"%3E%3Cpath fill="white" fill-rule="evenodd" d="M26 8a2 2 0 1 0-4 0v2a8 8 0 1 0 0 16v8a4.002 4.002 0 0 1-3.773-2.666a2 2 0 0 0-3.771 1.332A8.003 8.003 0 0 0 22 38v2a2 2 0 1 0 4 0v-2a8 8 0 1 0 0-16v-8a4.002 4.002 0 0 1 3.773 2.666a2 2 0 0 0 3.771-1.332A8.003 8.003 0 0 0 26 10V8Zm-4 6a4 4 0 0 0 0 8v-8Zm4 12v8a4 4 0 0 0 0-8Z" clip-rule="evenodd"%2F%3E%3C%2Fsvg%3E');
 }
-.theme-dark input[data-task='S']:checked,
-.theme-dark li[data-task='S'] > input:checked,
-.theme-dark li[data-task='S'] > p > input:checked {
+.theme-dark input[data-task="S"]:checked,
+.theme-dark li[data-task="S"] > input:checked,
+.theme-dark li[data-task="S"] > p > input:checked {
   background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 48 48"%3E%3Cpath fill-opacity="0.8" fill="black" fill-rule="evenodd" d="M26 8a2 2 0 1 0-4 0v2a8 8 0 1 0 0 16v8a4.002 4.002 0 0 1-3.773-2.666a2 2 0 0 0-3.771 1.332A8.003 8.003 0 0 0 22 38v2a2 2 0 1 0 4 0v-2a8 8 0 1 0 0-16v-8a4.002 4.002 0 0 1 3.773 2.666a2 2 0 0 0 3.771-1.332A8.003 8.003 0 0 0 26 10V8Zm-4 6a4 4 0 0 0 0 8v-8Zm4 12v8a4 4 0 0 0 0-8Z" clip-rule="evenodd"%2F%3E%3C%2Fsvg%3E');
 }
-input[data-task='I']:checked,
-li[data-task='I'] > input:checked,
-li[data-task='I'] > p > input:checked {
+input[data-task="I"]:checked,
+li[data-task="I"] > input:checked,
+li[data-task="I"] > p > input:checked {
   color: var(--color-yellow);
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath d='M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.002z' /%3E%3C/svg%3E");
 }
-input[data-task='f']:checked,
-li[data-task='f'] > input:checked,
-li[data-task='f'] > p > input:checked {
+input[data-task="f"]:checked,
+li[data-task="f"] > input:checked,
+li[data-task="f"] > p > input:checked {
   color: var(--color-red);
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z' clip-rule='evenodd' /%3E%3C/svg%3E");
 }
-input[data-task='k']:checked,
-li[data-task='k'] > input:checked,
-li[data-task='k'] > p > input:checked {
+input[data-task="k"]:checked,
+li[data-task="k"] > input:checked,
+li[data-task="k"] > p > input:checked {
   color: var(--color-yellow);
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 2 2 0 012 2 1 1 0 102 0 4 4 0 00-4-4z' clip-rule='evenodd' /%3E%3C/svg%3E");
 }
-input[data-task='u']:checked,
-li[data-task='u'] > input:checked,
-li[data-task='u'] > p > input:checked {
+input[data-task="u"]:checked,
+li[data-task="u"] > input:checked,
+li[data-task="u"] > p > input:checked {
   color: var(--color-green);
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z' clip-rule='evenodd' /%3E%3C/svg%3E");
 }
-input[data-task='d']:checked,
-li[data-task='d'] > input:checked,
-li[data-task='d'] > p > input:checked {
+input[data-task="d"]:checked,
+li[data-task="d"] > input:checked,
+li[data-task="d"] > p > input:checked {
   color: var(--color-red);
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M12 13a1 1 0 100 2h5a1 1 0 001-1V9a1 1 0 10-2 0v2.586l-4.293-4.293a1 1 0 00-1.414 0L8 9.586 3.707 5.293a1 1 0 00-1.414 1.414l5 5a1 1 0 001.414 0L11 9.414 14.586 13H12z' clip-rule='evenodd' /%3E%3C/svg%3E");
 }
-input[data-task='w']:checked,
-li[data-task='w'] > input:checked,
-li[data-task='w'] > p > input:checked {
+input[data-task="w"]:checked,
+li[data-task="w"] > input:checked,
+li[data-task="w"] > p > input:checked {
   color: var(--color-purple);
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M6 3a1 1 0 011-1h.01a1 1 0 010 2H7a1 1 0 01-1-1zm2 3a1 1 0 00-2 0v1a2 2 0 00-2 2v1a2 2 0 00-2 2v.683a3.7 3.7 0 011.055.485 1.704 1.704 0 001.89 0 3.704 3.704 0 014.11 0 1.704 1.704 0 001.89 0 3.704 3.704 0 014.11 0 1.704 1.704 0 001.89 0A3.7 3.7 0 0118 12.683V12a2 2 0 00-2-2V9a2 2 0 00-2-2V6a1 1 0 10-2 0v1h-1V6a1 1 0 10-2 0v1H8V6zm10 8.868a3.704 3.704 0 01-4.055-.036 1.704 1.704 0 00-1.89 0 3.704 3.704 0 01-4.11 0 1.704 1.704 0 00-1.89 0A3.704 3.704 0 012 14.868V17a1 1 0 001 1h14a1 1 0 001-1v-2.132zM9 3a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zm3 0a1 1 0 011-1h.01a1 1 0 110 2H13a1 1 0 01-1-1z' clip-rule='evenodd' /%3E%3C/svg%3E");
 }
-input[data-task='p']:checked,
-li[data-task='p'] > input:checked,
-li[data-task='p'] > p > input:checked {
+input[data-task="p"]:checked,
+li[data-task="p"] > input:checked,
+li[data-task="p"] > p > input:checked {
   color: var(--color-green);
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath d='M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z' /%3E%3C/svg%3E");
 }
-input[data-task='c']:checked,
-li[data-task='c'] > input:checked,
-li[data-task='c'] > p > input:checked {
+input[data-task="c"]:checked,
+li[data-task="c"] > input:checked,
+li[data-task="c"] > p > input:checked {
   color: var(--color-orange);
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath d='M18 9.5a1.5 1.5 0 11-3 0v-6a1.5 1.5 0 013 0v6zM14 9.667v-5.43a2 2 0 00-1.105-1.79l-.05-.025A4 4 0 0011.055 2H5.64a2 2 0 00-1.962 1.608l-1.2 6A2 2 0 004.44 12H8v4a2 2 0 002 2 1 1 0 001-1v-.667a4 4 0 01.8-2.4l1.4-1.866a4 4 0 00.8-2.4z' /%3E%3C/svg%3E");
 }
-input[data-task='b']:checked,
-li[data-task='b'] > input:checked,
-li[data-task='b'] > p > input:checked {
+input[data-task="b"]:checked,
+li[data-task="b"] > input:checked,
+li[data-task="b"] > p > input:checked {
   color: var(--color-orange);
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath d='M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z' /%3E%3C/svg%3E");
 }
-input[data-task='P']:checked,
-li[data-task='P'] > input:checked,
-li[data-task='P'] > p > input:checked {
+input[data-task="P"]:checked,
+li[data-task="P"] > input:checked,
+li[data-task="P"] > p > input:checked {
   color: var(--color-green);
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' width='16' height='16'%3E%3Cpath d='M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L9.573.677A.25.25 0 0 1 10 .854V2.5h1A2.5 2.5 0 0 1 13.5 5v5.628a2.251 2.251 0 1 1-1.5 0V5a1 1 0 0 0-1-1h-1v1.646a.25.25 0 0 1-.427.177L7.177 3.427a.25.25 0 0 1 0-.354ZM3.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm8.25.75a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0Z'%3E%3C/path%3E%3C/svg%3E");
 }
-input[data-task='M']:checked,
-li[data-task='M'] > input:checked,
-li[data-task='M'] > p > input:checked {
+input[data-task="M"]:checked,
+li[data-task="M"] > input:checked,
+li[data-task="M"] > p > input:checked {
   color: var(--color-purple);
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' width='16' height='16'%3E%3Cpath d='M5.45 5.154A4.25 4.25 0 0 0 9.25 7.5h1.378a2.251 2.251 0 1 1 0 1.5H9.25A5.734 5.734 0 0 1 5 7.123v3.505a2.25 2.25 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.95-.218ZM4.25 13.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm8.5-4.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM5 3.25a.75.75 0 1 0 0 .005V3.25Z'%3E%3C/path%3E%3C/svg%3E");
 }
-input[data-task='D']:checked,
-li[data-task='D'] > input:checked,
-li[data-task='D'] > p > input:checked {
+input[data-task="D"]:checked,
+li[data-task="D"] > input:checked,
+li[data-task="D"] > p > input:checked {
   color: var(--color-base-50);
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' width='16' height='16'%3E%3Cpath d='M3.25 1A2.25 2.25 0 0 1 4 5.372v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.251 2.251 0 0 1 3.25 1Zm9.5 14a2.25 2.25 0 1 1 0-4.5 2.25 2.25 0 0 1 0 4.5ZM2.5 3.25a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0ZM3.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm9.5 0a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM14 7.5a1.25 1.25 0 1 1-2.5 0 1.25 1.25 0 0 1 2.5 0Zm0-4.25a1.25 1.25 0 1 1-2.5 0 1.25 1.25 0 0 1 2.5 0Z'%3E%3C/path%3E%3C/svg%3E");
 }
 
-body:not(.tasks) li[data-task='>'].task-list-item.is-checked,
-body:not(.tasks) li[data-task='<'].task-list-item.is-checked,
-body:not(.tasks) li[data-task='b'].task-list-item.is-checked,
-body:not(.tasks) li[data-task='i'].task-list-item.is-checked,
-body:not(.tasks) li[data-task='*'].task-list-item.is-checked,
-body:not(.tasks) li[data-task='!'].task-list-item.is-checked,
-body:not(.tasks) li[data-task='S'].task-list-item.is-checked,
-body:not(.tasks) li[data-task='?'].task-list-item.is-checked,
-body:not(.tasks) li[data-task='/'].task-list-item.is-checked,
+body:not(.tasks) li[data-task=">"].task-list-item.is-checked,
+body:not(.tasks) li[data-task="<"].task-list-item.is-checked,
+body:not(.tasks) li[data-task="b"].task-list-item.is-checked,
+body:not(.tasks) li[data-task="i"].task-list-item.is-checked,
+body:not(.tasks) li[data-task="*"].task-list-item.is-checked,
+body:not(.tasks) li[data-task="!"].task-list-item.is-checked,
+body:not(.tasks) li[data-task="S"].task-list-item.is-checked,
+body:not(.tasks) li[data-task="?"].task-list-item.is-checked,
+body:not(.tasks) li[data-task="/"].task-list-item.is-checked,
 body:not(.tasks) li[data-task='"'].task-list-item.is-checked,
-body:not(.tasks) li[data-task='l'].task-list-item.is-checked,
-body:not(.tasks) li[data-task='I'].task-list-item.is-checked,
-body:not(.tasks) li[data-task='p'].task-list-item.is-checked,
-body:not(.tasks) li[data-task='c'].task-list-item.is-checked,
-body:not(.tasks) li[data-task='f'].task-list-item.is-checked,
-body:not(.tasks) li[data-task='k'].task-list-item.is-checked,
-body:not(.tasks) li[data-task='w'].task-list-item.is-checked,
-body:not(.tasks) li[data-task='u'].task-list-item.is-checked,
-body:not(.tasks) li[data-task='d'].task-list-item.is-checked,
-body:not(.tasks) li[data-task='P'].task-list-item.is-checked,
-body:not(.tasks) li[data-task='D'].task-list-item.is-checked {
+body:not(.tasks) li[data-task="l"].task-list-item.is-checked,
+body:not(.tasks) li[data-task="I"].task-list-item.is-checked,
+body:not(.tasks) li[data-task="p"].task-list-item.is-checked,
+body:not(.tasks) li[data-task="c"].task-list-item.is-checked,
+body:not(.tasks) li[data-task="f"].task-list-item.is-checked,
+body:not(.tasks) li[data-task="k"].task-list-item.is-checked,
+body:not(.tasks) li[data-task="w"].task-list-item.is-checked,
+body:not(.tasks) li[data-task="u"].task-list-item.is-checked,
+body:not(.tasks) li[data-task="d"].task-list-item.is-checked,
+body:not(.tasks) li[data-task="P"].task-list-item.is-checked,
+body:not(.tasks) li[data-task="D"].task-list-item.is-checked {
   color: var(--text-normal);
 }
 
@@ -967,37 +1011,37 @@ body:not(.tasks) li[data-task='D'].task-list-item.is-checked {
   .markdown-rendered progress,
   .markdown-source-view.is-live-preview progress,
   .markdown-preview-view progress {
-    &[value^='1']::-webkit-progress-value,
-    &[value^='2']::-webkit-progress-value,
-    &[value^='3']::-webkit-progress-value {
+    &[value^="1"]::-webkit-progress-value,
+    &[value^="2"]::-webkit-progress-value,
+    &[value^="3"]::-webkit-progress-value {
       background-color: var(--progress-color-1);
     }
-    &[value^='4']::-webkit-progress-value,
-    &[value^='5']::-webkit-progress-value {
+    &[value^="4"]::-webkit-progress-value,
+    &[value^="5"]::-webkit-progress-value {
       background-color: var(--progress-color-2);
     }
-    &[value^='6']::-webkit-progress-value,
-    &[value^='7']::-webkit-progress-value {
+    &[value^="6"]::-webkit-progress-value,
+    &[value^="7"]::-webkit-progress-value {
       background-color: var(--progress-color-3);
     }
-    &[value^='8']::-webkit-progress-value,
-    &[value^='9']::-webkit-progress-value {
+    &[value^="8"]::-webkit-progress-value,
+    &[value^="9"]::-webkit-progress-value {
       background-color: var(--progress-color-4);
     }
-    &[value='1']::-webkit-progress-value,
-    &[value='100']::-webkit-progress-value {
+    &[value="1"]::-webkit-progress-value,
+    &[value="100"]::-webkit-progress-value {
       background-color: var(--progress-color-5);
     }
 
-    &[value='0']::-webkit-progress-value,
-    &[value='2']::-webkit-progress-value,
-    &[value='3']::-webkit-progress-value,
-    &[value='4']::-webkit-progress-value,
-    &[value='5']::-webkit-progress-value,
-    &[value='6']::-webkit-progress-value,
-    &[value='7']::-webkit-progress-value,
-    &[value='8']::-webkit-progress-value,
-    &[value='9']::-webkit-progress-value {
+    &[value="0"]::-webkit-progress-value,
+    &[value="2"]::-webkit-progress-value,
+    &[value="3"]::-webkit-progress-value,
+    &[value="4"]::-webkit-progress-value,
+    &[value="5"]::-webkit-progress-value,
+    &[value="6"]::-webkit-progress-value,
+    &[value="7"]::-webkit-progress-value,
+    &[value="8"]::-webkit-progress-value,
+    &[value="9"]::-webkit-progress-value {
       background-color: var(--progress-color-1);
     }
   }
@@ -1011,32 +1055,32 @@ body:not(.tasks) li[data-task='D'].task-list-item.is-checked {
 /* Todoist */
 /* --------------- */
 
-.todoist-p1 > input[type='checkbox'] {
+.todoist-p1 > input[type="checkbox"] {
   border: 1px solid #ff757f !important;
   background-color: rgba(255, 117, 127, 0.25) !important;
 }
-.todoist-p1 > input[type='checkbox']:hover {
+.todoist-p1 > input[type="checkbox"]:hover {
   background-color: rgba(255, 117, 127, 0.5) !important;
 }
-.todoist-p2 > input[type='checkbox'] {
+.todoist-p2 > input[type="checkbox"] {
   border: 1px solid #ffc777 !important;
   background-color: rgba(255, 199, 119, 0.25) !important;
 }
-.todoist-p2 > input[type='checkbox']:hover {
+.todoist-p2 > input[type="checkbox"]:hover {
   background-color: rgba(255, 199, 119, 0.5) !important;
 }
-.todoist-p3 > input[type='checkbox'] {
+.todoist-p3 > input[type="checkbox"] {
   border: 1px solid #65bcff !important;
   background-color: rgba(101, 188, 255, 0.25) !important;
 }
-.todoist-p3 > input[type='checkbox']:hover {
+.todoist-p3 > input[type="checkbox"]:hover {
   background-color: rgba(101, 188, 255, 0.5) !important;
 }
-.todoist-p4 > input[type='checkbox'] {
+.todoist-p4 > input[type="checkbox"] {
   border: 1px solid #b4c2f0 !important;
   background-color: rgba(180, 194, 240, 0.25) !important;
 }
-.todoist-p4 > input[type='checkbox']:hover {
+.todoist-p4 > input[type="checkbox"]:hover {
   background-color: rgba(180, 194, 240, 0.5) !important;
 }
 .task-metadata {
@@ -1294,42 +1338,42 @@ settings:
         type: heading
         level: 2
         collapsed: true
-    - 
+    -
         id: default-font-color
         title: Default font colors
         description: Use the default font color styling for bold, italics, and quotes
         type: class-toggle
         default:  false
-    - 
+    -
         id: text-highlight-bg-l
         title: Highlight color (light)
         type: variable-color
         format: rgb
         default: 'rgba(255, 208, 0, 0.4)'
-    - 
+    -
         id: text-highlight-bg-d
         title: Highlight color (dark)
         type: variable-color
         format: rgb
         default: 'rgba(255, 208, 0, 0.4)'
-    - 
+    -
         id: strong-color
         title: Bold font color
         type: variable-color
         format: hex
-        default: '#FF82B2' 
-    - 
+        default: '#FF82B2'
+    -
         id: em-color
         title: Italics font color
         type: variable-color
         format: hex
-        default: '#FF82B2' 
-    - 
+        default: '#FF82B2'
+    -
         id: quote-color
         title: Blockquotes font color
         type: variable-color
         format: hex
-        default: '#3EB4BF' 
+        default: '#3EB4BF'
     -
         id: code-normal
         title: Inline code blocks font color (Light mode)
@@ -1342,90 +1386,90 @@ settings:
         type: variable-color
         format: hex
         default: '#555E68'
-    - 
+    -
         id: tag-background-color-l
         title: Tag background color (Light mode)
         type: variable-color
         format: hex
-        default: '#BDE1D3' 
-    - 
+        default: '#BDE1D3'
+    -
         id: tag-font-color-l
         title: Tag font color (Light mode)
         type: variable-color
         format: hex
-        default: '#1D694B' 
-    - 
+        default: '#1D694B'
+    -
         id: tag-background-color-d
         title: Tag background color (Dark mode)
         type: variable-color
         format: hex
-        default: '#1D694B' 
-    - 
+        default: '#1D694B'
+    -
         id: tag-font-color-d
         title: Tag font color (Dark mode)
         type: variable-color
         format: hex
-        default: '#FFFFFF' 
-    - 
+        default: '#FFFFFF'
+    -
         id: progress-color
         title: Progress colorful mode switcher
         description: Toggle progress color scheme
         type: class-toggle
         default: false
-    - 
+    -
         id: progress-color-1
         title: progress 2-39% color
         type: variable-color
         opacity: true
         format: hex
         default: '#ad5758'
-    - 
+    -
         id: progress-color-2
         title: progress 40-59% color
         type: variable-color
         opacity: true
         format: hex
         default: '#b87f4c'
-    - 
+    -
         id: progress-color-3
         title: progress 60-79% color
         type: variable-color
         opacity: true
         format: hex
         default: '#d2b874'
-    - 
+    -
         id: progress-color-4
         title: progress 80-99% color
         type: variable-color
         opacity: true
         format: hex
         default: '#b0c07e'
-    - 
+    -
         id: progress-color-5
         title: progress 1,100% color
         type: variable-color
         opacity: true
         format: hex
         default: '#768399'
-    - 
+    -
         id: headings
         title: Headings
         type: heading
         level: 2
         collapsed: true
-    - 
+    -
         id: level-1-headings
         title: Level 1 Headings
         type: heading
         level: 3
         collapsed: true
-    - 
+    -
         id: h1-size
         title: H1 font size
         description: Accepts any CSS font-size value
         type: variable-text
         default: 1.7em
-    - 
+    -
         id: h1-weight
         title: H1 font weight
         description: Accepts numbers representing the CSS font-weight
@@ -1437,31 +1481,31 @@ settings:
         type: variable-color
         format: hex
         default: '#'
-    - 
+    -
         id: level-2-headings
         title: Level 2 Headings
         type: heading
         level: 3
         collapsed: true
-    - 
+    -
         id: h2-size
         title: H2 font size
         description: Accepts any CSS font-size value
         type: variable-text
         default: 1.5em
-    - 
+    -
         id: h2-weight
         title: H2 font weight
         description: Accepts numbers representing the CSS font-weight
         type: variable-number
         default: 700
-    - 
+    -
         id: h2-color
         title: H2 color
         type: variable-color
         format: hex
         default: '#2E80F2'
-    - 
+    -
         id: h2-underline
         title: H2 underline
         description: Toggle H2 underline (border-bottom)
@@ -1473,13 +1517,13 @@ settings:
         type: heading
         level: 3
         collapsed: true
-    - 
+    -
         id: h3-size
         title: H3 font size
         description: Accepts any CSS font-size value
         type: variable-text
         default: 1.2em
-    - 
+    -
         id: h3-weight
         title: H3 font weight
         description: Accepts numbers representing the CSS font-weight
@@ -1491,25 +1535,25 @@ settings:
         type: variable-color
         format: hex
         default: '#2E80F2'
-    - 
+    -
         id: level-4-headings
         title: Level 4 Headings
         type: heading
         level: 3
         collapsed: true
-    - 
+    -
         id: h4-size
         title: H4 font size
         description: Accepts any CSS font-size value
         type: variable-text
         default: 1.1em
-    - 
+    -
         id: h4-weight
         title: H4 font weight
         description: Accepts numbers representing the CSS font-weight
         type: variable-number
         default: 500
-    - 
+    -
         id: h4-color
         title: H4 color
         type: variable-color
@@ -1528,43 +1572,43 @@ settings:
             -
                 label: None
                 value: none
-    - 
+    -
         id: level-5-headings
         title: Level 5 Headings
         type: heading
         level: 3
         collapsed: true
-    - 
+    -
         id: h5-size
         title: H5 font size
         description: Accepts any CSS font-size value
         type: variable-text
         default: 1em
-    - 
+    -
         id: h5-weight
         title: H5 font weight
         description: Accepts numbers representing the CSS font-weight
         type: variable-number
         default: 500
-    - 
+    -
         id: h5-color
         title: H5 color
         type: variable-color
         format: hex
         default: '#E83E3E'
-    - 
+    -
         id: level-6-headings
         title: Level 6 Headings
         type: heading
         level: 3
         collapsed: true
-    - 
+    -
         id: h6-size
         title: H6 font size
         description: Accepts any CSS font-size value
         type: variable-text
         default: 0.9em
-    - 
+    -
         id: h6-weight
         title: H6 font weight
         description: Accepts numbers representing the CSS font-weight
