@@ -432,11 +432,6 @@ body.active-line .cm-active.HyperMD-quote::before {
   opacity: 0.85;
 }
 
-/* Code blocks horizontal scroll */
-.markdown-reading-view .markdown-preview-view pre:not(.frontmatter) code {
-  white-space: pre;
-}
-
 /* Fancy code blocks */
 .cm-inline-code,
 .cm-s-obsidian .HyperMD-codeblock,
