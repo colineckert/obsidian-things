@@ -492,6 +492,7 @@ body:not(.default-font-color) mark em {
 /* Fancy highlight */
 body.fancy-highlight span.cm-highlight,
 body.fancy-highlight .markdown-preview-view mark,
+body.fancy-highlight .markdown-rendered mark,
 body.fancy-highlight span.search-result-file-matched-text {
   background-image: linear-gradient(
     0deg,
