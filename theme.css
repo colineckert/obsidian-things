@@ -343,12 +343,18 @@ body.is-focused:not(.hider-frameless):not(.is-fullscreen):not(.is-mobile)
 }
 
 /* H2 styling */
-body.h2-underline h2,
-body.h2-underline .HyperMD-header.HyperMD-header-2.cm-line {
+h2,
+.HyperMD-header.HyperMD-header-2.cm-line {
   border-bottom: 2px solid var(--background-modifier-border);
   width: 100%;
   padding-bottom: 2px;
   margin-bottom: 8px !important;
+}
+body.h2-no-underline h2,
+body.h2-no-underline .HyperMD-header.HyperMD-header-2.cm-line {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: revert;
 }
 
 /* Heading small-caps */
@@ -420,8 +426,8 @@ body.heading-underline-color.h1-underline
   .HyperMD-header.HyperMD-header-1.cm-line {
   border-bottom-color: var(--h1-color);
 }
-body.heading-underline-color.h2-underline h2,
-body.heading-underline-color.h2-underline
+body.heading-underline-color:not(.h2-no-underline) h2,
+body.heading-underline-color:not(.h2-no-underline)
   .HyperMD-header.HyperMD-header-2.cm-line {
   border-bottom-color: var(--h2-color);
 }
@@ -688,7 +694,7 @@ body.fancy-code .markdown-preview-view pre code {
   color: #ababab;
 }
 .theme-dark .token.comment,
-.theme-dark .cm-comment,
+.theme-dark .cm-comment:not(.cm-hashtag),
 .token.prolog,
 .token.doctype,
 .token.cdata {
@@ -1675,11 +1681,11 @@ settings:
         format: hex
         default: '#2E80F2'
     -
-        id: h2-underline
+        id: h2-no-underline
         title: H2 underline
-        description: Toggle H2 underline (border-bottom)
+        description: Disable H2 underline (border-bottom)
         type: class-toggle
-        default: true
+        default: false
     -
         id: h2-small-caps
         title: H2 small caps
