@@ -105,6 +105,12 @@ body {
 
   --line-width-adaptive: var(--line-width);
   --line-width-wide: calc(var(--line-width) + 12.5%);
+
+  --code-background-l: #eceef1;
+  --code-background-d: #303540;
+  --code-block-background-l: #f0f2f5;
+  --code-block-background-d: #282c34;
+  --quote-background: transparent;
 }
 
 /* COLOR SCHEMES
@@ -345,6 +351,101 @@ body.h2-underline .HyperMD-header.HyperMD-header-2.cm-line {
   margin-bottom: 8px !important;
 }
 
+/* Heading small-caps */
+body.h1-small-caps h1,
+body.h1-small-caps .HyperMD-header.HyperMD-header-1.cm-line {
+  font-variant-caps: small-caps;
+}
+body.h2-small-caps h2,
+body.h2-small-caps .HyperMD-header.HyperMD-header-2.cm-line {
+  font-variant-caps: small-caps;
+}
+body.h3-small-caps h3,
+body.h3-small-caps .HyperMD-header.HyperMD-header-3.cm-line {
+  font-variant-caps: small-caps;
+}
+body.h4-small-caps h4,
+body.h4-small-caps .HyperMD-header.HyperMD-header-4.cm-line {
+  font-variant-caps: small-caps;
+}
+body.h5-small-caps h5,
+body.h5-small-caps .HyperMD-header.HyperMD-header-5.cm-line {
+  font-variant-caps: small-caps;
+}
+body.h6-small-caps h6,
+body.h6-small-caps .HyperMD-header.HyperMD-header-6.cm-line {
+  font-variant-caps: small-caps;
+}
+
+/* Heading underlines (H1, H3-H6) */
+body.h1-underline h1,
+body.h1-underline .HyperMD-header.HyperMD-header-1.cm-line {
+  border-bottom: 2px solid var(--background-modifier-border);
+  width: 100%;
+  padding-bottom: 2px;
+  margin-bottom: 8px !important;
+}
+body.h3-underline h3,
+body.h3-underline .HyperMD-header.HyperMD-header-3.cm-line {
+  border-bottom: 2px solid var(--background-modifier-border);
+  width: 100%;
+  padding-bottom: 2px;
+  margin-bottom: 8px !important;
+}
+body.h4-underline h4,
+body.h4-underline .HyperMD-header.HyperMD-header-4.cm-line {
+  border-bottom: 2px solid var(--background-modifier-border);
+  width: 100%;
+  padding-bottom: 2px;
+  margin-bottom: 8px !important;
+}
+body.h5-underline h5,
+body.h5-underline .HyperMD-header.HyperMD-header-5.cm-line {
+  border-bottom: 2px solid var(--background-modifier-border);
+  width: 100%;
+  padding-bottom: 2px;
+  margin-bottom: 8px !important;
+}
+body.h6-underline h6,
+body.h6-underline .HyperMD-header.HyperMD-header-6.cm-line {
+  border-bottom: 2px solid var(--background-modifier-border);
+  width: 100%;
+  padding-bottom: 2px;
+  margin-bottom: 8px !important;
+}
+
+/* Heading underline color matches heading color */
+body.heading-underline-color.h1-underline h1,
+body.heading-underline-color.h1-underline
+  .HyperMD-header.HyperMD-header-1.cm-line {
+  border-bottom-color: var(--h1-color);
+}
+body.heading-underline-color.h2-underline h2,
+body.heading-underline-color.h2-underline
+  .HyperMD-header.HyperMD-header-2.cm-line {
+  border-bottom-color: var(--h2-color);
+}
+body.heading-underline-color.h3-underline h3,
+body.heading-underline-color.h3-underline
+  .HyperMD-header.HyperMD-header-3.cm-line {
+  border-bottom-color: var(--h3-color);
+}
+body.heading-underline-color.h4-underline h4,
+body.heading-underline-color.h4-underline
+  .HyperMD-header.HyperMD-header-4.cm-line {
+  border-bottom-color: var(--h4-color);
+}
+body.heading-underline-color.h5-underline h5,
+body.heading-underline-color.h5-underline
+  .HyperMD-header.HyperMD-header-5.cm-line {
+  border-bottom-color: var(--h5-color);
+}
+body.heading-underline-color.h6-underline h6,
+body.heading-underline-color.h6-underline
+  .HyperMD-header.HyperMD-header-6.cm-line {
+  border-bottom-color: var(--h6-color);
+}
+
 /* Hashtags font */
 .markdown-source-view.mod-cm6.is-live-preview .cm-hashtag.cm-meta,
 .markdown-source-view.mod-cm5 .cm-hashtag.cm-meta {
@@ -356,6 +457,12 @@ body:not(.default-font-color) .markdown-preview-view blockquote,
 body:not(.default-font-color) span.cm-quote.cm-quote-1 {
   font-style: italic;
   color: var(--quote-color);
+}
+body .markdown-preview-view blockquote {
+  background-color: var(--quote-background);
+}
+body .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote {
+  background-color: var(--quote-background);
 }
 
 /* Bold font */
@@ -430,6 +537,36 @@ body.active-line .cm-active.HyperMD-quote::before {
   border-left: 3px solid var(--color-accent);
   border-radius: 10px 0 0 10px;
   opacity: 0.85;
+}
+
+/* Inline code background (separate from block code) */
+.theme-light .markdown-rendered code:not(pre code),
+.theme-light .markdown-preview-view code:not(pre code) {
+  background-color: var(--code-background-l);
+}
+.theme-dark .markdown-rendered code:not(pre code),
+.theme-dark .markdown-preview-view code:not(pre code) {
+  background-color: var(--code-background-d);
+}
+.theme-light .cm-s-obsidian span.cm-inline-code {
+  background-color: var(--code-background-l);
+}
+.theme-dark .cm-s-obsidian span.cm-inline-code {
+  background-color: var(--code-background-d);
+}
+
+/* Code block background (separate from inline code) */
+.theme-light .markdown-preview-view pre:not(.frontmatter) {
+  background-color: var(--code-block-background-l);
+}
+.theme-dark .markdown-preview-view pre:not(.frontmatter) {
+  background-color: var(--code-block-background-d);
+}
+.theme-light .cm-s-obsidian div.HyperMD-codeblock-bg {
+  background-color: var(--code-block-background-l);
+}
+.theme-dark .cm-s-obsidian div.HyperMD-codeblock-bg {
+  background-color: var(--code-block-background-d);
 }
 
 /* Fancy code blocks */
@@ -1370,17 +1507,36 @@ settings:
         format: hex
         default: '#3EB4BF'
     -
-        id: code-normal
-        title: Inline code blocks font color (Light mode)
+        id: quote-background
+        title: Blockquote background color
         type: variable-color
-        format: hex
-        default: '#BEC6CF'
+        opacity: true
+        format: rgb
+        default: 'rgba(0,0,0,0)'
     -
-        id: code-color-d
-        title: Inline code blocks font color (Dark mode)
+        id: code-block-background-l
+        title: Code block background (Light mode)
         type: variable-color
         format: hex
-        default: '#555E68'
+        default: '#f0f2f5'
+    -
+        id: code-block-background-d
+        title: Code block background (Dark mode)
+        type: variable-color
+        format: hex
+        default: '#282c34'
+    -
+        id: code-background-l
+        title: Inline code background (Light mode)
+        type: variable-color
+        format: hex
+        default: '#eceef1'
+    -
+        id: code-background-d
+        title: Inline code background (Dark mode)
+        type: variable-color
+        format: hex
+        default: '#303540'
     -
         id: tag-background-color-l
         title: Tag background color (Light mode)
@@ -1453,6 +1609,12 @@ settings:
         level: 2
         collapsed: true
     -
+        id: heading-underline-color
+        title: Match underline color to heading color
+        description: When enabled, heading border-bottom uses the heading's own color
+        type: class-toggle
+        default: false
+    -
         id: level-1-headings
         title: Level 1 Headings
         type: heading
@@ -1476,6 +1638,18 @@ settings:
         type: variable-color
         format: hex
         default: '#'
+    -
+        id: h1-small-caps
+        title: H1 small caps
+        description: Toggle H1 small caps
+        type: class-toggle
+        default: false
+    -
+        id: h1-underline
+        title: H1 underline
+        description: Toggle H1 underline (border-bottom)
+        type: class-toggle
+        default: false
     -
         id: level-2-headings
         title: Level 2 Headings
@@ -1507,6 +1681,12 @@ settings:
         type: class-toggle
         default: true
     -
+        id: h2-small-caps
+        title: H2 small caps
+        description: Toggle H2 small caps
+        type: class-toggle
+        default: false
+    -
         id: level-3-headings
         title: Level 3 Headings
         type: heading
@@ -1530,6 +1710,18 @@ settings:
         type: variable-color
         format: hex
         default: '#2E80F2'
+    -
+        id: h3-small-caps
+        title: H3 small caps
+        description: Toggle H3 small caps
+        type: class-toggle
+        default: false
+    -
+        id: h3-underline
+        title: H3 underline
+        description: Toggle H3 underline (border-bottom)
+        type: class-toggle
+        default: false
     -
         id: level-4-headings
         title: Level 4 Headings
@@ -1568,6 +1760,18 @@ settings:
                 label: None
                 value: none
     -
+        id: h4-small-caps
+        title: H4 small caps
+        description: Toggle H4 small caps
+        type: class-toggle
+        default: false
+    -
+        id: h4-underline
+        title: H4 underline
+        description: Toggle H4 underline (border-bottom)
+        type: class-toggle
+        default: false
+    -
         id: level-5-headings
         title: Level 5 Headings
         type: heading
@@ -1592,6 +1796,18 @@ settings:
         format: hex
         default: '#E83E3E'
     -
+        id: h5-small-caps
+        title: H5 small caps
+        description: Toggle H5 small caps
+        type: class-toggle
+        default: false
+    -
+        id: h5-underline
+        title: H5 underline
+        description: Toggle H5 underline (border-bottom)
+        type: class-toggle
+        default: false
+    -
         id: level-6-headings
         title: Level 6 Headings
         type: heading
@@ -1615,6 +1831,18 @@ settings:
         type: variable-color
         format: hex
         default: '#'
+    -
+        id: h6-small-caps
+        title: H6 small caps
+        description: Toggle H6 small caps
+        type: class-toggle
+        default: false
+    -
+        id: h6-underline
+        title: H6 underline
+        description: Toggle H6 underline (border-bottom)
+        type: class-toggle
+        default: false
     -
         id: credits
         title: Credits
