@@ -562,6 +562,22 @@ body.active-line .cm-active.HyperMD-quote::before {
   background-color: var(--code-background-d);
 }
 
+/* Copy button stays fixed at top-right while code scrolls horizontally */
+.markdown-reading-view .el-pre {
+  position: relative;
+}
+.markdown-reading-view .el-pre pre {
+  position: static;
+  overflow-x: auto;
+  white-space: pre;
+}
+.markdown-reading-view .el-pre pre code {
+  white-space: pre;
+}
+.markdown-reading-view .el-pre .copy-code-button {
+  position: absolute;
+}
+
 /* Code block background (separate from inline code) */
 .theme-light .markdown-preview-view pre:not(.frontmatter) {
   background-color: var(--code-block-background-l);
