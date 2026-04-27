@@ -787,19 +787,42 @@ code .cm-tag {
 /* Mobile toolbar button */
 /* --------------------- */
 
-body.is-mobile:not(.floating-button-off):not(.advanced-toolbar)
-  .view-action:nth-last-of-type(2),
-body.is-mobile:not(.floating-button-off):not(.advanced-toolbar)
-  .view-action:nth-last-of-type(2) {
+/* iOS glass: style button in-place within the glass pill */
+body.is-mobile.is-ios:not(.floating-button-off)
+  .view-actions
+  .view-action:not(.mod-bookmark):not([aria-label="More options"]) {
   color: white;
   background-color: var(--blue);
   opacity: 1;
-  top: calc(90vh - 110px);
   display: flex;
   padding: 5px;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50% !important;
+  box-shadow:
+    1.1px 0.3px 2.2px rgba(0, 0, 0, 0.02),
+    2.7px 0.7px 5.3px rgba(0, 0, 0, 0.028),
+    5px 1.3px 10px rgba(0, 0, 0, 0.035),
+    8.9px 2.2px 17.9px rgba(0, 0, 0, 0.042),
+    16.7px 4.2px 33.4px rgba(0, 0, 0, 0.05),
+    40px 10px 80px rgba(0, 0, 0, 0.07);
+}
+
+/* Non-iOS mobile (Android): floating button at bottom-right */
+body.is-mobile:not(.is-ios):not(.floating-button-off):not(.advanced-toolbar)
+  .view-actions
+  .view-action:not(.mod-bookmark):not([aria-label="More options"]) {
+  color: white;
+  background-color: var(--blue);
+  opacity: 1;
   position: fixed;
-  left: 86vw;
+  top: calc(90vh - 110px);
+  /*left: 80vw;*/
   transform: translate(-40%, 5%);
+  display: flex;
+  padding: 5px;
   justify-content: center;
   align-items: center;
   width: 53px;
@@ -813,20 +836,18 @@ body.is-mobile:not(.floating-button-off):not(.advanced-toolbar)
     16.7px 4.2px 33.4px rgba(0, 0, 0, 0.05),
     40px 10px 80px rgba(0, 0, 0, 0.07);
 }
-
-body.is-mobile:not(.floating-button-off).advanced-toolbar
-  .view-action:nth-last-of-type(2),
-body.is-mobile:not(.floating-button-off).advanced-toolbar
-  .view-action:nth-last-of-type(2) {
+body.is-mobile:not(.is-ios):not(.floating-button-off).advanced-toolbar
+  .view-actions
+  .view-action:not(.mod-bookmark):not([aria-label="More options"]) {
   color: white;
   background-color: var(--blue);
   opacity: 1;
   position: fixed;
   top: calc(100vh - 138px);
+  /*left: 80vw;*/
+  transform: translate(-40%, -115%);
   display: flex;
   padding: 5px;
-  left: 86vw;
-  transform: translate(-40%, -115%);
   justify-content: center;
   align-items: center;
   width: 53px;
