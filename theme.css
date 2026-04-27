@@ -621,7 +621,7 @@ body.fancy-code
   line-height: 2;
   text-align: right;
   height: 100%;
-  width: 1.7em;
+  width: 2.1em;
   color: var(--text-muted);
   /* background-color: #1e2029; */
   background-color: var(--code-background);
@@ -635,7 +635,7 @@ body.fancy-code
     .HyperMD-codeblock-begin,
     .HyperMD-codeblock-end
   ) {
-  padding-left: 2.8em;
+  padding-left: 2.6em;
 }
 
 body.fancy-code .cm-s-obsidian div.HyperMD-codeblock-begin-bg {
