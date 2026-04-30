@@ -334,7 +334,7 @@ body.is-focused:not(.hider-frameless):not(.is-fullscreen):not(.is-mobile)
 }
 
 /* Breadcrumb: hidden by default, visible on hover */
-.view-header-title-container {
+.view-header .view-header-title-container {
   opacity: 0;
   transition: opacity 200ms ease;
 }
@@ -343,14 +343,16 @@ body.is-focused:not(.hider-frameless):not(.is-fullscreen):not(.is-mobile)
 }
 
 /* H2 styling */
-h2,
+.markdown-preview-view h2,
+.markdown-rendered h2,
 .HyperMD-header.HyperMD-header-2.cm-line {
   border-bottom: 2px solid var(--background-modifier-border);
   width: 100%;
   padding-bottom: 2px;
   margin-bottom: 8px !important;
 }
-body.h2-no-underline h2,
+body.h2-no-underline .markdown-preview-view h2,
+body.h2-no-underline .markdown-rendered h2,
 body.h2-no-underline .HyperMD-header.HyperMD-header-2.cm-line {
   border-bottom: none;
   padding-bottom: 0;
@@ -426,7 +428,8 @@ body.heading-underline-color.h1-underline
   .HyperMD-header.HyperMD-header-1.cm-line {
   border-bottom-color: var(--h1-color);
 }
-body.heading-underline-color:not(.h2-no-underline) h2,
+body.heading-underline-color:not(.h2-no-underline) .markdown-preview-view h2,
+body.heading-underline-color:not(.h2-no-underline) .markdown-rendered h2,
 body.heading-underline-color:not(.h2-no-underline)
   .HyperMD-header.HyperMD-header-2.cm-line {
   border-bottom-color: var(--h2-color);
