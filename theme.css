@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 THINGS
-Version 2.2.2
+Version 2.2.3
 Created by @colineckert
 
 Readme:
@@ -322,15 +322,6 @@ body.is-mobile.theme-dark.mobile-black-background {
     --color-base-30: #ebedf0;
     --h1-color: var(--color-base-00);
   }
-}
-
-/* Titlebar focused/unfocused states */
-body:not(.hider-frameless):not(.is-fullscreen):not(.is-mobile) .titlebar {
-  background-color: var(--titlebar-background);
-}
-body.is-focused:not(.hider-frameless):not(.is-fullscreen):not(.is-mobile)
-  .titlebar {
-  background-color: var(--titlebar-background-focused);
 }
 
 /* Breadcrumb: hidden by default, visible on hover */
