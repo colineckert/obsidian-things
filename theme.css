@@ -60,6 +60,14 @@ body {
   --progress-color-4: #b0c07e;
   --progress-color-5: #768399;
 
+  --strong-gradient-color-1: #87c2fd;
+  --strong-gradient-color-2: #dcb9fc;
+  --strong-gradient-aurora: linear-gradient(62deg, #87c2fd, #dcb9fc);
+  --strong-gradient-fleet: linear-gradient(62deg, #6E90F1, #9ECFEF);
+  --strong-gradient-snippetslab: linear-gradient(62deg, #29aee9, #28dac9);
+  --strong-gradient-custom: linear-gradient(62deg, var(--strong-gradient-color-1), var(--strong-gradient-color-2));
+  --strong-gradient: var(--strong-gradient-aurora);
+
   /* Font families */
   --font-text-theme:
     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Ubuntu,
@@ -469,6 +477,16 @@ body .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote {
 body:not(.default-font-color) strong,
 body:not(.default-font-color) span:not(.cm-highlight).cm-strong {
   color: var(--strong-color);
+}
+
+/* Fancy bold font */
+body.fancy-bold:not(.default-font-color) strong,
+body.fancy-bold:not(.default-font-color) span:not(.cm-highlight).cm-strong {
+    padding-right: 0.1em;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: var(--strong-gradient);
 }
 
 /* Italics */
@@ -1479,6 +1497,44 @@ settings:
         type: class-toggle
         default: false
     -
+        id: fancy-bold
+        title: Fancy bold font
+        description: Enable fancy gradient bold font
+        type: class-toggle
+    - 
+        title: Fancy bold font theme
+        description: Change gradient bold font theme
+        id: strong-gradient
+        type: variable-select
+        default: var(--strong-gradient-aurora)
+        options: 
+        -
+            label: Aurora
+            value: var(--strong-gradient-aurora)
+        - 
+            label: Fleet
+            value: var(--strong-gradient-fleet)
+        - 
+            label: SnippetsLab
+            value: var(--strong-gradient-snippetslab)
+        - 
+            label: Custom
+            value: var(--strong-gradient-custom)
+    - 
+        id: strong-gradient-color-1
+        title: Blod font graident color 1
+        type: variable-color
+        opacity: false
+        format: hex
+        default: '#87c2fd'
+    - 
+        id: strong-gradient-color-2
+        title: Blod font graident color 2
+        type: variable-color
+        opacity: false
+        format: hex
+        default: '#dcb9fc'
+    - 
         title: Disable Kanban board styles
         description: Remove minimalist styling to the Kanban plugin
         id: no-kanban-styles
