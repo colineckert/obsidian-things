@@ -329,6 +329,7 @@ body.is-mobile.theme-dark.mobile-black-background {
   opacity: 0;
   transition: opacity 200ms ease;
 }
+.view-header .view-header-title-container:focus-within,
 .view-header:hover .view-header-title-container {
   opacity: 1;
 }
