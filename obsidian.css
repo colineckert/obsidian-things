@@ -2911,12 +2911,19 @@ iframe {
   border: solid var(--quote-opening-modifier);
   border-width: 0px 0px 0px 2px;
   background-color: transparent;
-  font-style: italic;
+  font-size: var(--quote-size, 1em);
+  font-family: var(--quote-font, inherit);
   padding: 0 0 0 calc(var(--nested-padding) / 2);
   margin-inline-start: var(--nested-padding);
 }
 
 .cm-s-obsidian span.cm-quote {
+  font-size: var(--quote-size, 1em);
+  font-family: var(--quote-font, inherit);
+}
+
+body:not(.quote-no-italic) .markdown-preview-view blockquote,
+body:not(.quote-no-italic) .cm-s-obsidian span.cm-quote {
   font-style: italic;
 }
 
@@ -6676,12 +6683,30 @@ settings:
         type: variable-color
         format: hex
         default: '#FF82B2' 
-    - 
+    -
         id: green
         title: Blockquotes font color
         type: variable-color
         format: hex
-        default: '#3EB4BF' 
+        default: '#3EB4BF'
+    -
+        id: quote-no-italic
+        title: Disable blockquote italics
+        description: Turn off italic styling for blockquotes
+        type: class-toggle
+        default: false
+    -
+        id: quote-size
+        title: Blockquote font size
+        description: Accepts any CSS font-size value. Prefer rem or px units - em compounds in nested quotes
+        type: variable-text
+        default: 1em
+    -
+        id: quote-font
+        title: Blockquote font
+        description: Font family for blockquotes. Accepts a full font stack, e.g. 'Georgia', 'LXGW WenKai'. Leave empty or set to inherit to follow the body font.
+        type: variable-text
+        default: inherit
     -
         id: code-color-l
         title: Inline code blocks font color (Light mode)

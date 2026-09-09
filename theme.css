@@ -44,6 +44,8 @@ body {
   --strong-color: var(--pink);
   --em-color: var(--pink);
   --quote-color: var(--green);
+  --quote-size: 1em;
+  --quote-font: inherit;
 
   --tag-background-color-l: #bde1d3;
   --tag-font-color-l: #1d694b;
@@ -475,15 +477,22 @@ body.heading-underline-color.h6-underline
 
 /* Blockquote */
 body:not(.default-font-color) .markdown-preview-view blockquote,
-body:not(.default-font-color) span.cm-quote.cm-quote-1 {
-  font-style: italic;
+body:not(.default-font-color) .markdown-source-view.mod-cm6 .HyperMD-quote {
   color: var(--quote-color);
+}
+body:not(.quote-no-italic) .markdown-preview-view blockquote,
+body:not(.quote-no-italic) .markdown-source-view.mod-cm6 .HyperMD-quote {
+  font-style: italic;
 }
 body .markdown-preview-view blockquote {
   background-color: var(--quote-background);
+  font-size: var(--quote-size, 1em);
+  font-family: var(--quote-font, inherit);
 }
 body .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote {
   background-color: var(--quote-background);
+  font-size: var(--quote-size, 1em);
+  font-family: var(--quote-font, inherit);
 }
 
 /* Bold font */
@@ -1572,6 +1581,24 @@ settings:
         opacity: true
         format: rgb
         default: 'rgba(0,0,0,0)'
+    -
+        id: quote-no-italic
+        title: Disable blockquote italics
+        description: Turn off italic styling for blockquotes
+        type: class-toggle
+        default: false
+    -
+        id: quote-size
+        title: Blockquote font size
+        description: Accepts any CSS font-size value. Prefer rem or px units - em compounds in nested quotes
+        type: variable-text
+        default: 1em
+    -
+        id: quote-font
+        title: Blockquote font
+        description: Font family for blockquotes. Accepts a full font stack, e.g. 'Georgia', 'LXGW WenKai'. Leave empty or set to inherit to follow the body font.
+        type: variable-text
+        default: inherit
     -
         id: code-block-background-l
         title: Code block background (Light mode)
