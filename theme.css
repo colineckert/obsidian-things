@@ -509,14 +509,54 @@ body.fancy-highlight span.cm-highlight,
 body.fancy-highlight .markdown-preview-view mark,
 body.fancy-highlight .markdown-rendered mark,
 body.fancy-highlight span.search-result-file-matched-text {
+  --fancy-highlight-underline: var(--highlight-background-color-underline);
+  --fancy-highlight-fill: var(--highlight-background-color--active);
   background-image: linear-gradient(
     0deg,
-    var(--highlight-background-color-underline) 0%,
-    var(--highlight-background-color-underline) 2px,
-    var(--highlight-background-color--active) 2px,
-    var(--highlight-background-color--active) 100%
+    var(--fancy-highlight-underline) 0%,
+    var(--fancy-highlight-underline) 2px,
+    var(--fancy-highlight-fill) 2px,
+    var(--fancy-highlight-fill) 100%
   ) !important;
   background-color: var(--highlight-text-color--active) !important;
+}
+
+/* Fancy highlight colors (Obsidian 1.14+) */
+body.fancy-highlight span.cm-highlight-red,
+body.fancy-highlight .markdown-preview-view mark[data-highlight='red'],
+body.fancy-highlight .markdown-rendered mark[data-highlight='red'] {
+  --fancy-highlight-underline: rgb(var(--color-red-rgb));
+  --fancy-highlight-fill: rgba(var(--color-red-rgb), 0.2);
+}
+body.fancy-highlight span.cm-highlight-orange,
+body.fancy-highlight .markdown-preview-view mark[data-highlight='orange'],
+body.fancy-highlight .markdown-rendered mark[data-highlight='orange'] {
+  --fancy-highlight-underline: rgb(var(--color-orange-rgb));
+  --fancy-highlight-fill: rgba(var(--color-orange-rgb), 0.2);
+}
+body.fancy-highlight span.cm-highlight-yellow,
+body.fancy-highlight .markdown-preview-view mark[data-highlight='yellow'],
+body.fancy-highlight .markdown-rendered mark[data-highlight='yellow'] {
+  --fancy-highlight-underline: rgb(var(--color-yellow-rgb));
+  --fancy-highlight-fill: rgba(var(--color-yellow-rgb), 0.2);
+}
+body.fancy-highlight span.cm-highlight-green,
+body.fancy-highlight .markdown-preview-view mark[data-highlight='green'],
+body.fancy-highlight .markdown-rendered mark[data-highlight='green'] {
+  --fancy-highlight-underline: rgb(var(--color-green-rgb));
+  --fancy-highlight-fill: rgba(var(--color-green-rgb), 0.2);
+}
+body.fancy-highlight span.cm-highlight-blue,
+body.fancy-highlight .markdown-preview-view mark[data-highlight='blue'],
+body.fancy-highlight .markdown-rendered mark[data-highlight='blue'] {
+  --fancy-highlight-underline: rgb(var(--color-blue-rgb));
+  --fancy-highlight-fill: rgba(var(--color-blue-rgb), 0.2);
+}
+body.fancy-highlight span.cm-highlight-purple,
+body.fancy-highlight .markdown-preview-view mark[data-highlight='purple'],
+body.fancy-highlight .markdown-rendered mark[data-highlight='purple'] {
+  --fancy-highlight-underline: rgb(var(--color-purple-rgb));
+  --fancy-highlight-fill: rgba(var(--color-purple-rgb), 0.2);
 }
 
 /* Markdown formatting */
