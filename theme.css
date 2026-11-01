@@ -324,12 +324,15 @@ body.is-mobile.theme-dark.mobile-black-background {
   }
 }
 
-/* Breadcrumb: hidden by default, visible on hover */
-.view-header .view-header-title-container {
+/* Breadcrumb: hidden by default, visible on hover
+   (disable with the "Always show tab title bar" style setting) */
+body:not(.always-show-title-bar) .view-header .view-header-title-container {
   opacity: 0;
   transition: opacity 200ms ease;
 }
-.view-header:hover .view-header-title-container {
+body:not(.always-show-title-bar)
+  .view-header:hover
+  .view-header-title-container {
   opacity: 1;
 }
 
@@ -1519,6 +1522,12 @@ settings:
         title: Disable mobile floating-action button
         description: Revert placement of edit/preview button to default in header (mobile)
         id: floating-button-off
+        type: class-toggle
+        default: false
+    -
+        title: Always show tab title bar
+        description: Keep the file path and name in the tab title bar visible instead of only on hover
+        id: always-show-title-bar
         type: class-toggle
         default: false
     -
